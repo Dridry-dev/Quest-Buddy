@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :skins, only: %i[index show] do
+  resources :skins, only: %i[index new create show] do
     resources :user_skins, only: %i[create edit update]
   end
 end
