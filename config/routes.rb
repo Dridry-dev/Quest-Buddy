@@ -14,9 +14,19 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/edit'
   devise_for :users
+  # root to: "users#show"
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users, only: %i[show edit update]
+
+  resources :categories, only: %i[index show] do
+    resources :quests, only: %i[show] do
+      resources :user_quests, only: %i[create show]
+      resources :user_goals, only: %i[new create]
+    end
+  end
+
+  resources :skins, only: %i[index show] do
+    resources :user_skins, only: %i[create edit update]
+  end
 end
