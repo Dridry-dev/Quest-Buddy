@@ -1,64 +1,66 @@
-
-
 <div class="navbar-card">
-    <div class="nav-item dropdown deplacer-btn">
-      <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <div class="dropdown">
-              <%= link_to "Menu", "#", class: "btn-dropdown" %>
-              <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
-              <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-              <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-            </div>
-          </div>
-    </div>
-      <img class="avatar-navbar" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
-        <div class="trophy">
-            <i class="fa-solid fa-trophy"></i>
+  <div class="nav-item dropdown deplacer-btn">
+    <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <div class="dropdown">
+          <%= link_to "Categories", "#", class: "btn-dropdown" %>
+          <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
+          <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+          <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
         </div>
+      </div>
+    </div>
+  </div>
+  <img class="avatar-navbar" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+  <div class="trophy">
+    <i class="fa-solid fa-trophy"></i>
+  </div>
 </div>
 
 <div class="container">
   <div class="cellules-skills-coin">
-      <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
-    </div>
-    <div class="card-border-yellow">
-      <h1>MAIN SKILLS</h1>
-    </div>
+    <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+  </div>
 
-    <div class="card">
-      <div class="title-card">
-        <h1>PUSH-UP</h1>
-      </div>
-        <div class="grid-cellules-skills">
-            <div class="cellules-skills">
-              <p>Force</p>
-            </div>
-            <div class="cellules-skills">
-              <p>Endu</p>
-            </div>
-            <div class="cellules-skills">
-              <p>Cardio</p>
-            </div>
-        </div>
-          <div class="progress">
-              <div class="step-one">
-              </div>
-              <div class="step-one">
-              </div>
-              <div class="step-one">
-              </div>
-            <div class="progress-value"></div>
-          </div>
-    </div>
+  <div class="card-border-yellow">
+    <h2>MAIN SKILLS</h2>
+  </div>
 
-      <div class="card-changing-room">
-        <h1>CHANGING ROOM</h1>
-          <div class="skins">
-            <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
-          </div>
-      </div>
-    <div class="adding-bar">
-        <p>ADDING BAR WORK IN PROGRESS</p>
+  <div class="card">
+    <div class="title-card">
+      <h2>PUSH-UP</h2>
     </div>
+    <div class="grid-cellules-skills">
+      <div class="cellules-skills">
+        <p>Force</p>
+      </div>
+      <div class="cellules-skills">
+        <p>Endu</p>
+      </div>
+      <div class="cellules-skills">
+        <p>Cardio</p>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="step-one">
+      </div>
+      <div class="step-one">
+      </div>
+      <div class="step-one">
+      </div>
+      <div class="progress-value"></div>
+    </div>
+  </div>
+  <%= link_to skins_path do %>
+  <div class="card-changing-room">
+    <h2>CHANGING ROOM</h2>
+    <div class="skins">
+      <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="adding-bar">
+  <p>ADDING BAR WORK IN PROGRESS</p>
 </div>

@@ -1,2 +1,6 @@
-<h1>Skins#show</h1>
-<p>Find me in app/views/skins/show.html.erb</p>
+<h1><%= @skin.name %></h1>
+<%= cl_image_tag @skin.photo.key, height: 100, width: 100, crop: :fill %>
+<p><%= @skin.description %></p>
+<p><%= @skin.price %></p>
+<%= link_to 'Acheter', skin_user_skins_path(@skin) %>
+<%= link_to 'Equiper', new_skin_path %>
