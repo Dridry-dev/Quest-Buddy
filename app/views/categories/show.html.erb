@@ -1,2 +1,16 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="category-container">
+  <h1>Category</h1>
+  <div class="cards-product">
+      <div class="card-product">
+        <img src="https://picsum.photos/200" />
+        <div class="card-product-infos">
+          <h3><%= @category.name%></h3>
+          <p><%= @category.description  %></p>
+          <% @category.quests.each do |quest| %>
+            <p><%= link_to quest.name, category_quest_path(quest)%></p>
+          <% end %>
+        </div>
+      </div>
+    <%= link_to  "<- Retour", categories_path %>
+  </div>
+</div>

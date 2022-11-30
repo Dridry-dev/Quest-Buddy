@@ -21,7 +21,7 @@
 }
 
 .dropdown {
-  background-color: #242423;
+  // background-color: #242423;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -30,10 +30,16 @@
 
 .btn-dropdown {
   text-decoration: none;
-  color: #F5CB5C;
+  color: white;
+
 
 }
 
 .btn-dropdown:hover {
-  color: white;
+  color: #F5CB5C;
 }
+
+// .dropdown-menu {
+//   background-color: #242423;
+
+// }

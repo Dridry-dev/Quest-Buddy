@@ -1,8 +1,13 @@
 puts 'Cleaning database...'
+User.destroy_all
 Category.destroy_all
 Quest.destroy_all
 Goal.destroy_all
 puts 'Database cleaned'
+
+puts 'Creation User...'
+User.create(name: "Buddy", email: "mail@gmail.com", password: "azerty", gold: 0)
+puts 'User created'
 
 puts 'Creation category-database...'
 sport = Category.create(name: "Sport", description: "do you want some endorphin?, this category is for you")
@@ -12,6 +17,7 @@ puts "#{cinema.name} done"
 puts "Category-database done!"
 
 puts 'Creation quest-database...'
+
 pushup_easy = Quest.create(name: "Push-up", rank: 1, description: "Do as many push-up as you can", category: sport)
 puts "#{pushup_easy.name}, #{pushup_easy.rank} done"
 pushup_medium = Quest.create(name: "Push-up", rank: 2, description: "Do as many push-up as you can", category: sport)
