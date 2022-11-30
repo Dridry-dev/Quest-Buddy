@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root to: "Users#show"
+  # root to: "users#show"
   root to: "pages#home"
 
   resources :users, only: %i[show edit update]

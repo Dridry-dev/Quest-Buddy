@@ -1,13 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-# require "json"
-# require "open-uri"
-
 puts 'Cleaning database...'
 Category.destroy_all
 Quest.destroy_all
@@ -17,7 +7,8 @@ puts 'Database cleaned'
 puts 'Creation category-database...'
 sport = Category.create(name: "Sport", description: "do you want some endorphin?, this category is for you")
 cinema = Category.create(name: "Cinema", description: "do you want to know all the best movies?, this category is for you")
-puts 'Creation category-database done!'
+
+puts 'Category-database done!'
 
 puts 'Creation quest-database...'
 pushup_easy = Quest.create(name: "push-up", rank: 1, description: "do push-up", category: sport)
@@ -29,7 +20,7 @@ runnning_hard = Quest.create(name: "running", rank: 3, description: "Run as far 
 japanese_movies_easy = Quest.create(name: "Japanese movies", rank: 1, description: "check all those movies", category: cinema)
 japanese_movies_medium = Quest.create(name: "Japanese movies", rank: 2, description: "check all those movies", category: cinema)
 japanese_movies_hard = Quest.create(name: "Japanese movies", rank: 3, description: "check all those movies", category: cinema)
-puts 'Creation quests-database done!'
+puts 'Quests-database created!'
 
 puts 'Creation goal-database...'
 Goal.create(
