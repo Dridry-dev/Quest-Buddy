@@ -7,7 +7,9 @@
           <h3><%= @category.name%></h3>
           <p><%= @category.description  %></p>
           <% @category.quests.each do |quest| %>
-            <p><%= link_to quest.name, category_quest_path(quest)%></p>
+          <% if quest.rank == current_user.rank_for(quest) %>
+            <p><%= link_to quest.name, category_quest_path(@category, quest)%></p>
+            <% end %>
           <% end %>
         </div>
       </div>
