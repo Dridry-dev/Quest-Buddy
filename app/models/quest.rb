@@ -2,7 +2,7 @@ class Quest < ApplicationRecord
   belongs_to :category
   has_many :users, through: :user_quests
   has_many :goals, dependent: :destroy
-  has_many :goal_skills, through: :goals
+  # has_many :goal_skills, through: :goals
 
   validates :name, presence: true, uniqueness: true
   validates :rank, presence: true, numericality: { in: 0..10 }
