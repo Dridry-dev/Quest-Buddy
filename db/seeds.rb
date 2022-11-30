@@ -20,9 +20,9 @@ cinema = Category.create(name: "Cinema", description: "do you want to know all t
 puts 'Creation category-database done!'
 
 puts 'Creation quest-database...'
-pushup_easy = Quest.create(name: "push-up", rank: 1, description: "do push-up", category: sport)
-pushup_medium = Quest.create(name: "push-up", rank: 2, description: "do push-up", category: sport)
-pushup_hard = Quest.create(name: "push-up", rank: 3, description: "do push-up", category: sport)
+pushup_easy = Quest.create(name: "push-up", rank: 1, description: "do the maximum push-up", category: sport)
+pushup_medium = Quest.create(name: "push-up", rank: 2, description: "do the maximum push-up", category: sport)
+pushup_hard = Quest.create(name: "push-up", rank: 3, description: "do the maximum push-up", category: sport)
 runnning_easy = Quest.create(name: "running", rank: 1, description: "Run as far as possible", category: sport)
 runnning_medium = Quest.create(name: "running", rank: 2, description: "Run as far as possible", category: sport)
 runnning_hard = Quest.create(name: "running", rank: 3, description: "Run as far as possible", category: sport)
