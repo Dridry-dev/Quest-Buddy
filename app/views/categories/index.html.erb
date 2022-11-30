@@ -1,15 +1,37 @@
-<h1>Categories</h1>
-<div class="cards">
-    <% @categories.each do |category|%>
-    <div class="card-trip">
-          <div class="btn btn-">
-            <h2><%= link_to category.name, category_path(category)%></h2>
-          </div>
-          <p><%= category.description %></p>
+<div class="container">
+    <div class="card-grey">
+      <div class="upper-card-grey">
+        <div class="nav-item dropdown deplacer-btn">
+                  <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <div class="dropdown">
+                <%= link_to "Menu", "#", class: "btn-dropdown" %>
+                <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
+                <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+                <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+              </div>
+            </div>
         </div>
-        <h2 class="card-trip-pricing"> </h2>
+          <div class="cellules-skills-coin">
+            <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+          </div>
+            <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
       </div>
+        <div class="lower-card-grey">
+              <h1>Quests List</h1>
+        </div>
     </div>
-    <% end %>
+
+
+
+  <% @categories.each do |category|%>
+    <div class="card">
+        <h2><%= link_to category.name, category_path(category), class: "categories-titles" %></h2>
+        <p><%= category.description %></p>
+    </div>
+  <% end %>
+  <div class="card">
+      <h1>Example Card</h1>
+    <%= link_to "Back to homepage", root_path, class: "btn btn-outline-dark" %>
   </div>
-<%= link_to "Back to homepage", root_path, class: "btn btn-primary" %>
+</div>
