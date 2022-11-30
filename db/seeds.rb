@@ -1,5 +1,4 @@
 puts 'Cleaning database...'
-User.destroy_all
 Category.destroy_all
 Quest.destroy_all
 Goal.destroy_all
@@ -8,7 +7,8 @@ puts 'Database cleaned'
 puts 'Creation category-database...'
 sport = Category.create(name: "Sport", description: "do you want some endorphin?, this category is for you")
 cinema = Category.create(name: "Cinema", description: "do you want to know all the best movies?, this category is for you")
-puts 'Creation category-database done!'
+
+puts 'Category-database done!'
 
 puts 'Creation quest-database...'
 pushup_easy = Quest.create(name: "push-up", rank: 1, description: "do push-up", category: sport)
@@ -20,7 +20,7 @@ runnning_hard = Quest.create(name: "running", rank: 3, description: "Run as far 
 japanese_movies_easy = Quest.create(name: "Japanese movies", rank: 1, description: "check all those movies", category: cinema)
 japanese_movies_medium = Quest.create(name: "Japanese movies", rank: 2, description: "check all those movies", category: cinema)
 japanese_movies_hard = Quest.create(name: "Japanese movies", rank: 3, description: "check all those movies", category: cinema)
-puts 'Creation quests-database done!'
+puts 'Quests-database created!'
 
 puts 'Creation goal-database...'
 Goal.create(
