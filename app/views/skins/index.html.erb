@@ -1,2 +1,6 @@
 <h1>Skins#index</h1>
-<p>Find me in app/views/skins/index.html.erb</p>
+<% @skins.each do |skin| %>
+  <%= link_to skin_path(skin) do %>
+    <%= cl_image_tag skin.photo.key, height: 100, width: 100, crop: :fill %>
+  <% end %>
+<% end %>
