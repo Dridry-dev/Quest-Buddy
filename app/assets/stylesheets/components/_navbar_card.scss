@@ -5,6 +5,7 @@
   background-color: #242423;
   height: 80px;
 
+
 }
 
 .avatar-navbar {
@@ -13,7 +14,26 @@
   border-radius: 50px;
 }
 
-.fa-solid fa-trophy {
-  color: #F5CB5C;
+.trophy {
   font-size: 30px;
+  color: #F5CB5C;
+  margin-right: 10px;
+}
+
+.dropdown {
+  background-color: #242423;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.btn-dropdown {
+  text-decoration: none;
+  color: #F5CB5C;
+
+}
+
+.btn-dropdown:hover {
+  color: white;
 }
