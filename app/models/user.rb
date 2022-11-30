@@ -8,6 +8,5 @@ class User < ApplicationRecord
   has_many :goals, through: :user_goals
   has_many :quests, through: :user_quests
 
-  validates :name, presence: true, uniqueness: true
   # validates :gold, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { in: 0..1_000_000 }
 end
