@@ -12,5 +12,9 @@ class User < ApplicationRecord
   has_many :user_quests
   has_many :quests, through: :user_quests
 
+  def rank_for(quest)
+    (quest.user_goals.where(user: self).count / 3) + 1
+  end
+
   # validates :gold, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { in: 0..1_000_000 }
 end

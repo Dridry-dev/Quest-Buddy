@@ -1,32 +1,37 @@
 <div class="container">
-    <div class="card-grey">
+  <div class="card-grey">
     <div class="upper-card-grey">
-        <div class="nav-item dropdown deplacer-btn">
-                  <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <div class="dropdown">
-                <%= link_to "Menu", "#", class: "btn-dropdown" %>
-                <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
-                <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-                <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-              </div>
-            </div>
-        </div>
-          <div class="cellules-skills-coin">
-            <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+      <div class="nav-item dropdown deplacer-btn">
+        <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <div class="dropdown">
+            <%= link_to "Menu", "#", class: "btn-dropdown" %>
+            <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
+            <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+            <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
           </div>
-            <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
-      </div>
-        <div class="lower-card-grey">
-          <h3><%= @category.name%> Quests</h3>
-          <p><%= @category.description  %></p>
         </div>
-    </div>
-          <% @category.quests.each do |quest| %>
-      <div class="card">
-            <h1><%= link_to quest.name, category_quest_path(quest), class: "categories-titles" %></h1>
       </div>
-          <% end %>
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+      </div>
+        <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+    </div>
+    <div class="lower-card-grey">
+      <h3><%= @category.name%> Quests</h3>
+      <p><%= @category.description  %></p>
+      <% @category.quests.each do |quest| %>
+        <% if quest.rank == current_user.rank_for(quest) %>
+          <p><%= link_to quest.name, category_quest_path(@category, quest)%></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% @category.quests.each do |quest| %>
+    <div class="card">
+      <h1><%= link_to quest.name, category_quest_path(quest), class: "categories-titles" %></h1>
+    </div>
+  <% end %>
 
-    <%= link_to  "<- Retour", categories_path, class: "btn btn-outline-dark" %>
+  <%= link_to  "<- Retour", categories_path, class: "btn btn-outline-dark" %>
 </div>
