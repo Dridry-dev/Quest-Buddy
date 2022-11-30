@@ -1,13 +1,25 @@
+require "open-uri"
+
 puts 'Cleaning database...'
 User.destroy_all
 Category.destroy_all
 Quest.destroy_all
 Goal.destroy_all
+Skin.destroy_all
+Skill.destroy_all
 puts 'Database cleaned'
 
 puts 'Creation User...'
-User.create(name: "Buddy", email: "mail@gmail.com", password: "azerty", gold: 0)
-puts 'User created'
+user = User.create(name: "Buddy", email: "mail@gmail.com", password: "azerty", gold: 0)
+puts "#{user.name} created"
+
+puts 'Creating Skins...'
+file = URI.open("https://asset.cloudinary.com/dpmbalij4/4b5ec36f70feaeb47efd9221863a6a51")
+skin = Skin.new(name: "Abs", description: "Ryan, c'est le plus bô", price: 10)
+skin.photo.attach(io: file, filename: "RyanAbs.png", content_type: "image/png")
+skin.save
+skin.photo.attached?
+puts "#{skin.name} created"
 
 puts 'Creation category-database...'
 sport = Category.create(name: "Sport", description: "do you want some endorphin?, this category is for you")
@@ -45,7 +57,7 @@ Goal.create(
   score: 100,
   threshold: 10,
   partial: "mon bout de code",
-  quest_id: pushup_easy
+  quest: pushup_easy
 )
 Goal.create(
   score: 150,
@@ -205,3 +217,13 @@ Goal.create(
 )
 puts Goal.count.to_s
 puts 'Goal-database done!'
+
+puts 'Creating Skills...'
+force = Skill.create(name: "Force", description: 'Capacité musculaire ou "puissance" des muscles', max_point: 99, level: 10)
+puts "#{force.name} created"
+endu = Skill.create(name: "Endurance", description: "Capacité à maintenir un effort dans la durée", max_point: 99, level: 10)
+puts "#{endu.name} created"
+cardio = Skill.create(name: "Cardio", description: "Capacité de récuperation après un effort", max_point: 99, level: 10)
+puts "#{cardio.name} created"
+
+puts "SEED DONE"

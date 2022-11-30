@@ -1,4 +1,5 @@
 class Skin < ApplicationRecord
+  has_many :user_skins
   has_many :users, through: :user_skins
   has_one_attached :photo
 
