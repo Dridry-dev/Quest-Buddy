@@ -1,6 +1,7 @@
 class Skill < ApplicationRecord
   has_many :users, through: :user_skills
-  has_many :goals, through: :goal_skills
+  # has_many :goals, through: :goal_skills
+  # has_many :quests, through: source: ?
 
   SKILLS = %w[Endurance Force Rapidité Agilité Souplesse Cardio Inteligence Reflexion Logique Savoir Esprit Spiritualité Créativité Social Culture]
 
