@@ -9,8 +9,9 @@
 # require "open-uri"
 
 puts 'Cleaning database...'
-User.destroy_all
-Prestation.destroy_all
+Category.destroy_all
+Quest.destroy_all
+Goal.destroy_all
 puts 'Database cleaned'
 
 puts 'Creation category-database...'
