@@ -1,12 +1,12 @@
 
 
 <div class="navbar-card">
-    <div class="nav-item dropdown">
-      <i class="fa-solid fa-angles-right" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+    <div class="nav-item dropdown deplacer-btn">
+      <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <div class="dropdown">
               <%= link_to "Menu", "#", class: "btn-dropdown" %>
-              <%= link_to "Quest", "#", class: "btn-dropdown" %>
+              <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
               <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
               <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
             </div>
@@ -58,9 +58,7 @@
             <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
           </div>
       </div>
-</div>
-
-<div class="adding-bar">
-<p></p>
-
+    <div class="adding-bar">
+        <p>ADDING BAR WORK IN PROGRESS</p>
+    </div>
 </div>

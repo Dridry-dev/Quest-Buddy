@@ -4,14 +4,14 @@
   align-items: center;
   background-color: #242423;
   height: 80px;
-
-
 }
 
 .avatar-navbar {
   height: 77px;
   width: 77px;
   border-radius: 50px;
+  margin-left: 16px;
+  margin-top: 10px;
 }
 
 .trophy {
@@ -30,7 +30,7 @@
 
 .btn-dropdown {
   text-decoration: none;
-  color: white;
+  color: #F5CB5C;
 
 
 }
@@ -39,7 +39,10 @@
   color: #F5CB5C;
 }
 
-// .dropdown-menu {
-//   background-color: #242423;
+.deplacer-btn {
+  margin-left: 10px;
+}
 
-// }
+.arrow-color {
+  color: #F5CB5C;
+}
