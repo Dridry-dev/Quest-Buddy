@@ -12,12 +12,26 @@
 }
 
 .progress-value {
-  animation: load 2s linear 1s;
+  animation: load 2s linear;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 40px;
   background: #F5CB5C;
   height: 15px;
   width: 300px;
+}
+
+.dot-spacer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.step-dot {
+  background-color: #242423;
+  border-radius: 50px;
+  height: 13px;
+  width: 13px;
+  margin-top: 1px;
 }
 
 @keyframes load {

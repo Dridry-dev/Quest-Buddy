@@ -1,17 +1,64 @@
-<div class="quest-container">
-  <h1>Quest</h1>
-  <div class="cards-product">
-      <div class="card-product">
-        <div class="card-product-infos">
-          <h3><%= @quest.name%></h3>
-          <p><%= @quest.description  %></p>
-          <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
-            <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-            <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
-            <%= f.submit " Start your quest?" %>
-          <% end %>
+<div class="container">
+  <div class="card-grey">
+    <div class="upper-card-grey">
+      <div class="nav-item dropdown deplacer-btn">
+        <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <div class="dropdown">
+            <%= link_to "Menu", "#", class: "btn-dropdown" %>
+            <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
+            <%= link_to "Profil", "#", data: {turbo_method: :delete}, class: "btn-dropdown" %>
+            <%= link_to "Shop", "#", data: {turbo_method: :delete}, class: "btn-dropdown" %>
+          </div>
         </div>
       </div>
-    <%= link_to  "<- Retour", categories_path %>
+        <div class="cellules-skills-coin">
+          <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+        </div>
+        <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+      </div>
+      <div class="quest-container">
+        <h1><%= @quest.name%></h1>
+        <div class="cards-product">
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h3><%= @quest.name%></h3>
+                <p><%= @quest.description  %></p>
+                <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+                  <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+                  <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+                  <%= f.submit " Start your quest?" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+
+
+      
+  
+
+
+
+
+  <%= link_to skins_path do %>
+  <div class="card-changing-room">
+    <h2>CHANGING ROOM</h2>
+    <div class="skins">
+      <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+    <%# <%= link_to  "Launch this Quest?", user_quest.create %>
+    <%= link_to  "<- Retour", categories_path %>
+    <img src="https://picsum.photos/200" />
 </div>
