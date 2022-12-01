@@ -14,9 +14,9 @@ user = User.create!(name: "Buddy", email: "mail@gmail.com", password: "azerty", 
 puts "#{user.name} created"
 
 puts 'Creating Skins...'
-file = URI.open("https://asset.cloudinary.com/dpmbalij4/4b5ec36f70feaeb47efd9221863a6a51")
+file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1669823095/Ryan_lzdmx9.png")
 skin = Skin.new(name: "Abs", description: "Ryan, c'est le plus bô", price: 10)
-skin.photo.attach(io: file, filename: "RyanAbs.png", content_type: "image/png")
+skin.photo.attach(io: file, filename: "RyanAbs.png", content_type: "image/jpeg")
 skin.save!
 skin.photo.attached?
 puts "#{skin.name} created"
