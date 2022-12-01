@@ -1,4 +1,7 @@
 <div class="container">
+
+<%# ----------------- MENU CARD ----------------- %>
+
   <div class="card-grey">
     <div class="upper-card-grey">
       <div class="nav-item dropdown deplacer-btn">
@@ -20,6 +23,9 @@
           <h1>Quests List</h1>
     </div>
   </div>
+
+  <%# ----------------- CARD CATEGORIES----------------- %>
+
   <% @categories.each do |category|%>
     <%= link_to category_path(category) do %>
       <div class="card">
@@ -28,6 +34,9 @@
       </div>
     <% end %>
   <% end %>
+
+  <%# ----------------- OTHER CARD ----------------- %>
+
   <div class="card">
     <h1>Example Card</h1>
   </div>
