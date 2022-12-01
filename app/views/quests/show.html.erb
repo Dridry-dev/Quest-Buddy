@@ -2,11 +2,14 @@
   <h1>Quest</h1>
   <div class="cards-product">
       <div class="card-product">
-        <img src="https://picsum.photos/200" />
         <div class="card-product-infos">
           <h3><%= @quest.name%></h3>
           <p><%= @quest.description  %></p>
-          <%# <%= link_to  "Launch this Quest?", user_quest.create %>
+          <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+            <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+            <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+            <%= f.submit " Start your quest?" %>
+          <% end %>
         </div>
       </div>
     <%= link_to  "<- Retour", categories_path %>
