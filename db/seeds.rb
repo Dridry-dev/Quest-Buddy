@@ -45,9 +45,9 @@ skin5.save!
 puts "#{skin5.name} created"
 
 puts 'Creation category-database...'
-sport = Category.create!(name: "Sport", description: "do you want some endorphin?, this category is for you")
+sport = Category.create!(name: "Sport", description: "Do you want some endorphin? this category is for you")
 puts "#{sport.name} done"
-cinema = Category.create!(name: "Cinema", description: "do you want to know all the best movies?, this category is for you")
+cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies?, this category is for you")
 puts "#{cinema.name} done"
 puts "Category-database done!"
 
