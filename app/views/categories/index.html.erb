@@ -7,8 +7,8 @@
               <div class="dropdown">
                 <%= link_to "Menu", "#", class: "btn-dropdown" %>
                 <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
-                <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-                <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+                <%= link_to "Profil", "#", data: {turbo_method: :delete}, class: "btn-dropdown" %>
+                <%= link_to "Shop", "#", data: {turbo_method: :delete}, class: "btn-dropdown" %>
               </div>
             </div>
         </div>
@@ -25,11 +25,13 @@
 
 
   <% @categories.each do |category|%>
-    <div class="card">
-        <h2><%= link_to category.name, category_path(category), class: "categories-titles" %></h2>
-        <p><%= category.description %></p>
-    </div>
-  <% end %>
+    <%= link_to category_path(category) do %>
+      <div class="card">
+          <h2 class="categories-titles"><%= category.name %></h2>
+          <p><%= category.description %></p>
+      </div>
+        <% end %>
+      <% end %>
   <div class="card">
       <h1>Example Card</h1>
     <%= link_to "Back to homepage", root_path, class: "btn btn-outline-dark" %>

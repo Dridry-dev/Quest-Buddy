@@ -21,6 +21,23 @@
 
 }
 
+.grid-cellules-skills {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.grid-cellules-skills-quest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+
+
 .fa-solid {
   margin-top: 2px;
+  color: #323232;
 }
