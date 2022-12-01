@@ -5,6 +5,8 @@ class Quest < ApplicationRecord
   has_many :goals, dependent: :destroy
   has_many :goal_skills, through: :goals
   has_many :skills, through: :goals
+  has_many :user_goals, through: :goals
+
 
   validates :name, presence: true
   validates :rank, presence: true, numericality: { in: 0..10 }
