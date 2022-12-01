@@ -1,4 +1,7 @@
 <div class="container">
+
+<%# ----------------- MENU CARD ----------------- %>
+
   <div class="card-grey">
     <div class="upper-card-grey">
       <div class="nav-item dropdown deplacer-btn">
@@ -20,6 +23,9 @@
       <h1>Skins List</h1>
     </div>
   </div>
+
+  <%# ----------------- CARD SKIN----------------- %>
+
   <% @skins.each do |skin| %>
     <%= link_to skin_path(skin) do %>
     <div class= "card">

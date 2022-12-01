@@ -6,32 +6,38 @@
     <div class="upper-card-grey">
       <div class="nav-item dropdown deplacer-btn">
         <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <div class="dropdown">
-              <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
-              <%= link_to "Profil", root_path, class: "btn-dropdown" %>
-              <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
-            </div>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <div class="dropdown">
+            <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
+            <%= link_to "Profil", root_path, class: "btn-dropdown" %>
+            <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
           </div>
         </div>
-        <div class="cellules-skills-coin">
-          <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
-        </div>
-        <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
       </div>
-      <div class="lower-card-grey">
-        <h1>Quests List</h1>
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
       </div>
+      <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
     </div>
+    <div class="lower-card-grey">
+      <h1>Quests List</h1>
+    </div>
+  </div>
+
+<%# ----------------- CARD QUEST ----------------- %>
+
     <% @category.quests.each do |quest| %>
       <% if quest.rank == current_user.rank_for(quest) %>
         <%= link_to category_quest_path(@category, quest) do %>
-        <div class="card">
-          <h3><%= quest.name %></h3>
-        </div>
+          <div class="card">
+            <h3><%= quest.name %></h3>
+          </div>
         <% end %>
       <% end %>
     <% end %>
+
+<%# ----------------- LIEN DE RETOUR ----------------- %>
+
     <%= link_to  "<- Retour", categories_path, class: "btn btn-outline-dark"%>
   </div>
 </div>
