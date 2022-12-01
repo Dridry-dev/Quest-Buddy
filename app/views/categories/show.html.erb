@@ -5,10 +5,9 @@
         <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <div class="dropdown">
-              <%= link_to "Menu", "#", class: "btn-dropdown" %>
-              <%= link_to "Quests list", categories_path, class: "btn-dropdown" %>
-              <%= link_to "Profil", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
-              <%= link_to "Shop", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+              <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
+              <%= link_to "Profil", root_path, class: "btn-dropdown" %>
+              <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
             </div>
           </div>
         </div>
@@ -18,7 +17,7 @@
         <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
       </div>
       <div class="lower-card-grey">
-            <h1>Quests List</h1>
+        <h1>Quests List</h1>
       </div>
     </div>
     <% @category.quests.each do |quest| %>
