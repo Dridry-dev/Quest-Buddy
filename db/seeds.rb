@@ -14,12 +14,35 @@ user = User.create!(name: "Buddy", email: "mail@gmail.com", password: "azerty", 
 puts "#{user.name} created"
 
 puts 'Creating Skins...'
-file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1669823095/Ryan_lzdmx9.png")
+file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669823095/Ryan_lzdmx9.png")
 skin = Skin.new(name: "Abs", description: "Ryan, c'est le plus bô", price: 10)
 skin.photo.attach(io: file, filename: "RyanAbs.png", content_type: "image/jpeg")
 skin.save!
-skin.photo.attached?
 puts "#{skin.name} created"
+
+file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Superman_hett66.png")
+skin2 = Skin.new(name: "Superman", description: "Superman, c'est le plus fort", price: 10)
+skin2.photo.attach(io: file2, filename: "Superman.png", content_type: "image/jpeg")
+skin2.save!
+puts "#{skin2.name} created"
+
+file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
+skin3 = Skin.new(name: "Goku", description: "Goku, c'est le plus vener", price: 10)
+skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
+skin3.save!
+puts "#{skin3.name} created"
+
+file4 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Jon_Snow_kgfjbp.png")
+skin4 = Skin.new(name: "JonSnow", description: "Jon, c'est celui qui know nothing", price: 10)
+skin4.photo.attach(io: file4, filename: "JonSnow.png", content_type: "image/jpeg")
+skin4.save!
+puts "#{skin4.name} created"
+
+file5 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
+skin5 = Skin.new(name: "Loki", description: "Loki, c'est le plus fourbe", price: 10)
+skin5.photo.attach(io: file5, filename: "loki.png", content_type: "image/jpeg")
+skin5.save!
+puts "#{skin5.name} created"
 
 puts 'Creation category-database...'
 sport = Category.create!(name: "Sport", description: "do you want some endorphin?, this category is for you")
