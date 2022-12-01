@@ -1,4 +1,7 @@
 <div class="container">
+
+<%# ----------------- MENU CARD ----------------- %>
+
   <div class="card-grey">
     <div class="upper-card-grey">
       <div class="nav-item dropdown deplacer-btn">
@@ -20,13 +23,19 @@
       <h1><%= @quest.name%></h1>
     </div>
   </div>
+
+<%# ----------------- BOUTON START ----------------- %>
+
   <span>
-      <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
-        <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-        <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
-        <%= f.submit "Start", class: "yellow-large-btn" %>
-      <% end %>
-    </span>
+    <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+      <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+      <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+      <%= f.submit "Start", class: "yellow-large-btn" %>
+    <% end %>
+  </span>
+
+<%# ----------------- CARD SKILLS ----------------- %>
+
   <div class="card-skills">
     <div class="grid-cellules-skills-quest">
       <div class="cellules-skills">
@@ -50,9 +59,15 @@
         </div>
       </div>
     </div>
+
+<%# ----------------- CARD TROPHIES ----------------- %>
+
   <div class="card-trophies">
     <h1>TROPHIES</h1>
   </div>
+
+<%# ----------------- CARD SKINS ----------------- %>
+
   <%= link_to skins_path do %>
     <div class="card-changing-room">
       <h2>CHANGING ROOM</h2>
@@ -61,4 +76,7 @@
       </div>
     </div>
   <% end %>
+    <div>
+      <%= link_to  "Return", category_path(@quest.category), class: "yellow-small-btn"%>
+    </div>
 </div>
