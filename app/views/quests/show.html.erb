@@ -14,42 +14,34 @@
       </div>
         <div class="cellules-skills-coin">
           <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
-    </div>
-        <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
-    </div>
-      <div class="lower-card-grey">
-          <h1><%= @quest.name%></h1>
-      </div>
-  </div>
-      <span>
-          <p class="yellow-large-btn">START</p>
-      </span>
-    <div class="card-skills">
-        <div class="grid-cellules-skills-quest">
-              <div class="cellules-skills">
-                  <p>Force</p>
-              </div>
-                    <div class="cellules-skills">
-                        <p>Endu</p>
-                    </div>
-              <div class="cellules-skills">
-                  <p>Cardio</p>
-              </div>
         </div>
-              <p><%= @quest.description  %></p>
-        <div class="progress">
-          <div class="progress-value">
-            <div class="dot-spacer">
-              <div class="step-dot"></div>
-              <div class="step-dot"></div>
-              <div class="step-dot"></div>
+        <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+      </div>
+      <div class="quest-container">
+        <h1><%= @quest.name%></h1>
+        <div class="cards-product">
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h3><%= @quest.name%></h3>
+                <p><%= @quest.description  %></p>
+                <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+                  <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+                  <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+                  <%= f.submit " Start your quest?" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
-  <div class="card-trophies">
-      <h1>TROPHIES</h1>
   </div>
+</div>
+
+
+
+      
+  
 
 
 
