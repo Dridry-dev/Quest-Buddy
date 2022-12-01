@@ -6,6 +6,7 @@ class SkinsController < ApplicationController
   end
 
   def show
+    @user_skin = UserSkin.find_by(user: current_user, skin: @skin)
   end
 
   def edit
