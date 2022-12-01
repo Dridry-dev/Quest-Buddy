@@ -2,4 +2,23 @@
   background-color: #CFDBD5;
   height: 30px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.round-plus {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: #CFDBD5;
+  text-align: center;
+}
+
+.big-plus {
+  color: #242423;
+  font-size: 50px;
+
 }
