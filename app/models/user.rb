@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def show_selected_skin
-    if user_skins
+    if user_skins && user_skins.find_by(selected: true)
       user_skins.find_by(selected: true).skin
     end
   end

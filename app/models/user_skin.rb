@@ -2,7 +2,7 @@ class UserSkin < ApplicationRecord
   belongs_to :user
   belongs_to :skin
   # before_save :set_primary
-  before_save :set_primary
+  before_update :set_primary
 
   private
   def set_primary
