@@ -44,6 +44,8 @@ skin5.photo.attach(io: file5, filename: "loki.png", content_type: "image/jpeg")
 skin5.save!
 puts "#{skin5.name} created"
 
+UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
+
 puts 'Creation category-database...'
 sport = Category.create!(name: "Sport", description: "Do you want some endorphin? this category is for you")
 puts "#{sport.name} done"
