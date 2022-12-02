@@ -19,16 +19,19 @@
     <h2 class="action-count">1</h2>
     <h2 class="action-count">GO !</h2>
   </div>
-  <p class="yellow-large-btn"> STOP !</p>
-  <div class="card-action-progress">
-    <p class="font-bold-large">PROGRESS</p>
-    <div class="progress">
-      <div class="progress-value">
-        <div class="dot-spacer">
-          <div class="step-dot"></div>
-          <div class="step-dot"></div>
-          <div class="step-dot"></div>
-        </div>
+    <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class: "yellow-large-btn"%>
+      <div class="card-action-progress">
+        <p class="font-bold-large">PROGRESS</p>
+          <div class="progress">
+            <div class="progress-value">
+              <div class="dot-spacer">
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+              </div>
+            </div>
+          </div>
+        <p class="timer-position-fix font-bold-large">TIMER 2:00</p>
       </div>
     </div>
     <p class="timer-position-fix font-bold-large">TIMER 2:00</p>
