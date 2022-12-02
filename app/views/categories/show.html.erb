@@ -17,7 +17,7 @@
       <div class="cellules-skills-coin">
         <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
       </div>
-      <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
     </div>
     <div class="lower-card-grey">
       <h1>Quests List</h1>
@@ -30,7 +30,7 @@
       <% if quest.rank == current_user.rank_for(quest) %>
         <%= link_to category_quest_path(@category, quest) do %>
           <div class="card">
-            <h3><%= quest.name %></h3>
+            <h2 class="title-center-card"><%= quest.name %></h2>
           </div>
         <% end %>
       <% end %>

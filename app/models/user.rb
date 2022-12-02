@@ -16,5 +16,11 @@ class User < ApplicationRecord
     (quest.user_goals.where(user: self).count / 3) + 1
   end
 
+  def show_selected_skin
+    if user_skins
+      user_skins.find_by(selected: true).skin
+    end
+  end
+
   # validates :gold, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { in: 0..1_000_000 }
 end

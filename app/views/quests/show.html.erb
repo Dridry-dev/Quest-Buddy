@@ -17,7 +17,7 @@
       <div class="cellules-skills-coin">
         <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
       </div>
-      <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
     </div>
     <div class="lower-card-grey">
       <h1><%= @quest.name%></h1>
@@ -25,14 +25,15 @@
   </div>
 
 <%# ----------------- BOUTON START ----------------- %>
-
-  <span>
-    <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
-      <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-      <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
-      <%= f.submit "Start", class: "yellow-large-btn" %>
-    <% end %>
-  </span>
+  <div class="yellow-btn-position-fixer-quests-show">
+    <span>
+      <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+        <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+        <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+        <%= f.submit "Start", class: "yellow-large-btn" %>
+      <% end %>
+    </span>
+  </div>
 
 <%# ----------------- CARD SKILLS ----------------- %>
 
@@ -64,6 +65,7 @@
 
   <div class="card-trophies">
     <h1>TROPHIES</h1>
+    <i class="fa-solid fa-trophy"></i>
   </div>
 
 <%# ----------------- CARD SKINS ----------------- %>

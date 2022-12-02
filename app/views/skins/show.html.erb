@@ -17,8 +17,7 @@
       <div class="cellules-skills-coin">
         <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
       </div>
-      <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
-    </div>
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>    </div>
     <div class="lower-card-grey">
       <h1><%= @skin.name %></h1>
     </div>
@@ -42,11 +41,15 @@
       <%= simple_form_for [@skin, @user_skin] do |f| %>
         <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
         <%= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
-        <%= f.input :selected, label: true, as: :hidden %>
+        <%= f.input :selected, input_html: {value: true}, as: :hidden %>
         <%= f.submit "Equiper", class: "yellow-large-btn" %>
       <% end %>
     <% else %>
-      <%= link_to 'Acheter', skin_user_skins_path(@skin, UserSkin.new), data: { turbo_method: :post }, class: "btn btn-primary" %>
+      <%= simple_form_for [@skin, UserSkin.new] do |f| %>
+        <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+        <%= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
+        <%= f.submit "Acheter", class: "yellow-large-btn" %>
+      <% end %>
     <% end %>
 
   </div>
