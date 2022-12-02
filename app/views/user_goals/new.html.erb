@@ -20,7 +20,7 @@
     <h2 class="action-count">1</h2>
     <h2 class="action-count">GO !</h2>
   </div>
-    <p class="yellow-large-btn"> STOP !</p>
+    <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class: "yellow-large-btn"%>
       <div class="card-action-progress">
         <p class="font-bold-large">PROGRESS</p>
           <div class="progress">
