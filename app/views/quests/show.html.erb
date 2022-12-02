@@ -25,14 +25,15 @@
   </div>
 
 <%# ----------------- BOUTON START ----------------- %>
-
-  <span>
-    <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
-      <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-      <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
-      <%= f.submit "Start", class: "yellow-large-btn" %>
-    <% end %>
-  </span>
+  <div class="yellow-btn-position-fixer-quests-show">
+    <span>
+      <%= simple_form_for [@quest.category, @quest, UserQuest.new] do |f| %>
+        <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+        <%= f.input :quest_id, input_html: {value: @quest.id}, as: :hidden %>
+        <%= f.submit "Start", class: "yellow-large-btn" %>
+      <% end %>
+    </span>
+  </div>
 
 <%# ----------------- CARD SKILLS ----------------- %>
 
@@ -64,6 +65,7 @@
 
   <div class="card-trophies">
     <h1>TROPHIES</h1>
+    <i class="fa-solid fa-trophy"></i>
   </div>
 
 <%# ----------------- CARD SKINS ----------------- %>
