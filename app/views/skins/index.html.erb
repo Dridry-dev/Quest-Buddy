@@ -17,7 +17,7 @@
       <div class="cellules-skills-coin">
         <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
       </div>
-      <img class="avatar-grey-card" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
     </div>
     <div class="lower-card-grey">
       <h1>Skins List</h1>

@@ -6,7 +6,6 @@ class UserSkinsController < ApplicationController
 
   def create
     @skin = Skin.find(params[:skin_id])
-
     @user_skin = UserSkin.new(user_skin_params)
     @user_skin.user = current_user
     @user_skin.skin = @skin
@@ -19,14 +18,18 @@ class UserSkinsController < ApplicationController
   end
 
   def update
-    raise
+    @user_skin = UserSkin.find(params[:id])
+    @skin = @user_skin.skin
+    if @user_skin.update(user_skin_params)
+      redirect_to root_path(@skin)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def user_skin_params
-    raise
     params.require(:user_skin).permit(:selected, :user_id, :skin_id)
-    raise
   end
 end

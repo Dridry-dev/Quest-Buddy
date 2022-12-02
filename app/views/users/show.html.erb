@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <img class="avatar-navbar" src="https://file1.closermag.fr/var/closermag/storage/images/bio-people/biographie-ryan-gosling-112720/825706-1-fre-FR/Ryan-Gosling.jpg?alias=square500x500&size=x100&format=jpeg">
+  <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
   <div class="trophy">
     <i class="fa-solid fa-trophy"></i>
   </div>
