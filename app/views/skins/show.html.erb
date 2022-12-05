@@ -36,7 +36,6 @@
       <%#= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
       <%#= f.input :selected, label: true, as: :hidden %>
       <%#= f.submit "Acheter", class: "yellow-large-btn" %>
-
     <% if @user_skin %>
       <%= simple_form_for [@skin, @user_skin] do |f| %>
         <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
@@ -52,5 +51,11 @@
       <% end %>
     <% end %>
 
+  </div>
+</div>
+
+<div class="adding-bar">
+  <div class="round-plus">
+        <p class="big-plus">+</p>
   </div>
 </div>
