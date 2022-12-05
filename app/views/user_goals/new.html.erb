@@ -13,13 +13,16 @@
     </div>
     <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
   </div>
-  <div class="card-grey-action">
-    <h2 class="action-count">3</h2>
+  <div class="card-grey-action" data-controller="quest-counter" data-action="click->quest-counter#clicked" data-quest-counter-category-value = <%= @category.id %> data-quest-counter-quest-value = <%= @quest.id %>
+  data-quest-counter-target = "div"
+  data-quest-counter-threshold-value = <%= @goal.threshold %>>
+    <%# <h2 class="action-count">3</h2>
     <h2 class="action-count">2</h2>
     <h2 class="action-count">1</h2>
-    <h2 class="action-count">GO !</h2>
+    <h2 class="action-count">GO !</h2> %>
+        <h1>+1</h1>
   </div>
-    <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class: "yellow-large-btn"%>
+    <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
       <div class="card-action-progress">
         <p class="font-bold-large">PROGRESS</p>
           <div class="progress">
