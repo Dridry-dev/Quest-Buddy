@@ -20,6 +20,7 @@
   </div>
 
 <%# ----------------- SKIN ACTION ----------------- %>
+
   <div class="shop-element">
     <% if @user_skin %>
       <% if @user_skin.selected %>
@@ -47,4 +48,10 @@
 
 <%# ----------------- LIEN DE RETOUR ----------------- %>
     <%= link_to "Return", skins_path, class: "yellow-small-btn"%>
+</div>
+
+<div class="adding-bar">
+  <div class="round-plus">
+        <p class="big-plus">+</p>
+  </div>
 </div>

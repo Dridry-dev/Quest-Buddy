@@ -1,23 +1,32 @@
 .adding-bar {
   background-color: #CFDBD5;
-  height: 30px;
+  height: 50px;
   text-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 
 .round-plus {
   display: flex;
   justify-content: center;
-  height: 30px;
-  width: 30px;
+  height: 70px;
+  width: 70px;
   border-radius: 50px;
   background-color: #CFDBD5;
   text-align: center;
+  position: absolute;
+  top: -30px;
+  left: 160px;
+  border: 1px solid #242423;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
 }
 
 .big-plus {
   color: #242423;
   font-size: 50px;
+  position: absolute;
+  right: 21px;
+  top: -3px;
 }

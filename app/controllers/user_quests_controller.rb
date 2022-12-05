@@ -12,6 +12,8 @@ class UserQuestsController < ApplicationController
 
   def show
     @userquest = UserQuest.find(params[:id])
+    @quest = @userquest.quest
+    @category = @quest.category
   end
 
   private
