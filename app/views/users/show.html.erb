@@ -22,6 +22,7 @@
   </div>
 
 <%# ----------------- GOLD CARD ----------------- %>
+
   <%#= link_to quest_path do %>
     <div class="cellules-skills-coin">
       <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
@@ -29,6 +30,7 @@
   <%# end %>
 
   <%# ----------------- SKILLS CARD ----------------- %>
+
   <%#= link_to quest_path do %>
     <div class="card-border-yellow">
       <h2>SKILLS</h2>
@@ -36,6 +38,7 @@
   <%# end %>
 
   <%# ----------------- QUEST CARD ----------------- %>
+
   <%#= link_to quest_path do %>
     <div class="card">
       <div class="title-card">
@@ -75,11 +78,11 @@
     </div>
   <% end %>
 
-<%# ----------------- MENU CARD ----------------- %>
+<%# ----------------- NEW QUEST CARD ----------------- %>
 
-  <div class="adding-bar">
-    <div class="round-plus">
-      <%= link_to "+", categories_path, class: "big-plus" %>
-    </div>
+</div>
+<div class="adding-bar">
+  <div class="round-plus">
+    <%= link_to "+", categories_path, class: "big-plus" %>
   </div>
 </div>
