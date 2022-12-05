@@ -4,20 +4,21 @@
   align-items: center;
   background-color: #242423;
   height: 80px;
+  width: 340px;
 }
 
 .avatar-navbar {
-  height: 77px;
-  width: 77px;
   border-radius: 50px;
-  margin-left: 16px;
-  margin-top: 10px;
+}
+
+.navbar-element{
+  width: 90px;
+  text-align: right;
 }
 
 .trophy {
   font-size: 30px;
   color: #F5CB5C;
-  margin-right: 10px;
 }
 
 .dropdown {
@@ -25,22 +26,19 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-
 }
 
 .btn-dropdown {
   text-decoration: none;
   color: #F5CB5C;
-
-
 }
 
 .btn-dropdown:hover {
   color: #F5CB5C;
 }
 
-.deplacer-btn {
-  margin-left: 10px;
+.side-nav-btn {
+  width: 35px;
 }
 
 .arrow-color {

@@ -1,63 +1,86 @@
-<div class="navbar-card">
-  <div class="nav-item dropdown deplacer-btn">
-    <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <div class="dropdown">
-        <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
-        <%= link_to "Profil", root_path, class: "btn-dropdown" %>
-        <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
-      </div>
-    </div>
-  </div>
-  <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
-  <div class="trophy">
-    <i class="fa-solid fa-trophy"></i>
-  </div>
-</div>
-
 <div class="container">
-  <div class="cellules-skills-coin">
-    <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
-  </div>
-  <div class="card-border-yellow">
-    <h2>MAIN SKILLS</h2>
-  </div>
-  <div class="card">
-    <div class="title-card">
-      <h2>PUSH-UP</h2>
-    </div>
-    <div class="grid-cellules-skills">
-      <div class="cellules-skills">
-        <p>Force</p>
-      </div>
-      <div class="cellules-skills">
-        <p>Endu</p>
-      </div>
-      <div class="cellules-skills">
-        <p>Cardio</p>
+
+<%# ----------------- MENU CARD BLACK ----------------- %>
+
+  <div class="navbar-card">
+    <div class="nav-item dropdown side-nav-btn">
+      <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <div class="dropdown">
+          <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
+          <%= link_to "Profil", root_path, class: "btn-dropdown" %>
+          <%= link_to "Changing Room", skins_path, class: "btn-dropdown" %>
+        </div>
       </div>
     </div>
-    <div class="progress">
-      <div class="step-one">
-      </div>
-      <div class="step-one">
-      </div>
-      <div class="step-one">
-      </div>
-      <div class="progress-value"></div>
+    <div>
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
+    </div>
+    <div class="trophy side-nav-btn">
+      <i class="fa-solid fa-trophy"></i>
     </div>
   </div>
+
+<%# ----------------- GOLD CARD ----------------- %>
+  <%#= link_to quest_path do %>
+    <div class="cellules-skills-coin">
+      <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
+    </div>
+  <%# end %>
+
+  <%# ----------------- SKILLS CARD ----------------- %>
+  <%#= link_to quest_path do %>
+    <div class="card-border-yellow">
+      <h2>SKILLS</h2>
+    </div>
+  <%# end %>
+
+  <%# ----------------- QUEST CARD ----------------- %>
+  <%#= link_to quest_path do %>
+    <div class="card">
+      <div class="title-card">
+        <h2>PUSH-UP</h2>
+      </div>
+      <div class="grid-cellules-skills">
+        <div class="cellules-skills">
+          <p>Force</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Endu</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Cardio</p>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="step-one">
+        </div>
+        <div class="step-one">
+        </div>
+        <div class="step-one">
+        </div>
+        <div class="progress-value"></div>
+      </div>
+    </div>
+  <%# end %>
+
+  <%# ----------------- SKIN CARD ----------------- %>
+
   <%= link_to skins_path do %>
-  <div class="card-changing-room">
-    <h2>CHANGING ROOM</h2>
-    <div class="skins">
-      <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
+    <div class="card-changing-room">
+      <h2>CHANGING ROOM</h2>
+      <div class="skins">
+        <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
+      </div>
+    </div>
+  <% end %>
+
+<%# ----------------- MENU CARD ----------------- %>
+
+  <div class="adding-bar">
+    <div class="round-plus">
+      <%= link_to "+", categories_path, class: "big-plus" %>
     </div>
   </div>
-  <% end %>
-</div>
-<div class="adding-bar">
- <div class="round-plus">
-    <p class="big-plus">+</p>
- </div>
+
 </div>
