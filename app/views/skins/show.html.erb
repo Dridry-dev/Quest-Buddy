@@ -1,57 +1,53 @@
 <div class="container">
 
-<%# ----------------- MENU CARD ----------------- %>
-
+<%# ----------------- MENU CARD YELLOW ----------------- %>
   <div class="card-grey">
-    <div class="upper-card-grey">
-      <div class="nav-item dropdown deplacer-btn">
-        <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <div class="dropdown">
-            <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
-            <%= link_to "Profil", root_path, class: "btn-dropdown" %>
-            <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
-          </div>
-        </div>
-      </div>
-      <div class="cellules-skills-coin">
-        <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
-      </div>
-      <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>    </div>
+    <%= render "shared/yellow_navbar" %>
     <div class="lower-card-grey">
       <h1><%= @skin.name %></h1>
     </div>
   </div>
 
-  <%# ----------------- CARD SKIN----------------- %>
+<%# ----------------- CARD SKIN ----------------- %>
 
-  <div class= "card">
-    <%= cl_image_tag @skin.photo.key, height: 100, crop: :fill %>
-    <p><%= @skin.description %></p>
-    <p><%= @skin.price %></p>
+  <div class= "shop-card">
+    <div class="shop-element">
+      <%= cl_image_tag @skin.photo.key, gravity: "auto", height: 300, width: 300, crop: :scale, crop: :fill %>
+    </div>
+    <div class="shop-element">
+      <%= @skin.description %>
+    </div>
+  </div>
 
-    <%#= link_to 'Acheter', skin_user_skins_path(@skin) %>
-    <%#= simple_form_for [@skin, UserSkin.new] do |f| %>
-      <%#= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-      <%#= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
-      <%#= f.input :selected, label: true, as: :hidden %>
-      <%#= f.submit "Acheter", class: "yellow-large-btn" %>
+<%# ----------------- SKIN ACTION ----------------- %>
+
+  <div class="shop-element">
     <% if @user_skin %>
-      <%= simple_form_for [@skin, @user_skin] do |f| %>
-        <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-        <%= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
-        <%= f.input :selected, input_html: {value: true}, as: :hidden %>
-        <%= f.submit "Equiper", class: "yellow-large-btn" %>
+      <% if @user_skin.selected %>
+        <h3>Currently equiped</h3>
+      <% else %>
+        <%= simple_form_for [@skin, @user_skin] do |f| %>
+          <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+          <%= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
+          <%= f.input :selected, input_html: {value: true}, as: :hidden %>
+          <%= f.submit "Equiper", class: "yellow-large-btn" %>
+        <% end %>
       <% end %>
     <% else %>
+      <h3>Price to unlock:</h3>
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i><p class="coin-count"><%= @skin.price %></p>
+      </div>
       <%= simple_form_for [@skin, UserSkin.new] do |f| %>
         <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
         <%= f.input :skin_id, input_html: {value: @skin.id}, as: :hidden %>
         <%= f.submit "Acheter", class: "yellow-large-btn" %>
       <% end %>
     <% end %>
-
   </div>
+
+<%# ----------------- LIEN DE RETOUR ----------------- %>
+    <%= link_to "Return", skins_path, class: "yellow-small-btn"%>
 </div>
 
 <div class="adding-bar">

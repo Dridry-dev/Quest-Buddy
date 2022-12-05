@@ -9,9 +9,10 @@ class UserSkinsController < ApplicationController
     @user_skin = UserSkin.new(user_skin_params)
     @user_skin.user = current_user
     @user_skin.skin = @skin
-
+    current_user.gold -= @skin.price
+    current_user.save
     if @user_skin.save
-      redirect_to skin_user_skins_path
+      redirect_to @skin
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,4 +33,5 @@ class UserSkinsController < ApplicationController
   def user_skin_params
     params.require(:user_skin).permit(:selected, :user_id, :skin_id)
   end
+
 end

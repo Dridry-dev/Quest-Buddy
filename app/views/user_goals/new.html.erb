@@ -1,4 +1,7 @@
 <div class="container">
+
+<%# ----------------- MENU CARD ----------------- %>
+
   <div class="invisible-card-top-quest">
     <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
     <div class="dropdown-menu dropdown-menu-end test-color-dropdown" aria-labelledby="navbarDropdown">
@@ -9,32 +12,26 @@
       </div>
     </div>
     <div class="cellules-skills-coin">
-      <i class="fa-solid fa-coins"></i> <p class="coin-count">392</p>
+      <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
     </div>
-    <%= cl_image_tag current_user.show_selected_skin.photo.key, class: "avatar-navbar" %>
+    <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
   </div>
-  <div class="card-grey-action" data-controller="quest-counter" data-action="click->quest-counter#clicked" data-quest-counter-category-value = <%= @category.id %> data-quest-counter-quest-value = <%= @quest.id %>
-  data-quest-counter-target = "div"
-  data-quest-counter-threshold-value = <%= @goal.threshold %>>
-    <%# <h2 class="action-count">3</h2>
-    <h2 class="action-count">2</h2>
-    <h2 class="action-count">1</h2>
-    <h2 class="action-count">GO !</h2> %>
-        <h1>+1</h1>
+
+<%# ----------------- MENU CARD ----------------- %>
+
+  <div class="card-grey-action" data-controller="quest-counter" data-action="click->quest-counter#clicked" data-quest-counter-category-value = <%= @category.id %> data-quest-counter-quest-value = <%= @quest.id %> data-quest-counter-target = "div" data-quest-counter-threshold-value = <%= @goal.threshold %>>
+    <h1>+1</h1>
   </div>
-    <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
-      <div class="card-action-progress">
-        <p class="font-bold-large">PROGRESS</p>
-          <div class="progress">
-            <div class="progress-value">
-              <div class="dot-spacer">
-                <div class="step-dot"></div>
-                <div class="step-dot"></div>
-                <div class="step-dot"></div>
-              </div>
-            </div>
-          </div>
-        <p class="timer-position-fix font-bold-large">TIMER 2:00</p>
+  <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
+  <div class="card-action-progress">
+    <p class="font-bold-large">PROGRESS</p>
+    <div class="progress">
+      <div class="progress-value">
+        <div class="dot-spacer">
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+        </div>
       </div>
     </div>
     <p class="timer-position-fix font-bold-large">TIMER 2:00</p>
