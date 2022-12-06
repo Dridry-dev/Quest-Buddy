@@ -31,14 +31,14 @@
 
   <%# ----------------- SKILLS CARD ----------------- %>
 
-  <%#= link_to skills_path do %>
+  <%= link_to skills_path do %>
     <div class="card-border-yellow">
       <h2>SKILLS</h2>
-        <div class="bar-chart" data-controller="chart-js">
+        <div class="bar-chart" data-controller="chart-js" data-chart-js-skills-value="<%= @skills.to_json %>">
           <canvas width="800px" height="280px"   data-chart-js-target="myChart"></canvas>
         </div>
     </div>
-  <%# end %>
+  <% end %>
 
   <%# ----------------- QUEST CARD ----------------- %>
 
