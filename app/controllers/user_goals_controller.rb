@@ -16,12 +16,23 @@ class UserGoalsController < ApplicationController
     else
       old_goal = old_user_goal.goal
       goal_id = goal_ids[goal_ids.index(old_goal.id) + 1]
+      # if goal_ids.index(old_goal.id) == 1
+        # current_user.gold += @quest.reward * 2
+        # current_user.save
+        # creation_userskill(Goal.find(goal_id))
+      # end
       @user_goal = UserGoal.create(goal_id: goal_id, user: current_user)
       @next_goal = Goal.find(goal_id)
     end
     respond_to do |format|
       format.html { redirect_to category_quest_user_quest_path(@user_goal) }
       format.json { render json: @next_goal }
+    end
+  end
+
+  def creation_userskill(goal)
+    goal.skills.each do |skill|
+      UserSkill.create(user: current_user, skill: skill)
     end
   end
 end

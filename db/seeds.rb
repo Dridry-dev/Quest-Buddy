@@ -68,11 +68,12 @@ puts "#{pushup_medium.name}, #{pushup_medium.rank} done"
 pushup_hard = Quest.create!(name: "Push-up", rank: 3, description: pushup_description, category: sport, reward: 200)
 puts "#{pushup_hard.name}, #{pushup_hard.rank} done"
 
-running_easy = Quest.create!(name: "Running", rank: 1, description: "Run as fast as you can. Maximum 7Km this time", category: sport)
+running_description = "To run, you just need to run dummy."
+running_easy = Quest.create!(name: "Running", rank: 1, description: running_description, category: sport)
 puts "#{running_easy.name}, #{running_easy.rank} done"
-running_medium = Quest.create!(name: "Running", rank: 2, description: "Run as far as possible. Maximum 22Km this time", category: sport)
+running_medium = Quest.create!(name: "Running", rank: 2, description: running_description, category: sport)
 puts "#{running_medium.name}, #{running_medium.rank} done"
-running_hard = Quest.create!(name: "Running", rank: 3, description: "Run as far as possible. Maximum 42Km this time", category: sport)
+running_hard = Quest.create!(name: "Running", rank: 3, description: running_description, category: sport)
 puts "#{running_hard.name}, #{running_hard.rank} done"
 
 japanese_movies_easy = Quest.create!(name: "Japanese movies", rank: 1, description: "check all those movies. Maximum 5 this time", category: cinema)
@@ -250,11 +251,33 @@ puts Goal.count.to_s
 puts 'Goal-database done!'
 
 puts 'Creating Skills...'
-force = Skill.create!(name: "Force", description: 'Capacité musculaire ou "puissance" des muscles', max_point: 99, level: 10)
+force = Skill.create!(name: "Strenght", description: 'Muscular capacity or "Muscular power"', max_point: 99, level: 1)
 puts "#{force.name} created"
-endu = Skill.create!(name: "Endurance", description: "Capacité à maintenir un effort dans la durée", max_point: 99, level: 10)
+endu = Skill.create!(name: "Stamina", description: "Capacity to last longer during effort", max_point: 99, level: 1)
 puts "#{endu.name} created"
-cardio = Skill.create!(name: "Cardio", description: "Capacité de récuperation après un effort", max_point: 99, level: 10)
+cardio = Skill.create!(name: "Cardio", description: "Recovery speed after effort", max_point: 99, level: 1)
 puts "#{cardio.name} created"
+agilite = Skill.create!(name: "Agility", description: "Ability to move quickly and easily", max_point: 99, level: 1)
+puts "#{agilite.name} created"
+vitesse = Skill.create!(name: "Speed", description: "Define how fast you are", max_point: 99, level: 1)
+puts "#{vitesse.name} created"
+souplesse = Skill.create!(name: "Flexibility", description: "Capacity of bending easily without breaking.", max_point: 99, level: 1)
+puts "#{souplesse.name} created"
+inteligence = Skill.create!(name: "Intelligence", description: "Ability to learn or understand or to deal with new situation", max_point: 99, level: 1)
+puts "#{inteligence.name} created"
+logique = Skill.create!(name: "Logic", description: "Ability to reason accordingly to strict principles of validity", max_point: 99, level: 1)
+puts "#{logique.name} created"
+reflexion = Skill.create!(name: "Thinking", description: "Capacity to use thought or rational judgement", max_point: 99, level: 1)
+puts "#{reflexion.name} created"
+savoir = Skill.create!(name: "Knowledge", description: "Awareness or familiarity gained by experience", max_point: 99, level: 1)
+puts "#{savoir.name} created"
+spiritualite = Skill.create!(name: "Faith", description: "Capacity to trust someone or something", max_point: 99, level: 1)
+puts "#{spiritualite.name} created"
+creativite = Skill.create!(name: "Creativity", description: "Capacity of imagination to create something", max_point: 99, level: 1)
+puts "#{creativite.name} created"
+social = Skill.create!(name: "Social", description: "Capacity to interact with other", max_point: 99, level: 1)
+puts "#{social.name} created"
+culture = Skill.create!(name: "Culture", description: "Specific knowledge on man-made achievements", max_point: 99, level: 1)
+puts "#{culture.name} created"
 
 puts "SEED DONE"
