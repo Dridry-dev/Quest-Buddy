@@ -7,6 +7,9 @@ import { application } from "./application"
 import ChartJsController from "./chart_js_controller"
 application.register("chart-js", ChartJsController)
 
+import ChartpageController from "./chartpage_controller"
+application.register("chartpage", ChartpageController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
