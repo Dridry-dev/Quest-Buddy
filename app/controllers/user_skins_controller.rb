@@ -33,5 +33,4 @@ class UserSkinsController < ApplicationController
   def user_skin_params
     params.require(:user_skin).permit(:selected, :user_id, :skin_id)
   end
-
 end

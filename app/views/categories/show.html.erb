@@ -11,11 +11,13 @@
 <%# ----------------- CARD QUEST ----------------- %>
 
   <% @category.quests.each do |quest| %>
-    <% if quest.rank == current_user.rank_for(quest) %>
-      <%= link_to category_quest_path(@category, quest) do %>
-        <div class="card">
-          <h2 class="title-center-card"><%= quest.name %></h2>
-        </div>
+    <% unless quest.finish_for(current_user)%>
+      <% if quest.rank == current_user.rank_for(quest) %>
+        <%= link_to category_quest_path(@category, quest) do %>
+          <div class="card">
+            <h2 class="title-center-card"><%= quest.name %></h2>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
