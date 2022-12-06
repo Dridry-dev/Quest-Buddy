@@ -14,4 +14,9 @@ class Quest < ApplicationRecord
 
   # validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { in: 0..1_000_000 }
   # validates :reward, presence: true
+  def finish_for(user)
+    goal_ids = self.goals.map(&:id)
+    user_goal_count = user.user_goals.where(goal_id: goal_ids).count
+    goal_ids.count == user_goal_count
+  end
 end
