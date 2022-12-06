@@ -61,11 +61,11 @@ puts "Category-database done!"
 
 puts 'Creation quest-database...'
 pushup_description = "To do a push-up, get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
-pushup_easy = Quest.create!(name: "Push-up", rank: 1, description: pushup_description, category: sport)
+pushup_easy = Quest.create!(name: "Push-up", rank: 1, description: pushup_description, category: sport, reward: 100)
 puts "#{pushup_easy.name}, #{pushup_easy.rank} done"
-pushup_medium = Quest.create!(name: "Push-up", rank: 2, description: pushup_description, category: sport)
+pushup_medium = Quest.create!(name: "Push-up", rank: 2, description: pushup_description, category: sport, reward: 150)
 puts "#{pushup_medium.name}, #{pushup_medium.rank} done"
-pushup_hard = Quest.create!(name: "Push-up", rank: 3, description: pushup_description, category: sport)
+pushup_hard = Quest.create!(name: "Push-up", rank: 3, description: pushup_description, category: sport, reward: 200)
 puts "#{pushup_hard.name}, #{pushup_hard.rank} done"
 
 running_easy = Quest.create!(name: "Running", rank: 1, description: "Run as fast as you can. Maximum 7Km this time", category: sport)

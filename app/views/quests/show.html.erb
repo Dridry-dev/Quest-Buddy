@@ -8,6 +8,53 @@
     </div>
   </div>
 
+
+<%# ----------------- CARD QUEST ----------------- %>
+
+  <div class="card-quest">
+
+    <div class="grid-cellules-quest">
+
+      <h4>Skills needed for <%= @quest.name %></h4>
+      <div class="container-cellules-quests">
+        <div class="cellules-skills">
+          <p>Force</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Endu</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Cardio</p>
+        </div>
+      </div>
+
+      <h4>Progress</h4>
+      <div class="container-cellules-quests">
+        <div class="progress">
+          <div class="progress-value">
+            <div class="dot-spacer">
+              <div class="step-dot"></div>
+              <div class="step-dot"></div>
+              <div class="step-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4>Rewards</h4>
+      <div class="container-cellules-quests">
+        <div class="cellules-skills-coin">
+          <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= @quest.reward %></p>
+        </div>
+      </div>
+
+        <h4>Description</h4>
+      <div class="container-cellules-quests">
+        <p><%= @quest.description  %></p>
+      </div>
+    </div>
+  </div>
+
 <%# ----------------- BOUTON START ----------------- %>
 
   <div class="yellow-btn-position-fixer-quests-show">
@@ -20,50 +67,9 @@
     </span>
   </div>
 
-<%# ----------------- CARD SKILLS ----------------- %>
+  <%# ----------------- BOUTON RETURN ----------------- %>
 
-  <div class="card-skills">
-    <div class="grid-cellules-skills-quest">
-      <div class="cellules-skills">
-        <p>Force</p>
-      </div>
-      <div class="cellules-skills">
-        <p>Endu</p>
-      </div>
-      <div class="cellules-skills">
-        <p>Cardio</p>
-      </div>
-    </div>
-    <p><%= @quest.description  %></p>
-      <div class="progress">
-        <div class="progress-value">
-          <div class="dot-spacer">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<%# ----------------- CARD TROPHIES ----------------- %>
-
-  <div class="card-trophies">
-    <h1>TROPHIES</h1>
-    <i class="fa-solid fa-trophy"></i>
+  <div>
+    <%= link_to  "Return", category_path(@quest.category), class: "yellow-small-btn"%>
   </div>
-
-<%# ----------------- CARD SKINS ----------------- %>
-
-  <%= link_to skins_path do %>
-    <div class="card-changing-room">
-      <h2>CHANGING ROOM</h2>
-      <div class="skins">
-        <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
-      </div>
-    </div>
-  <% end %>
-    <div>
-      <%= link_to  "Return", category_path(@quest.category), class: "yellow-small-btn"%>
-    </div>
 </div>

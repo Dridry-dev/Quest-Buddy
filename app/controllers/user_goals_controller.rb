@@ -23,5 +23,4 @@ private
   def user_goal_params
     params.require(:user_goal).permit(:user_id, :goal_id)
   end
-
 end

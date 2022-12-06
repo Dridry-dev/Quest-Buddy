@@ -163,7 +163,7 @@ align-items: center;
   border: 3px solid black;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
-  height: 165px;
+  height: 300px;
   width: 340px;
   text-align: center;
   background-color: #323232;
@@ -172,7 +172,6 @@ align-items: center;
   padding-right: 20px;
   padding-top: 20px;
   margin-bottom: 8px;
-  height: 300px;
 }
 
 .card-trophies {
@@ -223,4 +222,39 @@ align-items: center;
 
 .title-card {
   padding-bottom: 30px;
+}
+
+.card-quest {
+  width: 340px;
+  height: 420px;
+  background: #323232;
+  background-color: #323232;
+  color: #E8EDDF;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  padding: 8px 16px 0 16px;
+  text-align: center;
+  display: block;
+  overflow: auto;
+}
+
+.card-grey-action-reward {
+  display: flex;
+  background: #E8EDDF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  height: 450px;
+  width: 340px;
+  background-color: #E8EDDF;;
+  color: #323232;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
