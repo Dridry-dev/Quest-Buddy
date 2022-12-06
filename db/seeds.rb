@@ -53,22 +53,22 @@ puts "#{skin4.name} created"
 UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
 
 puts 'Creation category-database...'
-sport = Category.create!(name: "Sport", description: "Do you want some endorphin? this category is for you")
+sport = Category.create!(name: "Sport", description: "Do you want some endorphin? This category is for you")
 puts "#{sport.name} done"
 cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies?, this category is for you")
 puts "#{cinema.name} done"
 puts "Category-database done!"
 
 puts 'Creation quest-database...'
-
-pushup_easy = Quest.create!(name: "Push-up", rank: 1, description: "Do as many push-up as you can. Maximum 20 this time", category: sport)
+pushup_description = "To do a push-up, get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
+pushup_easy = Quest.create!(name: "Push-up", rank: 1, description: pushup_description, category: sport)
 puts "#{pushup_easy.name}, #{pushup_easy.rank} done"
-pushup_medium = Quest.create!(name: "Push-up", rank: 2, description: "Do as many push-up as you can. Maximum 50 this time", category: sport)
+pushup_medium = Quest.create!(name: "Push-up", rank: 2, description: pushup_description, category: sport)
 puts "#{pushup_medium.name}, #{pushup_medium.rank} done"
-pushup_hard = Quest.create!(name: "Push-up", rank: 3, description: "Do as many push-up as you can. Maximum 100 this time", category: sport)
+pushup_hard = Quest.create!(name: "Push-up", rank: 3, description: pushup_description, category: sport)
 puts "#{pushup_hard.name}, #{pushup_hard.rank} done"
 
-running_easy = Quest.create!(name: "Running", rank: 1, description: "Run as far as possible. Maximum 7Km this time", category: sport)
+running_easy = Quest.create!(name: "Running", rank: 1, description: "Run as fast as you can. Maximum 7Km this time", category: sport)
 puts "#{running_easy.name}, #{running_easy.rank} done"
 running_medium = Quest.create!(name: "Running", rank: 2, description: "Run as far as possible. Maximum 22Km this time", category: sport)
 puts "#{running_medium.name}, #{running_medium.rank} done"
@@ -86,55 +86,55 @@ puts 'Quests-database created!'
 puts 'Creation goal-database...'
 Goal.create!(
   score: 100,
-  threshold: 10,
+  threshold: 1,
   partial: "mon bout de code",
   quest: pushup_easy
 )
 Goal.create!(
   score: 150,
-  threshold: 15,
+  threshold: 2,
   partial: "mon bout de code",
   quest: pushup_easy
 )
 Goal.create!(
   score: 200,
-  threshold: 20,
+  threshold: 5,
   partial: "mon bout de code",
   quest: pushup_easy
 )
 Goal.create!(
   score: 250,
-  threshold: 25,
+  threshold: 2,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
   score: 350,
-  threshold: 35,
+  threshold: 5,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
   score: 500,
-  threshold: 50,
+  threshold: 10,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
   score: 650,
-  threshold: 65,
+  threshold: 5,
   partial: "mon bout de code",
   quest: pushup_hard
 )
 Goal.create!(
   score: 800,
-  threshold: 80,
+  threshold: 12,
   partial: "mon bout de code",
   quest: pushup_hard
 )
 Goal.create!(
   score: 1000,
-  threshold: 100,
+  threshold: 25,
   partial: "mon bout de code",
   quest: pushup_hard
 )
