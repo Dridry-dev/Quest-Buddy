@@ -18,15 +18,13 @@
       <i class="fa-solid fa-trophy"></i>
     </div>
   </div>
+
 <%# ------------------------FIRST GRAPH--------------------------- %>
 
-  <div class="card-grey">
-    <h1>SKILLS</h1>
-  </div>
   <div class="card-graph">
     <div class="chart-donut">
       <div class="radar-chart" data-controller="chartpage" data-chartpage-skills-value="<%= @skills.to_json %>">
-        <canvas width="800px" height="370px" data-chartpage-target="myChartDeux"></canvas>
+        <canvas width="850px" height="550px" data-chartpage-target="myChartDeux"></canvas>
       </div>
     </div>
   </div>
