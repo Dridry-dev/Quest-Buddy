@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # root to: "pages#home"
 
   resources :users, only: %i[show edit update]
+  resources :skills, only: %i[index]
 
   resources :categories, only: %i[index show] do
     resources :quests, only: %i[show] do

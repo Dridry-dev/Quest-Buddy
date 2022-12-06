@@ -6,26 +6,30 @@ import Chart from 'chart.js/auto';
 
 export default class extends Controller {
   static targets = ["myChart"]
+  static values =  {skills: Array}
   connect() {
-
-
+    console.log(this.skillsValue);
+    const labels = this.skillsValue.map(skill => {
+      return skill.name
+    });
+    console.log(labels);
+    const data = this.skillsValue.map(skill => {
+      return skill.level
+    });
+    console.log(data);
     const ctx = this.myChartTarget
     console.log(ctx);
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: [
-            'Force',
-            'Cardio',
-            'Endurance',
-          ],
+          labels,
           datasets: [{
             label: false,
-            data: [0, 10, 14, 13],
+            data,
             backgroundColor: [
-              '#ACD9D0',
-              '#0F7373',
-              '#F2E7DD',
+              '#F5CB5C',
+              '#F5CB5C',
+              '#F5CB5C',
               ],
               borderColor: [
                 '#ffffff',
@@ -36,6 +40,11 @@ export default class extends Controller {
           }]
       },
       options: {
+        plugins: {
+          legend: {
+              display: false
+          },
+      },
         scales: {
             y: {
                 beginAtZero: true,
