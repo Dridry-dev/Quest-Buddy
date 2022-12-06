@@ -23,7 +23,7 @@
 
 <%# ----------------- GOLD CARD ----------------- %>
 
-  <%#= link_to quest_path do %>
+  <%#= link_to shop_path do %>
     <div class="cellules-skills-coin">
       <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
     </div>
@@ -43,7 +43,7 @@
   <%# ----------------- QUEST CARD ----------------- %>
 
   <%#= link_to quest_path do %>
-    <div class="card">
+    <%# <div class="card">
       <div class="title-card">
         <h2>PUSH-UP</h2>
       </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="progress-value"></div>
       </div>
-    </div>
+    </div> %>
   <%# end %>
 
   <%# ----------------- SKIN CARD ----------------- %>
@@ -83,9 +83,9 @@
 
 <%# ----------------- NEW QUEST CARD ----------------- %>
 
-</div>
-<div class="adding-bar">
-  <div class="round-plus">
-    <%= link_to "+", categories_path, class: "big-plus" %>
+  <div class="adding-bar">
+    <div class="round-plus">
+      <%= link_to "+", categories_path, class: "big-plus" %>
+    </div>
   </div>
 </div>

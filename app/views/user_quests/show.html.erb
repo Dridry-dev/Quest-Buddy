@@ -1,17 +1,54 @@
 <div class="container">
 
-<%# ----------------- MENU CARD YELLOW ----------------- %>
-  <div class="card-grey">
-    <%= render "shared/yellow_navbar" %>
+<%# ----------------- MENU CARD BLACK ----------------- %>
+
+  <div class="navbar-card">
+    <div class="nav-item dropdown side-nav-btn">
+      <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <div class="dropdown">
+          <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
+          <%= link_to "Profil", root_path, class: "btn-dropdown" %>
+          <%= link_to "Changing Room", skins_path, class: "btn-dropdown" %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
+    </div>
+    <div class="trophy side-nav-btn">
+      <i class="fa-solid fa-trophy"></i>
+    </div>
   </div>
 
-<%# ----------------- MENU CARD ----------------- %>
+<%# ----------------- REWARD CARD ----------------- %>
 
-  <div class="card-grey-action">
-    <h2 class="quest-finish-congratulation">WELL DONE !</h2>
+  <div class="card-grey-action-reward">
+    <h1 class="quest-finish-congratulation">WELL DONE !</h1>
+    <h2>You have won <u><%= @quest.reward %></u> golds</h2>
+    <div class="grid-cellules-quest">
+      <h3>Here is your new gold count :</h3>
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
+      </div>
+    </div>
+    <div>
+      <h3>You've also won 1 point in those skills :</h3>
+      <div class="container-cellules-quests">
+        <div class="cellules-skills">
+          <p>Force</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Endu</p>
+        </div>
+        <div class="cellules-skills">
+          <p>Cardio</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-<%# ----------------- MENU CARD ----------------- %>
+<%# ----------------- END QUEST BUTTON ----------------- %>
 
   <%= link_to "FINISH", category_quest_path(@category, @quest), class:"yellow-large-btn"%>
 </div>
