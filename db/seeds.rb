@@ -251,33 +251,33 @@ puts Goal.count.to_s
 puts 'Goal-database done!'
 
 puts 'Creating Skills...'
-force = Skill.create!(name: "Strenght", description: 'Muscular capacity or "Muscular power"', max_point: 99, level: 1)
+force = Skill.create!(name: "Strenght", description: 'Muscular capacity or "Muscular power"', max_point: 99, level: 70)
 puts "#{force.name} created"
-endu = Skill.create!(name: "Stamina", description: "Capacity to last longer during effort", max_point: 99, level: 1)
+endu = Skill.create!(name: "Stamina", description: "Capacity to last longer during effort", max_point: 99, level: 59)
 puts "#{endu.name} created"
-cardio = Skill.create!(name: "Cardio", description: "Recovery speed after effort", max_point: 99, level: 1)
+cardio = Skill.create!(name: "Cardio", description: "Recovery speed after effort", max_point: 99, level: 28)
 puts "#{cardio.name} created"
-agilite = Skill.create!(name: "Agility", description: "Ability to move quickly and easily", max_point: 99, level: 1)
+agilite = Skill.create!(name: "Agility", description: "Ability to move quickly and easily", max_point: 99, level: 59)
 puts "#{agilite.name} created"
-vitesse = Skill.create!(name: "Speed", description: "Define how fast you are", max_point: 99, level: 1)
+vitesse = Skill.create!(name: "Speed", description: "Define how fast you are", max_point: 99, level: 12)
 puts "#{vitesse.name} created"
-souplesse = Skill.create!(name: "Flexibility", description: "Capacity of bending easily without breaking.", max_point: 99, level: 1)
+souplesse = Skill.create!(name: "Flexibility", description: "Capacity of bending easily without breaking.", max_point: 99, level: 23)
 puts "#{souplesse.name} created"
-inteligence = Skill.create!(name: "Intelligence", description: "Ability to learn or understand or to deal with new situation", max_point: 99, level: 1)
+inteligence = Skill.create!(name: "Intelligence", description: "Ability to learn or understand or to deal with new situation", max_point: 99, level: 88)
 puts "#{inteligence.name} created"
-logique = Skill.create!(name: "Logic", description: "Ability to reason accordingly to strict principles of validity", max_point: 99, level: 1)
+logique = Skill.create!(name: "Logic", description: "Ability to reason accordingly to strict principles of validity", max_point: 99, level: 37)
 puts "#{logique.name} created"
-reflexion = Skill.create!(name: "Thinking", description: "Capacity to use thought or rational judgement", max_point: 99, level: 1)
+reflexion = Skill.create!(name: "Thinking", description: "Capacity to use thought or rational judgement", max_point: 99, level: 48)
 puts "#{reflexion.name} created"
-savoir = Skill.create!(name: "Knowledge", description: "Awareness or familiarity gained by experience", max_point: 99, level: 1)
+savoir = Skill.create!(name: "Knowledge", description: "Awareness or familiarity gained by experience", max_point: 99, level: 37)
 puts "#{savoir.name} created"
-spiritualite = Skill.create!(name: "Faith", description: "Capacity to trust someone or something", max_point: 99, level: 1)
+spiritualite = Skill.create!(name: "Faith", description: "Capacity to trust someone or something", max_point: 99, level: 8)
 puts "#{spiritualite.name} created"
-creativite = Skill.create!(name: "Creativity", description: "Capacity of imagination to create something", max_point: 99, level: 1)
+creativite = Skill.create!(name: "Creativity", description: "Capacity of imagination to create something", max_point: 99, level: 32)
 puts "#{creativite.name} created"
-social = Skill.create!(name: "Social", description: "Capacity to interact with other", max_point: 99, level: 1)
+social = Skill.create!(name: "Social", description: "Capacity to interact with other", max_point: 99, level: 29)
 puts "#{social.name} created"
-culture = Skill.create!(name: "Culture", description: "Specific knowledge on man-made achievements", max_point: 99, level: 1)
+culture = Skill.create!(name: "Culture", description: "Specific knowledge on man-made achievements", max_point: 99, level: 12)
 puts "#{culture.name} created"
 
 puts "SEED DONE"
