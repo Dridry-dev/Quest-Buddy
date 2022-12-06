@@ -20,16 +20,16 @@ export default class extends Controller {
   }
 
   connectUserGoal(){
-    // this.divTarget.innerHTML = this.score
-    // fetch(`/categories/${this.categoryValue}/quests/${this.questValue}/user_goals`), {
-    // method: "POST",
-    // headers: {"Content-Type": "application/json"},
-    // body: JSON.stringify({"email": emailValue, "password": passwordValue}) }
-    // .then(response => response.json())
-    // .then((data) => {
-    //   console.log(data);
-    //   this.divTarget.innerHTML = '<%= @goal.score %>'
-    // })
+    console.log('salut')
+    this.divTarget.innerHTML = this.threshold
+    fetch(`/categories/${this.categoryValue}/quests/${this.questValue}/user_goals`), {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ "threshold": thresholdValue }) }
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    })
   }
 }
 //fetch vers mon create pour creer mon instance
