@@ -4,8 +4,14 @@
 
 import { application } from "./application"
 
+import ChartJsController from "./chart_js_controller"
+application.register("chart-js", ChartJsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import QuestCounterController from "./quest_counter_controller"
 application.register("quest-counter", QuestCounterController)
+
+import TestController from "./test_controller"
+application.register("test", TestController)
