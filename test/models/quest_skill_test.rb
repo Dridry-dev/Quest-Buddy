@@ -1,6 +1,6 @@
 require "test_helper"
 
-class GoalSkillTest < ActiveSupport::TestCase
+class QuestSkillTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
