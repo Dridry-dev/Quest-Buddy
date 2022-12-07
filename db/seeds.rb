@@ -7,6 +7,8 @@ Quest.destroy_all
 Goal.destroy_all
 Skin.destroy_all
 Skill.destroy_all
+UserGoal.destroy_all
+UserQuest.destroy_all
 puts 'Database cleaned'
 
 puts 'Creation User...'
@@ -104,37 +106,37 @@ Goal.create!(
   quest: pushup_easy
 )
 Goal.create!(
-  score: 250,
+  score: 150,
   threshold: 2,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
-  score: 350,
+  score: 200,
   threshold: 5,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
-  score: 500,
+  score: 300,
   threshold: 10,
   partial: "mon bout de code",
   quest: pushup_medium
 )
 Goal.create!(
-  score: 650,
+  score: 20,
   threshold: 5,
   partial: "mon bout de code",
   quest: pushup_hard
 )
 Goal.create!(
-  score: 800,
+  score: 400,
   threshold: 12,
   partial: "mon bout de code",
   quest: pushup_hard
 )
 Goal.create!(
-  score: 1000,
+  score: 900,
   threshold: 25,
   partial: "mon bout de code",
   quest: pushup_hard
