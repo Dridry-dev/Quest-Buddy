@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_112905) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_135128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,23 +49,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_112905) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "goal_skills", force: :cascade do |t|
-    t.bigint "skill_id", null: false
-    t.bigint "goal_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["goal_id"], name: "index_goal_skills_on_goal_id"
-    t.index ["skill_id"], name: "index_goal_skills_on_skill_id"
-  end
-
   create_table "goals", force: :cascade do |t|
     t.bigint "quest_id", null: false
-    t.text "partial"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "threshold"
     t.index ["quest_id"], name: "index_goals_on_quest_id"
+  end
+
+  create_table "quest_skills", force: :cascade do |t|
+    t.bigint "quest_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quest_id"], name: "index_quest_skills_on_quest_id"
+    t.index ["skill_id"], name: "index_quest_skills_on_skill_id"
   end
 
   create_table "quests", force: :cascade do |t|
@@ -83,10 +82,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_112905) do
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "max_point"
+    t.integer "max_point", default: 99
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "level"
   end
 
   create_table "skins", force: :cascade do |t|
@@ -120,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_112905) do
     t.bigint "skill_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "level", default: 0
     t.index ["skill_id"], name: "index_user_skills_on_skill_id"
     t.index ["user_id"], name: "index_user_skills_on_user_id"
   end
@@ -150,9 +149,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_112905) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "goal_skills", "goals"
-  add_foreign_key "goal_skills", "skills"
   add_foreign_key "goals", "quests"
+  add_foreign_key "quest_skills", "quests"
+  add_foreign_key "quest_skills", "skills"
   add_foreign_key "quests", "categories"
   add_foreign_key "user_goals", "goals"
   add_foreign_key "user_goals", "users"
