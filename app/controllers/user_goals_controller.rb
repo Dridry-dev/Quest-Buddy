@@ -13,14 +13,15 @@ class UserGoalsController < ApplicationController
     old_user_goal = current_user.user_goals.where(goal_id: goal_ids).last
     if old_user_goal.nil?
       @user_goal = UserGoal.create(goal: @quest.goals.order(:threshold).first, user: current_user)
+      current_user.gold += @quest.reward
+      current_user.save
+      # old_goal = old_user_goal.goal
+      # if goal_ids.index(old_goal.id) == 2
+      #   creation_userskill(Goal.find(goal_id))
+      # end
     else
       old_goal = old_user_goal.goal
       goal_id = goal_ids[goal_ids.index(old_goal.id) + 1]
-      # if goal_ids.index(old_goal.id) == 2
-      # creation_userskill(Goal.find(goal_id))
-      # end
-      current_user.gold += @quest.reward
-      current_user.save
       @user_goal = UserGoal.create(goal_id: goal_id, user: current_user)
       @next_goal = Goal.find(goal_id)
     end
