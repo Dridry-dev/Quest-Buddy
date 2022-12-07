@@ -28,11 +28,23 @@ skin2.photo.attach(io: file2, filename: "Superman.png", content_type: "image/jpe
 skin2.save!
 puts "#{skin2.name} created"
 
+file10 = URI.open("0")
+skin10 = Skin.new(name: "Spider Gwen", description: "Spider Gwen, c'est la plus agile", price: 50)
+skin10.photo.attach(io: file10, filename: "spider_gwen.png", content_type: "image/jpeg")
+skin10.save!
+puts "#{skin10.name} created"
+
 file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
 skin3 = Skin.new(name: "Goku", description: "Goku, c'est le plus vener", price: 100)
 skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
 skin3.save!
 puts "#{skin3.name} created"
+
+file7 = URI.open("0")
+skin7 = Skin.new(name: "Mikasa", description: "Mikasa, c'est la plus dangereuse", price: 150)
+skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg")
+skin7.save!
+puts "#{skin7.name} created"
 
 file6 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Deadpool_vug6im.png")
 skin6 = Skin.new(name: "Deadpool", description: "Deadpool, c'est le plus rigolo", price: 90)
@@ -51,6 +63,30 @@ skin4 = Skin.new(name: "Jon Snow", description: "Jon, c'est celui qui know nothi
 skin4.photo.attach(io: file4, filename: "JonSnow.png", content_type: "image/jpeg")
 skin4.save!
 puts "#{skin4.name} created"
+
+file8 = URI.open("0")
+skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, c'est celle qui a le plus beau sceptre", price: 70)
+skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
+skin8.save!
+puts "#{skin8.name} created"
+
+file9 = URI.open("0")
+skin9 = Skin.new(name: "Captain Marvel", description: "Captain, c'est la plus forte", price: 80)
+skin9.photo.attach(io: file9, filename: "captain_marvel.png", content_type: "image/jpeg")
+skin9.save!
+puts "#{skin9.name} created"
+
+file11 = URI.open("0")
+skin11 = Skin.new(name: "Saitama", description: "Saitama, c'est pas le plus intelligent", price: 40)
+skin11.photo.attach(io: file11, filename: "saitama.png", content_type: "image/jpeg")
+skin11.save!
+puts "#{skin11.name} created"
+
+file12 = URI.open("0")
+skin12 = Skin.new(name: "Wonder Woman", description: "Wonder Woman, c'est une machine", price: 100)
+skin12.photo.attach(io: file12, filename: "wonder_woman.png", content_type: "image/jpeg")
+skin12.save!
+puts "#{skin12.name} created"
 
 UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
 
