@@ -1,4 +1,5 @@
 require "open-uri"
+require 'debug'
 
 # ----------------- CLEANING SEED -----------------
 
@@ -12,7 +13,8 @@ Skill.destroy_all
 UserGoal.destroy_all
 UserQuest.destroy_all
 UserSkill.destroy_all
-GoalSkill.destroy_all
+UserSkin.destroy_all
+QuestSkill.destroy_all
 puts 'Database cleaned'
 
 # ----------------- CREATING USERS -----------------
@@ -145,22 +147,16 @@ puts "Category-database done!"
 
 # ----------------- CREATING QUESTS AND GOALS -----------------
 
-
 pushup_description = "To do a push-up, get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
 running_description = "To run, you just need to run while focusing on your breathing."
 japanese_description = "Watch a lot of japanese movies and test your skills whith Quizzes."
 
-partial = "mon bout de code"
-
-def create_goal(partial, quest, niveau)
-  threshold = 1
-  goal_level = 1
+def create_goal(quest, threshold)
   score = 100
-  until goal_level <= 3
-    Goal.create!(score: score, threshold: threshold, partial: partial, quest: quest )
-    threshold *= (niveau * 1.5)
-    score *= (niveau * 1.5)
-    goal_level += 1
+  multipicator = [1, 2, 5]
+  3.times do |index|
+    # binding.b
+    Goal.create!(score: score * multipicator[index], threshold: threshold * multipicator[index], quest: quest)
   end
 end
 
@@ -169,191 +165,25 @@ def create_quest(name, description, category, niveau)
   reward = 100
   while rank <= niveau
     quest = Quest.create!(name: name, rank: rank, description: description, category: category, reward: reward)
-    create_goal(partial, quest, niveau)
-    reward *= (niveau * 1.5)
+    create_goal(quest, rank)
+    reward = reward * niveau
     rank += 1
-    return quest
   end
 end
 
-puts 'Creation quest-database...'
+puts 'Creation Quest-database & Goal-database...'
 
 create_quest("push-up", pushup_description, sport, 3)
 create_quest("running", running_description, sport, 5)
 create_quest("Japanese movies", japanese_description, cinema, 4)
-
-puts 'Quests-database created!'
-
-# Goal.create!(
-#   score: 100,
-#   threshold: 1,
-#   partial: "mon bout de code",
-#   quest: pushup_easy
-# )
-# Goal.create!(
-#   score: 150,
-#   threshold: 2,
-#   partial: "mon bout de code",
-#   quest: pushup_easy
-# )
-# Goal.create!(
-#   score: 200,
-#   threshold: 5,
-#   partial: "mon bout de code",
-#   quest: pushup_easy
-# )
-# Goal.create!(
-#   score: 150,
-#   threshold: 2,
-#   partial: "mon bout de code",
-#   quest: pushup_medium
-# )
-# Goal.create!(
-#   score: 200,
-#   threshold: 5,
-#   partial: "mon bout de code",
-#   quest: pushup_medium
-# )
-# Goal.create!(
-#   score: 300,
-#   threshold: 10,
-#   partial: "mon bout de code",
-#   quest: pushup_medium
-# )
-# Goal.create!(
-#   score: 20,
-#   threshold: 5,
-#   partial: "mon bout de code",
-#   quest: pushup_hard
-# )
-# Goal.create!(
-#   score: 400,
-#   threshold: 12,
-#   partial: "mon bout de code",
-#   quest: pushup_hard
-# )
-# Goal.create!(
-#   score: 900,
-#   threshold: 25,
-#   partial: "mon bout de code",
-#   quest: pushup_hard
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 2,
-#   partial: "mon bout de code",
-#   quest: running_easy
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 5,
-#   partial: "mon bout de code",
-#   quest: running_easy
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 7,
-#   partial: "mon bout de code",
-#   quest: running_easy
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 10,
-#   partial: "mon bout de code",
-#   quest: running_medium
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 15,
-#   partial: "mon bout de code",
-#   quest: running_medium
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 22,
-#   partial: "mon bout de code",
-#   quest: running_medium
-# )
-# Goal.create!(
-#   score: 100,
-#   threshold: 28,
-#   partial: "mon bout de code",
-#   quest: running_hard
-# )
-# Goal.create!(
-#   score: 39000,
-#   threshold: 39,
-#   partial: "mon bout de code",
-#   quest: running_hard
-# )
-# Goal.create!(
-#   score: 42_000,
-#   threshold: 42,
-#   partial: "mon bout de code",
-#   quest: running_hard
-# )
-# Goal.create!(
-#   score: 1000,
-#   threshold: 1,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_easy
-# )
-# Goal.create!(
-#   score: 3000,
-#   threshold: 3,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_easy
-# )
-# Goal.create!(
-#   score: 5000,
-#   threshold: 5,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_easy
-# )
-# Goal.create!(
-#   score: 7000,
-#   threshold: 7,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_medium
-# )
-# Goal.create!(
-#   score: 9000,
-#   threshold: 9,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_medium
-# )
-# Goal.create!(
-#   score: 12_000,
-#   threshold: 12,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_medium
-# )
-# Goal.create!(
-#   score: 15_000,
-#   threshold: 15,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_hard
-# )
-# Goal.create!(
-#   score: 25_000,
-#   threshold: 25,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_hard
-# )
-# Goal.create(
-#   score: 35_000,
-#   threshold: 35,
-#   partial: "mon bout de code",
-#   quest: japanese_movies_hard
-# )
+puts Quest.count.to_s
 puts Goal.count.to_s
-puts 'Goal-database done!'
+puts 'Quests-database and Goal-database done!'
 
-# ----------------- CREATING GOAL-SKILLS -----------------
 
-puts 'Creating skills to quests...'
-GoalSkill.create(goal_id: pushup_easy_goal.id, skill_id: force.id)
-puts GoalSkill.count.to_s
-puts 'UserSkin done!'
+# puts 'Creating skills to quests...'
+# QuestSkill.create(quest_id: quest.id, skill_id: force.id)
+# puts GoalSkill.count.to_s
+# puts 'UserSkin done!'
 
 puts "SEED DONE"
