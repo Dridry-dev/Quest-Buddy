@@ -3,22 +3,22 @@ import Chart from 'chart.js/auto';
 
 
 // Connects to data-controller="chart-js"
-
 export default class extends Controller {
   static targets = ["myChart"]
-  static values =  {skills: Array}
+  static values =  {skills: Array, userSkills: Array}
   connect() {
     console.log(this.skillsValue);
     const labels = this.skillsValue.map(skill => {
       return skill.name
     });
     console.log(labels);
-    const data = this.skillsValue.map(skill => {
-      return skill.level
+    const data = this.userSkillsValue.map(userSkill => {
+      return userSkill.level
     });
     console.log(data);
     const ctx = this.myChartTarget
     console.log(ctx);
+
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {

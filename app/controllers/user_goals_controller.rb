@@ -12,7 +12,6 @@ class UserGoalsController < ApplicationController
     goal_ids = @quest.goals.order(:threshold).map(&:id)
     old_user_goal = current_user.user_goals.where(goal_id: goal_ids).last
 
-    # il faut en db que la quete ait des skills
     # skills = @quest.skills
     # skills.each do |skill|
     #   user_skill = current_user.user_skills.find(skill.id)
@@ -24,10 +23,6 @@ class UserGoalsController < ApplicationController
       @user_goal = UserGoal.create(goal: @quest.goals.order(:threshold).first, user: current_user)
       current_user.gold += @quest.reward
       current_user.save
-      # old_goal = old_user_goal.goal
-      # if goal_ids.index(old_goal.id) == 2
-      #   creation_userskill(Goal.find(goal_id))
-      # end
     else
       old_goal = old_user_goal.goal
       goal_id = goal_ids[goal_ids.index(old_goal.id) + 1]
