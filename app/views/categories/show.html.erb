@@ -17,7 +17,7 @@
           <div class="card-quest-category">
             <div class="categories-titles-category">
               <div class="grid-cellules-quest">
-                <h2><%= quest.name %></h2>
+                <h2 class="title-quests-font"><%= quest.name %></h2>
               </div>
               <div class="grid-cellules-quest">
                 <h6>Skills needed for <%= quest.name %></h6>
@@ -31,7 +31,6 @@
               </div>
               <div class="grid-cellules-quest">
                 <h6>Your curent rank : <%= current_user.rank_for(quest) %></h6>
-
               </div>
             </div>
           </div>

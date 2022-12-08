@@ -129,8 +129,8 @@ vitesse = Skill.create!(name: "Speed", description: "Define how fast you are")
 puts "#{vitesse.name} created"
 souplesse = Skill.create!(name: "Flexibility", description: "Capacity of bending easily without breaking.")
 puts "#{souplesse.name} created"
-inteligence = Skill.create!(name: "Intelligence", description: "Ability to learn or understand or to deal with new situation")
-puts "#{inteligence.name} created"
+intelligence = Skill.create!(name: "Intelligence", description: "Ability to learn or understand or to deal with new situation")
+puts "#{intelligence.name} created"
 logique = Skill.create!(name: "Logic", description: "Ability to reason accordingly to strict principles of validity")
 puts "#{logique.name} created"
 reflexion = Skill.create!(name: "Thinking", description: "Capacity to use thought or rational judgement")
@@ -163,8 +163,8 @@ user_vitesse = UserSkill.create(user_id: user.id, skill_id: vitesse.id, level: 5
 puts "#{user.name} vitesse is level #{user_vitesse.level}"
 user_souplesse = UserSkill.create(user_id: user.id, skill_id: souplesse.id, level: 50)
 puts "#{user.name} souplesse is level #{user_souplesse.level}"
-user_inteligence = UserSkill.create(user_id: user.id, skill_id: inteligence.id, level: 29)
-puts "#{user.name} inteligence is level #{user_inteligence.level}"
+user_intelligence = UserSkill.create(user_id: user.id, skill_id: intelligence.id, level: 29)
+puts "#{user.name} intelligence is level #{user_intelligence.level}"
 user_logique = UserSkill.create(user_id: user.id, skill_id: logique.id, level: 27)
 puts "#{user.name} logique is level #{user_logique.level}"
 user_reflexion = UserSkill.create(user_id: user.id, skill_id: reflexion.id, level: 30)
@@ -192,6 +192,22 @@ puts "#{sport.name} done"
 cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies?, this category is for you")
 cinema_skills = [reflexion, culture, savoir, creativite, social]
 puts "#{cinema.name} done"
+literature = Category.create!(name: "Literature", description: "Do you want to understand the word? This category is for you")
+literature_skills = [culture, intelligence, savoir, reflexion, creativite]
+puts "#{literature.name} done"
+music = Category.create!(name: "Music", description: "Do you want enjoy the word? This category is for you")
+music_skills = [culture, intelligence, savoir, social, creativite, logique]
+puts "#{music.name} done"
+social = Category.create!(name: "Social", description: "Do you want to understand people? This category is for you")
+social_skills = [intelligence, savoir, social, creativite]
+puts "#{social.name} done"
+theatre = Category.create!(name: "Theatre", description: "Do you want know how to act? This category is for you")
+theatre_skills = [culture, intelligence, savoir, social, creativite]
+puts "#{theatre.name} done"
+science = Category.create!(name: "Science", description: "Do you want to do 2+2? This category is for you")
+science_skills = [culture, intelligence, savoir, creativite, logique]
+puts "#{science.name} done"
+
 puts "Category-database done!"
 puts '----------------------------------------------------'
 
@@ -200,6 +216,24 @@ puts '----------------------------------------------------'
 pushup_description = "To do a push-up, get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
 running_description = "To run, you just need to run while focusing on your breathing."
 japanese_description = "Watch a lot of japanese movies and test your skills whith Quizzes."
+indian_description = "Watch a lot of indian movies and test your skills whith Quizzes."
+french_description = "Watch a lot of french movies and test your skills whith Quizzes."
+abs_description = "6 pack, 12 pack, 18 pack. As much as you want."
+italian_literature_description = "Read a lot of italian books and test your skills whith Quizzes."
+french_literature_description = "Read a lot of french books and test your skills whith Quizzes."
+portuguese_literature_description = "Read a lot of portuguese books and test your skills whith Quizzes."
+arithmetic_description = "complete thoses exercises to be better than your child"
+quick_calculation_description = "complete thoses exercises to be better than a calculator"
+biology_description = "Read thoses books and test your skills whith Quizzes."
+rock_description = "Listen this playlist and test your skills whith Quizzes."
+hip_hop_description = "Listen this playlist and test your skills whith Quizzes."
+makina_description = "Listen this playlist and test your skills whith Quizzes."
+moliere_description = "Watch this theater plays and test your skills whith Quizzes."
+classical_theatre_description = "Watch this greek theater plays and test your skills whith Quizzes."
+drama_theatre_description = "Watch this drama plays and test your skills whith Quizzes."
+meeting_description = "Watch those tutorials and test them at your next party."
+talking_description = "Watch those tutorials and test them at your next party."
+good_manners_description = "Watch those tutorials and test them at your next party."
 
 def create_goal(quest, threshold)
   score = 100
@@ -232,7 +266,25 @@ puts 'Creation Quest-database & Goal-database...'
 
 create_quest("Push-up", pushup_description, sport, 3, sport_skills)
 create_quest("Running", running_description, sport, 5, sport_skills)
+create_quest("Abs", abs_description, sport, 3, sport_skills)
 create_quest("Japanese movies", japanese_description, cinema, 4, cinema_skills)
+create_quest("Indian movies", indian_description, cinema, 4, cinema_skills)
+create_quest("French movies", french_description, cinema, 4, cinema_skills)
+create_quest("Italian literature", italian_literature_description, literature, 4, literature_skills)
+create_quest("French literature", french_literature_description, literature, 4, literature_skills)
+create_quest("Portuguese literature", portuguese_literature_description, literature, 4, literature_skills)
+create_quest("Arithmetic", arithmetic_description, science, 4, science_skills)
+create_quest("Quick calculation", quick_calculation_description, science, 5, science_skills)
+create_quest("Biology", biology_description, science, 6, science_skills)
+create_quest("Rock", rock_description, music, 5, music_skills)
+create_quest("Hip Hop", hip_hop_description, music, 5, music_skills)
+create_quest("Makina", makina_description, music, 1, music_skills)
+create_quest("Classical", classical_theatre_description, theatre, 5, theatre_skills)
+create_quest("Moliere", moliere_description, theatre, 4, theatre_skills)
+create_quest("Drama", drama_theatre_description, theatre, 4, theatre_skills)
+create_quest("Meeting", meeting_description, social, 3, social_skills)
+create_quest("Talking", talking_description, social, 5, social_skills)
+create_quest("Good manners", good_manners_description, social, 4, social_skills)
 puts Quest.count.to_s
 puts Goal.count.to_s
 puts QuestSkill.count.to_s
