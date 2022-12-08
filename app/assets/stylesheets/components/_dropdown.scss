@@ -3,3 +3,43 @@
   border-radius: 5px;
   font-size: larger;
 }
+
+#dropdown-toggled {
+  height: 150px;
+  width: 280px;
+  background-color: #E8EDDF;
+  border-radius: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+#dropdown-toggled.active {
+  display: block;
+}
+
+
+.cellules-skills-drop {
+  background: #F5CB5C;
+  color: #323232;
+  border-radius: 20px;
+  width: 260px;
+  height: 25px;
+  box-shadow: #323232;
+  margin: 3px;
+
+}
+
+.cellules-skills-drop-positionner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+}
+
+.cellules-skills-drop-golds {
+  color: #323232;
+}
