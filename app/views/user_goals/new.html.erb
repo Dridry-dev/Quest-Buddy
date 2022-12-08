@@ -1,12 +1,16 @@
-<div class="container">
-
+<div class="container" data-controller="quest-counter"
+    data-quest-counter-category-value = <%= @category.id %>
+    data-quest-counter-quest-value = <%= @quest.id %>
+    data-quest-counter-userquest-value = <%= @user_quest.id %>
+    data-quest-counter-threshold-value = <%= @goal.threshold %>
+    data-quest-counter-lastgoal-value = <%= @last_goal.threshold %>>
 <%# ----------------- MENU CARD BLACK ----------------- %>
 
   <div class="navbar-card">
     <div class="nav-item dropdown side-nav-btn">
       <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <div class="dropdown">
+        <div class="dropdown">
           <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
           <%= link_to "Profil", root_path, class: "btn-dropdown" %>
           <%= link_to "Changing Room", skins_path, class: "btn-dropdown" %>
@@ -43,15 +47,15 @@
 
 <%# ----------------- MENU CARD ----------------- %>
 
-  <div class="card-grey-action" data-controller="quest-counter" data-action="click->quest-counter#clicked" data-quest-counter-category-value = <%= @category.id %> data-quest-counter-quest-value = <%= @quest.id %>
-  data-quest-counter-userquest-value = <%= @user_quest.id %>  data-quest-counter-threshold-value = <%= @goal.threshold %>
-  data-quest-counter-lastgoal-value = <%= @last_goal.threshold %>>
+  <div class="card-grey-action"
+       data-action="click->quest-counter#clicked">
 
-    <h1 data-quest-counter-target = "div"> +1 </h1>
+    <div class="counter" data-quest-counter-target = "div"> Click </div>
   </div>
   <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
   <div class="card-action-progress">
     <p class="font-bold-large">PROGRESS</p>
-    <%=  @goal.threshold  %>
-        <%= render "progress_bar" %>
+    <% <h2> Your threshold: <%= @last_goal.threshold %> </h2>
+    <%= render "progress_bar_2" %>
+  </div>
 </div>
