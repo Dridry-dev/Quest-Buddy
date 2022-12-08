@@ -203,7 +203,7 @@ def create_quest(name, description, category, niveau)
   while rank <= niveau
     quest = Quest.create!(name: name, rank: rank, description: description, category: category, reward: reward)
     create_goal(quest, rank)
-    reward = reward * niveau
+    reward *= niveau
     rank += 1
   end
 end
