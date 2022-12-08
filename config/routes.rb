@@ -8,9 +8,13 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[index show] do
     resources :quests, only: %i[show] do
-      resources :user_quests, only: %i[create show]
+      resources :user_quests, only: %i[create]
       resources :user_goals, only: %i[new create]
     end
+  end
+
+  resources :user_quests, only: [:show] do
+    resources :user_skills, only: [:index]
   end
 
   resources :skins, only: %i[index edit update show] do

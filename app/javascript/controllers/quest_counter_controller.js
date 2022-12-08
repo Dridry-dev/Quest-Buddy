@@ -19,7 +19,7 @@ export default class extends Controller {
     this.progressBarTarget.style.width = `${100 * (this.counter/this.lastgoalValue)}%`
     console.log(this.thresholdValue)
     if (this.counter == this.lastgoalValue){
-      window.location.replace(`/categories/${this.categoryValue}/quests/${this.questValue}/user_quests/${this.userquestValue}`)
+      window.location.replace(`/user_quests/${this.userquestValue}/user_skills`)
     }
     if (this.counter >= this.thresholdValue && this.counter < this.lastgoalValue) {
       this.connectUserGoal()
