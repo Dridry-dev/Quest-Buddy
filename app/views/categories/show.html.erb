@@ -16,7 +16,7 @@
         <%= link_to category_quest_path(@category, quest) do %>
           <div class="card-quest-category">
             <div class="categories-titles-quest">
-              <h2>
+              <h2 class="title-quests-font">
                 <%= quest.name %>
                 <%= quest.rank %>
                 <%= current_user.rank_for(quest) %>

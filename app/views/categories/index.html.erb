@@ -13,7 +13,7 @@
   <% @categories.each do |category|%>
     <%= link_to category_path(category) do %>
       <div class="card">
-        <h2 class="categories-titles"><%= category.name %></h2>
+        <h1 class="test-font-title"><%= category.name %></h1>
         <p><%= category.description %></p>
       </div>
     <% end %>
@@ -21,9 +21,7 @@
 
 <%# ----------------- OTHER CARD ----------------- %>
 
-  <div class="card">
-    <h1>Example Card</h1>
-  </div>
+
   <div>
     <%= link_to  "Return", root_path, class: "yellow-small-btn"%>
   </div>

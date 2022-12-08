@@ -48,6 +48,9 @@ export default class extends Controller {
         scales: {
             y: {
                 beginAtZero: true,
+            },
+            x: {
+                display: false
             }
         }
       }
