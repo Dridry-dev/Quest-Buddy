@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :quests, through: :user_quests
 
   def rank_for(quest)
-    (quest.user_goals.where(user: self).count / 3) + 1
+    (self.quests.where(name: quest.name)&.order(:rank)&.last&.rank).to_i + 1
+    # (quest.user_goals.where(user: self).count) + 1
   end
 
   def show_selected_skin

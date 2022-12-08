@@ -107,11 +107,11 @@ puts '----------------------------------------------------'
 
 # ----------------- CREATING USER-SKINS -----------------
 
-puts 'Creating one default skin to user...'
-UserSkin.create(user_id: user.id, skin_id: skin.id, selected: true)
-puts UserSkin.count.to_s
-puts 'UserSkin done!'
-puts '----------------------------------------------------'
+# puts 'Creating one default skin to user...'
+# UserSkin.create(user_id: user.id, skin_id: skin.id, selected: true)
+# puts UserSkin.count.to_s
+# puts 'UserSkin done!'
+# puts '----------------------------------------------------'
 
 # ----------------- CREATING SKILLS -----------------
 

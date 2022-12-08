@@ -52,7 +52,7 @@
 
     <div class="counter" data-quest-counter-target = "div"> Touch </div>
   </div>
-  <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
+  <%= link_to  "STOP", user_quest_path(@quest.user_quests.last), class:"yellow-large-btn"%>
   <div class="card-action-progress">
     <p class="font-bold-large">PROGRESS</p>
     <h2> Your threshold: <%= @last_goal.threshold %> </h2>

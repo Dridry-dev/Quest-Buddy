@@ -18,6 +18,9 @@
             <div class="categories-titles-quest">
               <h2>
                 <%= quest.name %>
+                <%= quest.rank %>
+                <%= current_user.rank_for(quest) %>
+
               </h2>
             </div>
           </div>
