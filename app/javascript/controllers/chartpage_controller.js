@@ -42,7 +42,13 @@ export default class extends Controller {
         line: {
           borderWidth: 3
         }
-      }
+      },
+      scales: {
+        r: {
+            suggestedMin: 1,
+            suggestedMax: 100,
+        }
+    }
     },
   };
 

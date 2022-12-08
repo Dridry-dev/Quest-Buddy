@@ -1,4 +1,14 @@
 <div class="container">
+  <div class="titre-appli">
+    <div class="deconstructed">
+      QUEST-BUDDY
+      <div>QUEST-BUDDY</div>
+      <div>QUEST-BUDDY</div>
+      <div>QUEST-BUDDY</div>
+      <div>QUEST-BUDDY</div>
+    </div>
+  </div>
+  <div class="underline-title"></div>
 
 <%# ----------------- MENU CARD BLACK ----------------- %>
 
@@ -72,20 +82,30 @@
 
   <%# ----------------- SKIN CARD ----------------- %>
 
-  <%= link_to skins_path do %>
     <div class="card-changing-room">
-      <h2>CHANGING ROOM</h2>
-      <div class="skins">
-        <img class="size-skin" src="https://static1.millenium.org/entity_articles/1/19/31/@/1472156-kassadin-6-article_image_d-1.jpg"  alt="">
-      </div>
+        <div class="cat-cont">
+          <div class="cat">
+            <div class="ear ear--left"></div>
+            <div class="ear ear--right"></div>
+            <div class="face">
+              <div class="eye eye--left">
+                <div class="eye-pupil"></div>
+              </div>
+              <div class="eye eye--right">
+                <div class="eye-pupil"></div>
+              </div>
+              <div class="muzzle"></div>
+            </div>
+          </div>
+          </div>
     </div>
-  <% end %>
+
 
 <%# ----------------- NEW QUEST CARD ----------------- %>
 
   <div class="adding-bar">
     <div class="round-plus">
-      <%= link_to "+", categories_path, class: "big-plus" %>
+      <%= link_to "START QUEST", categories_path, class: "big-plus" %>
     </div>
   </div>
 </div>
