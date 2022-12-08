@@ -1,7 +1,7 @@
 .card {
   display: flex;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   height: 165px;
@@ -23,7 +23,7 @@
 .card-graph {
   display: block;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   height: 450px;
@@ -41,7 +41,7 @@
 .shop-card {
   display: block;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   width: 340px;
@@ -85,7 +85,7 @@
 
 .semi-card {
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   height: 180px;
@@ -148,31 +148,13 @@
   text-align: center;
 }
 
-.card-grey-action {
-  display: block;
-  background: #E8EDDF;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  height: 450px;
-  width: 340px;
-  background-color: #E8EDDF;;
-  color: #323232;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  text-align: center;
-  justify-content: space-between;
-}
-
 .card-changing-room {
   display: block;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
-  height: 250px;
+  height: 365px;
   width: 340px;
   text-align: center;
   background-color: #323232;
@@ -187,7 +169,7 @@
 .card-skills {
   display: block;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   height: 300px;
@@ -204,7 +186,7 @@
 .card-trophies {
   display: block;
   background: #323232;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
   height: 165px;
@@ -256,7 +238,7 @@
   background: #323232;
   background-color: #323232;
   color: #E8EDDF;
-  border: 3px solid black;
+  border: 3px solid #F5CB5C;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   padding: 8px 16px 0 16px;
@@ -314,4 +296,29 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 320px;
+
+
+.card-grey-action {
+  display: block;
+  background: #E8EDDF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  height: 450px;
+  width: 340px;
+  background-color: #E8EDDF;;
+  color: #323232;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.card-grey-action:active {
+background-color: #F5CB5C;
+color: #E8EDDF;
 }
