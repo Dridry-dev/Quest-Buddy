@@ -241,8 +241,4 @@ puts 'UserSkin done!'
 puts 'Quests-database and Goal-database done!'
 puts '----------------------------------------------------'
 
-
-
-
-
 puts "SEED DONE"
