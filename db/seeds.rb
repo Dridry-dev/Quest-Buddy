@@ -16,12 +16,102 @@ UserSkill.destroy_all
 UserSkin.destroy_all
 QuestSkill.destroy_all
 puts 'Database cleaned'
+puts '----------------------------------------------------'
+puts '----------------------------------------------------'
+puts '----------------------------------------------------'
 
 # ----------------- CREATING USERS -----------------
 
 puts 'Creation User...'
 user = User.create!(name: "Buddy", email: "mail@gmail.com", password: "azerty", gold: 100)
 puts "#{user.name} created"
+puts '----------------------------------------------------'
+
+# ----------------- CREATING SKINS -----------------
+puts 'Creating Skins...'
+
+# file1 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/saitamapng_cxlq3w.png")
+# skin1 = Skin.new(name: "Saitama", description: '"100 pushups, 100 sit-ups, 100 squats, and a 10km run each days!"', price: 1000)
+# skin1.photo.attach(io: file1, filename: "saitama.png", content_type: "image/jpeg")
+# skin1.save!
+# puts "#{skin1.name} created"
+
+# file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/captain_marvel_yh9beh.png")
+# skin2 = Skin.new(name: "Captain Marvel", description: "She could have handle Thanos all by herself", price: 800)
+# skin2.photo.attach(io: file2, filename: "captain_marvel.png", content_type: "image/jpeg")
+# skin2.save!
+# puts "#{skin2.name} created"
+
+# file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
+# skin3 = Skin.new(name: "Goku", description: "KAAAAAMEEEEEEHAAAAMEEEEEHAAAAAAA", price: 800)
+# skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
+# skin3.save!
+# puts "#{skin3.name} created"
+
+# file4 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/wonder_woman_qwgbks.png")
+# skin4 = Skin.new(name: "WonderWoman", description: "Best lasso girl on earth", price: 750)
+# skin4.photo.attach(io: file4, filename: "wonder_woman.png", content_type: "image/jpeg")
+# skin4.save!
+# puts "#{skin4.name} created"
+
+# file5 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Superman_hett66.png")
+# skin5 = Skin.new(name: "Superman", description: "It's a bird ? It's a plane ? It's Superman !", price: 750)
+# skin5.photo.attach(io: file5, filename: "Superman.png", content_type: "image/jpeg")
+# skin5.save!
+# puts "#{skin5.name} created"
+
+# file6 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/spider_gwen_b90ovj.png")
+# skin6 = Skin.new(name: "Spider Gwen", description: "Spider Gwen, the best Spidey", price: 500)
+# skin6.photo.attach(io: file6, filename: "spider_gwen.png", content_type: "image/jpeg")
+# skin6.save!
+# puts "#{skin6.name} created"
+
+# file7 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/mikasa_jyg4fu.png")
+# skin7 = Skin.new(name: "Mikasa", description: "Mikasa, es tu casa....?", price: 400)
+# skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg")
+# skin7.save!
+# puts "#{skin7.name} created"
+
+# file8 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/sailor_ps3rqp.png")
+# skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, the one and only!", price: 250)
+# skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
+# skin8.save!
+# puts "#{skin8.name} created"
+
+# file9 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Deadpool_vug6im.png")
+# skin9 = Skin.new(name: "Deadpool", description: "Hi there, Nice to meet you, I'm Deadpool", price: 250)
+# skin9.photo.attach(io: file9, filename: "deadpool.png", content_type: "image/jpeg")
+# skin9.save!
+# puts "#{skin9.name} created"
+
+
+# file10 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670245700/Ryan-removebg-preview_kvkyb6.png")
+# skin10 = Skin.new(name: "Ryan's Abs", description: "Did you ask for some abs ?", price: 200)
+# skin10.photo.attach(io: file10, filename: "RyanAbs.png", content_type: "image/jpeg")
+# skin10.save!
+# puts "#{skin10.name} created"
+
+# file11 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
+# skin11 = Skin.new(name: "Loki", description: '"Loki, cool guy but never trust him!" - Thor', price: 200)
+# skin11.photo.attach(io: file11, filename: "loki.png", content_type: "image/jpeg")
+# skin11.save!
+# puts "#{skin11.name} created"
+
+file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Jon_Snow_kgfjbp.png")
+skin = Skin.new(name: "Jon Snow", description: "Jon Snow, definitly knows nothing. SPOILER : He's a Targariyen", price: 10)
+skin.photo.attach(io: file, filename: "JonSnow.png", content_type: "image/jpeg")
+skin.save!
+puts "#{skin.name} created"
+puts "#{Skin.count} skins created"
+puts '----------------------------------------------------'
+
+# ----------------- CREATING USER-SKINS -----------------
+
+puts 'Creating one default skin to user...'
+UserSkin.create(user_id: user.id, skin_id: skin.id, selected: true)
+puts UserSkin.count.to_s
+puts 'UserSkin done!'
+puts '----------------------------------------------------'
 
 # ----------------- CREATING SKILLS -----------------
 
@@ -55,6 +145,7 @@ puts "#{social.name} created"
 culture = Skill.create!(name: "Culture", description: "Specific knowledge on man-made achievements")
 puts "#{culture.name} created"
 puts Skill.count.to_s
+puts '----------------------------------------------------'
 
 # ----------------- CREATING USER-SKILLS -----------------
 
@@ -89,98 +180,19 @@ user_culture = UserSkill.create(user_id: user.id, skill_id: culture.id, level: 4
 puts "#{user.name} culture is level #{user_culture.level}"
 puts UserSkill.count.to_s
 puts 'UserSkills done!'
-
-# ----------------- CREATING SKINS -----------------
-
-puts 'Creating Skins...'
-file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670245700/Ryan-removebg-preview_kvkyb6.png")
-skin = Skin.new(name: "Ryan's Abs", description: "Ryan, c'est le plus bô", price: 200)
-skin.photo.attach(io: file, filename: "RyanAbs.png", content_type: "image/jpeg")
-skin.save!
-puts "#{skin.name} created"
-
-file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Superman_hett66.png")
-skin2 = Skin.new(name: "Superman", description: "Superman, c'est le plus fort", price: 120)
-skin2.photo.attach(io: file2, filename: "Superman.png", content_type: "image/jpeg")
-skin2.save!
-puts "#{skin2.name} created"
-
-file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
-skin3 = Skin.new(name: "Goku", description: "Goku, c'est le plus vener", price: 100)
-skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
-skin3.save!
-puts "#{skin3.name} created"
-
-
-file6 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Deadpool_vug6im.png")
-skin6 = Skin.new(name: "Deadpool", description: "Deadpool, c'est le plus rigolo", price: 90)
-skin6.photo.attach(io: file6, filename: "deadpool.png", content_type: "image/jpeg")
-skin6.save!
-puts "#{skin6.name} created"
-
-file5 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
-skin5 = Skin.new(name: "Loki", description: "Loki, c'est le plus fourbe", price: 70)
-skin5.photo.attach(io: file5, filename: "loki.png", content_type: "image/jpeg")
-skin5.save!
-puts "#{skin5.name} created"
-
-file4 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Jon_Snow_kgfjbp.png")
-skin4 = Skin.new(name: "Jon Snow", description: "Jon, c'est celui qui know nothing", price: 10)
-skin4.photo.attach(io: file4, filename: "JonSnow.png", content_type: "image/jpeg")
-skin4.save!
-puts "#{skin4.name} created"
-
-#file8 = URI.open("0")
-#skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, c'est celle qui a le plus beau sceptre", price: 70)
-#skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
-#skin8.save!
-#puts "#{skin8.name} created"
-
-# file7 = URI.open("0")
-# skin7 = Skin.new(name: "Mikasa", description: "Mikasa, c'est la plus dangereuse", price: 150)
-# skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg")
-# skin7.save!
-# puts "#{skin7.name} created"
-
-# file10 = URI.open("0")
-# skin10 = Skin.new(name: "Spider Gwen", description: "Spider Gwen, c'est la plus agile", price: 50)
-# skin10.photo.attach(io: file10, filename: "spider_gwen.png", content_type: "image/jpeg")
-# skin10.save!
-# puts "#{skin10.name} created"
-
-#file9 = URI.open("0")
-#skin9 = Skin.new(name: "Captain Marvel", description: "Captain, c'est la plus forte", price: 80)
-#skin9.photo.attach(io: file9, filename: "captain_marvel.png", content_type: "image/jpeg")
-#skin9.save!
-#puts "#{skin9.name} created"
-
-#file11 = URI.open("0")
-#skin11 = Skin.new(name: "Saitama", description: "Saitama, c'est pas le plus intelligent", price: 40)
-#skin11.photo.attach(io: file11, filename: "saitama.png", content_type: "image/jpeg")
-#skin11.save!
-#puts "#{skin11.name} created"
-
-#file12 = URI.open("0")
-#skin12 = Skin.new(name: "Wonder Woman", description: "Wonder Woman, c'est une machine", price: 100)
-#skin12.photo.attach(io: file12, filename: "wonder_woman.png", content_type: "image/jpeg")
-#skin12.save!
-#puts "#{skin12.name} created"
-
-# ----------------- CREATING USER-SKINS -----------------
-
-# puts 'Creating one default skin to user...'
-# UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
-# puts UserSkin.count.to_s
-# puts 'UserSkin done!'
+puts '----------------------------------------------------'
 
 # ----------------- CREATING CATEGORIES -----------------
 
 puts 'Creation category-database...'
 sport = Category.create!(name: "Sport", description: "Do you want some endorphin? This category is for you")
+sport_skills = [force, endu, cardio, souplesse, vitesse, agilite]
 puts "#{sport.name} done"
 cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies?, this category is for you")
+cinema_skills = [reflexion, culture, savoir, creativite, social]
 puts "#{cinema.name} done"
 puts "Category-database done!"
+puts '----------------------------------------------------'
 
 # ----------------- CREATING QUESTS AND GOALS -----------------
 
@@ -197,11 +209,20 @@ def create_goal(quest, threshold)
   end
 end
 
-def create_quest(name, description, category, niveau)
+def create_quest_skill(quest, category_skills)
+  # binding.b
+  category_skills_sample = category_skills.sample(3)
+  category_skills_sample.each do |skill|
+    QuestSkill.create(quest_id: quest.id, skill_id: skill.id)
+  end
+end
+
+def create_quest(name, description, category, niveau, category_skills)
   rank = 1
   reward = 100
   while rank <= niveau
     quest = Quest.create!(name: name, rank: rank, description: description, category: category, reward: reward)
+    create_quest_skill(quest, category_skills)
     create_goal(quest, rank)
     reward *= niveau
     rank += 1
@@ -210,17 +231,18 @@ end
 
 puts 'Creation Quest-database & Goal-database...'
 
-create_quest("push-up", pushup_description, sport, 3)
-create_quest("running", running_description, sport, 5)
-create_quest("Japanese movies", japanese_description, cinema, 4)
+create_quest("Push-up", pushup_description, sport, 3, sport_skills)
+create_quest("Running", running_description, sport, 5, sport_skills)
+create_quest("Japanese movies", japanese_description, cinema, 4, cinema_skills)
 puts Quest.count.to_s
 puts Goal.count.to_s
+puts QuestSkill.count.to_s
+puts 'UserSkin done!'
 puts 'Quests-database and Goal-database done!'
+puts '----------------------------------------------------'
 
 
-# puts 'Creating skills to quests...'
-# QuestSkill.create(quest_id: quest.id, skill_id: force.id)
-# puts GoalSkill.count.to_s
-# puts 'UserSkin done!'
+
+
 
 puts "SEED DONE"

@@ -64,7 +64,7 @@
   <%= link_to skills_path do %>
     <div class="card-border-yellow">
       <h2>SKILLS</h2>
-        <div class="bar-chart" data-controller="chart-js" data-chart-js-skills-value="<%= @skills.to_json %>" data-chartpage-user-skills-value="<%= @user_skills.to_json %>">
+        <div class="bar-chart" data-controller="chart-js" data-chart-js-skills-value="<%= @skills.to_json %>" data-chart-js-user-skills-value="<%= @user_skills.to_json %>">
           <canvas width="800px" height="280px" data-chart-js-target="myChart"></canvas>
         </div>
     </div>
