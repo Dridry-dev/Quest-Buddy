@@ -23,7 +23,7 @@
 
   <div class="card-graph">
     <div class="chart-donut">
-      <div class="radar-chart" data-controller="chartpage" data-chartpage-skills-value="<%= @skills.to_json %>">
+      <div class="radar-chart" data-controller="chartpage" data-chartpage-skills-value="<%= @skills.to_json %>" data-chartpage-user-skills-value="<%= @user_skills.to_json %>">
         <canvas width="850px" height="550px" data-chartpage-target="myChartDeux"></canvas>
       </div>
     </div>

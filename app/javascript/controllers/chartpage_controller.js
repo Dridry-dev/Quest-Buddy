@@ -5,15 +5,15 @@ import Chart from 'chart.js/auto';
 // Connects to data-controller="chartpage"
 export default class extends Controller {
   static targets = ["myChartDeux"]
-  static values =  {skills: Array}
+  static values =  {skills: Array, userSkills: Array}
   connect(){
     console.log(this.skillsValue);
     const labels = this.skillsValue.map(skill => {
       return skill.name
     });
     console.log(labels);
-    const bob = this.skillsValue.map(skill => {
-      return skill.level
+    const bob = this.userSkillsValue.map(userSkill => {
+      return userSkill.level
     });
     console.log(bob);
     const ctx = this.myChartDeuxTarget;
@@ -42,7 +42,13 @@ export default class extends Controller {
         line: {
           borderWidth: 3
         }
-      }
+      },
+      scales: {
+        r: {
+            suggestedMin: 1,
+            suggestedMax: 100,
+        }
+    }
     },
   };
 

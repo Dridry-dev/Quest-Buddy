@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit]
   def show
     @quest = Quest.new
+    @user_skills = UserSkill.all
     @skills = Skill.all
     @skins = Skin.all
   end
