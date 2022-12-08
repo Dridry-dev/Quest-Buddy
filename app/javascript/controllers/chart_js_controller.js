@@ -7,7 +7,7 @@ export default class extends Controller {
   static targets = ["myChart"]
   static values =  {skills: Array, userSkills: Array}
   connect() {
-    console.log(this.skillsValue);
+    console.log(this.userSkillsValue);
     const labels = this.skillsValue.map(skill => {
       return skill.name
     });

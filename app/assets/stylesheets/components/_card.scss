@@ -1,5 +1,5 @@
 .card {
-  display: block;
+  display: flex;
   background: #323232;
   border: 3px solid black;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
@@ -7,6 +7,10 @@
   height: 165px;
   width: 340px;
   text-align: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
   background-color: #323232;
   color: #E8EDDF;
   padding-left: 20px;
@@ -43,7 +47,7 @@
   width: 340px;
   height: 380px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -69,10 +73,14 @@
 }
 
 .shop-element{
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: justify;
+  text-align: center;
 }
 
 .semi-card {
@@ -275,4 +283,35 @@ align-items: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.card-quest-category {
+  display: flex;
+  background: #323232;
+  border: 3px solid black;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  height: 165px;
+  width: 340px;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #323232;
+  color: #E8EDDF;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.categories-titles-quest {
+  text-decoration: none;
+  color: #CFDBD5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 320px;
 }
