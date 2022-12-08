@@ -29,6 +29,37 @@
   display: block;
 }
 
+#dropdown-toggled-deux {
+  height: 150px;
+  width: 280px;
+  background-color: #E8EDDF;
+  border-radius: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+#dropdown-toggled-deux.active {
+  display: block;
+}
+
+#dropdown-toggled-trois {
+  height: 150px;
+  width: 280px;
+  background-color: #E8EDDF;
+  border-radius: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+#dropdown-toggled-trois.active {
+  display: block;
+}
+
+
 
 .cellules-skills-drop {
   background: #F5CB5C;

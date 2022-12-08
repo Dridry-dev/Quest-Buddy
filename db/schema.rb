@@ -49,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_135128) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "goal_skills", force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "goal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_goal_skills_on_goal_id"
+    t.index ["skill_id"], name: "index_goal_skills_on_skill_id"
+  end
+
   create_table "goals", force: :cascade do |t|
     t.bigint "quest_id", null: false
     t.integer "score"
@@ -149,6 +158,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_135128) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "goal_skills", "goals"
+  add_foreign_key "goal_skills", "skills"
   add_foreign_key "goals", "quests"
   add_foreign_key "quest_skills", "quests"
   add_foreign_key "quest_skills", "skills"
