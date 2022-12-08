@@ -168,10 +168,10 @@ puts "#{skin4.name} created"
 
 # ----------------- CREATING USER-SKINS -----------------
 
-puts 'Creating one default skin to user...'
-UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
-puts UserSkin.count.to_s
-puts 'UserSkin done!'
+# puts 'Creating one default skin to user...'
+# UserSkin.create(user_id: user.id, skin_id: skin4.id, selected: true)
+# puts UserSkin.count.to_s
+# puts 'UserSkin done!'
 
 # ----------------- CREATING CATEGORIES -----------------
 
