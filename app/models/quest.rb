@@ -1,6 +1,7 @@
 class Quest < ApplicationRecord
   belongs_to :category
-  has_many :user_quests
+  has_many :quest_skills, dependent: :destroy
+  has_many :user_quests, dependent: :destroy
   has_many :users, through: :user_quests
   has_many :goals, dependent: :destroy
   has_many :skills, through: :quest_skills

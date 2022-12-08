@@ -12,54 +12,52 @@
 <%# ----------------- CARD QUEST ----------------- %>
 
   <div class="card-quest">
-
     <div class="grid-cellules-quest">
-
       <h4>Skills needed for <%= @quest.name %></h4>
       <div class="container-cellules-quests">
-        <div class="cellules-skills">
-          <p>Force</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Endu</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Cardio</p>
-        </div>
+        <%  @quest.skills.each do |skill| %>
+          <div class="cellules-skills">
+            <p> <%= skill.name %></p>
+          </div>
+        <% end %>
       </div>
 
-      <h4>Progress</h4>
-      <div class="container-cellules-quests">
-        <div class="progress">
-          <div class="progress-value">
-            <div class="dot-spacer">
-              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
-              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
-              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+    <h4>Progress</h4>
+    <div class="container-cellules-quests">
+      <div class="progress">
+        <div class="progress-value">
+          <div class="dot-spacer">
+            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+            </div>
+            <div class="step-dot">
+            </div>
+            <div class="step-dot">
             </div>
           </div>
         </div>
-          <div id="dropdown-toggled" data-dropdown-target="dropdownFirst">
-            <div class="cellules-skills-drop-positionner">
-              <p class="cellules-skills-drop-golds">+40 golds</p>
-              <p class="cellules-skills-drop">+5 Strenght</p>
-              <p class="cellules-skills-drop">+3 Stamina</p>
-              <p class="cellules-skills-drop">+1 Cardio</p>
-            </div>
-          </div>
       </div>
-
-      <h4>Rewards</h4>
-      <div class="container-cellules-quests">
-        <div class="cellules-skills-coin">
-          <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= @quest.reward %></p>
+      <div id="dropdown-toggled" data-dropdown-target="dropdownFirst">
+        <div class="cellules-skills-drop-positionner">
+          <p class="cellules-skills-drop-golds">+40 golds</p>
+          <p class="cellules-skills-drop">+5 Strenght</p>
+          <p class="cellules-skills-drop">+3 Stamina</p>
+          <p class="cellules-skills-drop">+1 Cardio</p>
         </div>
       </div>
+    </div>
 
-        <h4>Description</h4>
-      <div class="container-cellules-quests">
-        <p><%= @quest.description  %></p>
+    <h4>Rewards</h4>
+    <div class="container-cellules-quests">
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= @quest.reward %></p>
       </div>
+    </div>
+
+    <h4>Description</h4>
+    <div class="container-cellules-quests">
+      <p><%= @quest.description  %></p>
     </div>
   </div>
 

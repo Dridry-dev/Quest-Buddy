@@ -55,15 +55,11 @@
     <div>
       <h3>You've also won 1 point in those skills :</h3>
       <div class="container-cellules-quests">
-        <div class="cellules-skills">
-          <p>Force</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Endu</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Cardio</p>
-        </div>
+        <%  @quest.skills.each do |skill| %>
+          <div class="cellules-skills">
+            <p> <%= skill.name %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
