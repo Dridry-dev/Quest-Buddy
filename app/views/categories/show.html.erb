@@ -15,13 +15,23 @@
       <% if quest.rank == current_user.rank_for(quest) %>
         <%= link_to category_quest_path(@category, quest) do %>
           <div class="card-quest-category">
-            <div class="categories-titles-quest">
-              <h2 class="title-quests-font">
-                <%= quest.name %>
-                <%= quest.rank %>
-                <%= current_user.rank_for(quest) %>
-
-              </h2>
+            <div class="categories-titles-category">
+              <div class="grid-cellules-quest">
+                <h2 class="title-quests-font"><%= quest.name %></h2>
+              </div>
+              <div class="grid-cellules-quest">
+                <h6>Skills needed for <%= quest.name %></h6>
+                <div class="container-cellules-quests">
+                  <%  quest.skills.each do |skill| %>
+                    <div class="cellules-skills">
+                      <p> <%= skill.name %></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="grid-cellules-quest">
+                <h6>Your curent rank : <%= current_user.rank_for(quest) %></h6>
+              </div>
             </div>
           </div>
         <% end %>

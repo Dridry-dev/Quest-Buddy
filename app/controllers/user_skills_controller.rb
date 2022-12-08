@@ -5,7 +5,7 @@ class UserSkillsController < ApplicationController
 
     @skills = @quest.skills
     @skills.each do |skill|
-      user_skill = current_user.user_skills.find(skill.id)
+      user_skill = current_user.user_skills.find_by(skill: skill)
       user_skill.level += 1
       user_skill.save
     end

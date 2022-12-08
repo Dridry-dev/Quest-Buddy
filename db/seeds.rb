@@ -1,5 +1,6 @@
 require "open-uri"
 # require 'debug'
+# binding.break
 
 # ----------------- CLEANING SEED -----------------
 
@@ -238,13 +239,11 @@ def create_goal(quest, threshold)
   score = 100
   multipicator = [1, 2, 5]
   3.times do |index|
-    # binding.b
     Goal.create!(score: score * multipicator[index], threshold: threshold * multipicator[index], quest: quest)
   end
 end
 
 def create_quest_skill(quest, category_skills)
-  # binding.b
   category_skills_sample = category_skills.sample(3)
   category_skills_sample.each do |skill|
     QuestSkill.create(quest_id: quest.id, skill_id: skill.id)
