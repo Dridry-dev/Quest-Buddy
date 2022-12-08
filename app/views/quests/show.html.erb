@@ -27,22 +27,33 @@
       <div class="progress">
         <div class="progress-value">
           <div class="dot-spacer">
-            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
-            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggletrois"></div>
+            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggledeux"></div>
             <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
           </div>
         </div>
       </div>
     </div>
-      <div id="dropdown-toggled" data-dropdown-target="dropdownFirst">
-        <div class="cellules-skills-drop-positionner">
-          <p class="cellules-skills-drop-golds">+40 golds</p>
-          <p class="cellules-skills-drop">+5 Strenght</p>
-          <p class="cellules-skills-drop">+3 Stamina</p>
-          <p class="cellules-skills-drop">+1 Cardio</p>
-        </div>
+    <div id="dropdown-toggled" data-dropdown-target="dropdownUn">
+      <div class="cellules-skills-drop-positionner">
+        <p class="cellules-skills-drop-golds">+40 golds</p>
+        <p class="cellules-skills-drop">+5 Strenght</p>
+        <p class="cellules-skills-drop">+3 Stamina</p>
+        <p class="cellules-skills-drop">+1 Cardio</p>
       </div>
     </div>
+    <div id="dropdown-toggled-deux" data-dropdown-target="dropdowndeux">
+      <div class="cellules-skills-drop-positionner">
+        <p class="cellules-skills-drop-golds">+20 golds</p>
+        <p class="cellules-skills-drop">+5 Strenght</p>
+      </div>
+    </div>
+    <div id="dropdown-toggled-trois" data-dropdown-target="dropdowntrois">
+      <div class="cellules-skills-drop-positionner">
+        <p class="cellules-skills-drop-golds">+10 golds</p>
+      </div>
+    </div>
+  </div>
 
     <h4>Rewards</h4>
     <div class="container-cellules-quests">
@@ -50,7 +61,6 @@
         <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= @quest.reward %></p>
       </div>
     </div>
-
     <h4>Description</h4>
     <div class="container-cellules-quests">
       <p><%= @quest.description  %></p>
