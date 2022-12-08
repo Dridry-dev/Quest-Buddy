@@ -55,7 +55,7 @@
   <%= link_to  "STOP", category_quest_user_quest_path(@category, @quest, @quest.user_quests.last), class:"yellow-large-btn"%>
   <div class="card-action-progress">
     <p class="font-bold-large">PROGRESS</p>
-    <% <h2> Your threshold: <%= @last_goal.threshold %> </h2>
+    <h2> Your threshold: <%= @last_goal.threshold %> </h2>
     <%= render "progress_bar_2" %>
   </div>
 </div>
