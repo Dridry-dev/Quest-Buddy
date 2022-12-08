@@ -12,8 +12,8 @@
     <div class="cellules-skills-coin navbar-element">
       <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= current_user.gold %></p>
     </div>
-    <%= link_to skin_path(current_user.show_selected_skin) do %>
-      <div class="navbar-element">
+    <div class="navbar-element">
+      <% if current_user.show_selected_skin.nil? %>
           <div class="cat-cont-smol">
             <div class="cat-smol">
               <div class="ear ear--left"></div>
@@ -28,7 +28,11 @@
                 <div class="muzzle"></div>
               </div>
             </div>
-            </div>
-      </div>
-    <% end %>
+          </div>
+        <% else %>
+          <%= link_to skin_path(current_user.show_selected_skin) do %>
+            <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
+          <% end %>
+      <% end %>
+    </div>
   </div>
