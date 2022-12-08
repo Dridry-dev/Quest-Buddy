@@ -20,4 +20,26 @@ export default class extends Controller {
       console.log("bbb");
     }
   }
+
+  toggledeux() {
+    let test = document.getElementById('dropdown-toggled-deux')
+    console.log(test.classList);
+    if (test.classList.contains("active")) {
+      test.classList.remove("active")
+
+    } else {
+      test.classList.add("active")
+    }
+  }
+
+  toggletrois() {
+    let test = document.getElementById('dropdown-toggled-trois')
+    console.log(test.classList);
+    if (test.classList.contains("active")) {
+      test.classList.remove("active")
+
+    } else {
+      test.classList.add("active")
+    }
+  }
 }
