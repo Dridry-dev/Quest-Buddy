@@ -24,27 +24,9 @@
       </div>
     </div>
     <div>
-      <% if current_user.show_selected_skin.nil? %>
-        <div class="cat-cont-smol">
-          <div class="cat-smol">
-            <div class="ear ear--left"></div>
-            <div class="ear ear--right"></div>
-            <div class="face">
-              <div class="eye eye--left">
-                <div class="eye-pupil"></div>
-              </div>
-              <div class="eye eye--right">
-                <div class="eye-pupil"></div>
-              </div>
-              <div class="muzzle"></div>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <%= link_to skin_path(current_user.show_selected_skin) do %>
-          <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
-        <% end %>
-    <% end %>
+      <div class="cellules-skills-coin">
+        <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
+      </div>
     </div>
     <div class="trophy side-nav-btn">
       <i class="fa-solid fa-trophy"></i>
@@ -54,9 +36,7 @@
 <%# ----------------- GOLD CARD ----------------- %>
 
   <%#= link_to shop_path do %>
-    <div class="cellules-skills-coin">
-      <i class="fa-solid fa-coins"></i><p class="coin-count"><%= current_user.gold %></p>
-    </div>
+
   <%# end %>
 
   <%# ----------------- SKILLS CARD ----------------- %>

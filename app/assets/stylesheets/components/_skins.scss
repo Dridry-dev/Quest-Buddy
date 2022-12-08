@@ -109,7 +109,7 @@ $size-avatar: 50px; // (Fully responsive)
 		width: 100%;
 		border-radius: 0 0 50% 50% / 0 0 40% 40%;
 		background: $color-black;
-		animation: blink 4s infinite ease-in;
+		animation: blink 7s infinite ease-in;
 	}
 
 	@keyframes blink {
@@ -157,7 +157,7 @@ $size-avatar: 50px; // (Fully responsive)
 	width: 20%;
 	background: $color-black;
 	border-radius: 50%;
-	animation: look-around 4s infinite;
+	animation: look-around 7s infinite;
 
 	@keyframes look-around {
 		0% { transform: translate(0) }
