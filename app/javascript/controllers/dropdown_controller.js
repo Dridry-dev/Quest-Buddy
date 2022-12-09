@@ -10,36 +10,44 @@ export default class extends Controller {
   }
   toggle() {
     let test = document.getElementById('dropdown-toggled')
-    console.log(test.classList);
+    let test2 = document.getElementById('dropdown-toggled-deux')
+    let test3 = document.getElementById('dropdown-toggled-trois')
     if (test.classList.contains("active")) {
       test.classList.remove("active")
-      console.log("aaa");
-
     } else {
       test.classList.add("active")
-      console.log("bbb");
+      test2.classList.remove("active")
+      test3.classList.remove("active")
     }
   }
 
   toggledeux() {
     let test = document.getElementById('dropdown-toggled-deux')
+    let test2 = document.getElementById('dropdown-toggled')
+    let test3 = document.getElementById('dropdown-toggled-trois')
     console.log(test.classList);
     if (test.classList.contains("active")) {
       test.classList.remove("active")
 
     } else {
       test.classList.add("active")
+      test2.classList.remove("active")
+      test3.classList.remove("active")
     }
   }
 
   toggletrois() {
     let test = document.getElementById('dropdown-toggled-trois')
+    let test2 = document.getElementById('dropdown-toggled')
+    let test3 = document.getElementById('dropdown-toggled-deux')
     console.log(test.classList);
     if (test.classList.contains("active")) {
       test.classList.remove("active")
 
     } else {
       test.classList.add("active")
+      test2.classList.remove("active")
+      test3.classList.remove("active")
     }
   }
 }

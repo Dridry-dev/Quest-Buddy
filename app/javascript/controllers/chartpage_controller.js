@@ -27,8 +27,8 @@ export default class extends Controller {
         fill: true,
         backgroundColor: 'rgba(245, 203, 92, 0.2)',
         borderColor: 'rgb(245, 203, 92)',
-      pointBackgroundColor: 'rgb(245, 203, 92)',
-      pointBorderColor: '#fff',
+      pointBackgroundColor: '#000',
+      pointBorderColor: 'rgb(245, 203, 92)',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(207, 207, 207, 0.8)'
     },]

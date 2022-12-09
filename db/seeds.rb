@@ -163,7 +163,7 @@ user_spiritualite = UserSkill.create(user_id: user.id, skill_id: spiritualite.id
 puts "#{user.name} spiritualite is level #{user_spiritualite.level}"
 user_creativite = UserSkill.create(user_id: user.id, skill_id: creativite.id, level: 64)
 puts "#{user.name} creativite is level #{user_creativite.level}"
-user_social = UserSkill.create(user_id: user.id, skill_id: social.id, level: 3)
+user_social = UserSkill.create(user_id: user.id, skill_id: social.id, level: 13)
 puts "#{user.name} social is level #{user_social.level}"
 user_culture = UserSkill.create(user_id: user.id, skill_id: culture.id, level: 44)
 puts "#{user.name} culture is level #{user_culture.level}"
@@ -189,12 +189,15 @@ puts "#{social.name} done"
 theatre = Category.create!(name: "Theatre", description: "Do you want know how to act? This category is for you")
 theatre_skills = [culture, intelligence, savoir, social, creativite]
 puts "#{theatre.name} done"
-literature = Category.create!(name: "Literature", description: "Do you want to travel the word? This category is for you")
-literature_skills = [culture, intelligence, savoir, reflexion, creativite]
-puts "#{literature.name} done"
+gaming = Category.create!(name: "Gaming", description: "Do you want to learn how to try hard? This category is for you")
+gaming_skills = [culture, spiritualite, savoir, logique]
+puts "#{gaming.name} done"
 science = Category.create!(name: "Science", description: "Do you want to work your brain out? This category is for you")
 science_skills = [culture, intelligence, savoir, creativite, logique]
 puts "#{science.name} done"
+literature = Category.create!(name: "Literature", description: "Do you want to travel the word? This category is for you")
+literature_skills = [culture, intelligence, savoir, reflexion, creativite]
+puts "#{literature.name} done"
 
 puts "Category-database done!"
 puts '----------------------------------------------------'
@@ -222,6 +225,9 @@ drama_theatre_description = "Watch this drama plays and test your skills whith Q
 meeting_description = "Watch those tutorials and test them at your next party."
 talking_description = "Watch those tutorials and test them at your next party."
 good_manners_description = "Watch those tutorials and test them at your next party."
+elden_ring_description = "Play this game to learn how to cry."
+candy_crush_description = "Play this game to learn how to cry too."
+god_of_war_description = "Play this game to learn how to cry but not for the same reason."
 
 def create_goal(quest, threshold)
   score = 100
@@ -273,6 +279,9 @@ create_quest("Drama", drama_theatre_description, theatre, 4, theatre_skills)
 create_quest("Meeting", meeting_description, social, 3, social_skills)
 create_quest("Talking", talking_description, social, 5, social_skills)
 create_quest("Good manners", good_manners_description, social, 4, social_skills)
+create_quest("Elden ring", elden_ring_description, gaming, 4, gaming_skills)
+create_quest("Candy crush", candy_crush_description, gaming, 6, gaming_skills)
+create_quest("God of war", god_of_war_description, gaming, 3, gaming_skills)
 puts Quest.count.to_s
 puts Goal.count.to_s
 puts QuestSkill.count.to_s
