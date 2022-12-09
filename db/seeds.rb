@@ -38,7 +38,7 @@ skin1.save!
 puts "#{skin1.name} created"
 
 file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/captain_marvel_yh9beh.png")
-skin2 = Skin.new(name: "Captain Marvel", description: "She could have handle Thanos all by herself", price: 800)
+skin2 = Skin.new(name: "Cap Marvel", description: "She could have handle Thanos all by herself", price: 800)
 skin2.photo.attach(io: file2, filename: "captain_marvel.png", content_type: "image/jpeg")
 skin2.save!
 puts "#{skin2.name} created"
@@ -73,24 +73,17 @@ skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg"
 skin7.save!
 puts "#{skin7.name} created"
 
-file8 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/sailor_ps3rqp.png")
-skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, the one and only!", price: 250)
-skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
-skin8.save!
-puts "#{skin8.name} created"
-
-file9 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Deadpool_vug6im.png")
-skin9 = Skin.new(name: "Deadpool", description: "Hi there, Nice to meet you, I'm Deadpool", price: 250)
-skin9.photo.attach(io: file9, filename: "deadpool.png", content_type: "image/jpeg")
-skin9.save!
-puts "#{skin9.name} created"
-
-
 file10 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670245700/Ryan-removebg-preview_kvkyb6.png")
-skin10 = Skin.new(name: "Ryan's Abs", description: "Did you ask for some abs ?", price: 200)
+skin10 = Skin.new(name: "Ryan's Abs", description: "Did you ask for some abs ?", price: 250)
 skin10.photo.attach(io: file10, filename: "RyanAbs.png", content_type: "image/jpeg")
 skin10.save!
 puts "#{skin10.name} created"
+
+file8 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/sailor_ps3rqp.png")
+skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, the one and only!", price: 200)
+skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
+skin8.save!
+puts "#{skin8.name} created"
 
 file11 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
 skin11 = Skin.new(name: "Loki", description: '"Loki, cool guy but never trust him!" - Thor', price: 200)
@@ -98,11 +91,6 @@ skin11.photo.attach(io: file11, filename: "loki.png", content_type: "image/jpeg"
 skin11.save!
 puts "#{skin11.name} created"
 
-file = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Jon_Snow_kgfjbp.png")
-skin = Skin.new(name: "Jon Snow", description: "Jon Snow, definitly knows nothing. SPOILER : He's a Targariyen", price: 10)
-skin.photo.attach(io: file, filename: "JonSnow.png", content_type: "image/jpeg")
-skin.save!
-puts "#{skin.name} created"
 puts "#{Skin.count} skins created"
 puts '----------------------------------------------------'
 
@@ -151,31 +139,31 @@ puts '----------------------------------------------------'
 # ----------------- CREATING USER-SKILLS -----------------
 
 puts 'Creating User-Skills...'
-user_force = UserSkill.create(user_id: user.id, skill_id: force.id, level: 40)
+user_force = UserSkill.create(user_id: user.id, skill_id: force.id, level: 28)
 puts "#{user.name} Force is level #{user_force.level}"
-user_endu = UserSkill.create(user_id: user.id, skill_id: endu.id, level: 42)
+user_endu = UserSkill.create(user_id: user.id, skill_id: endu.id, level: 30)
 puts "#{user.name} endu is level #{user_endu.level}"
-user_cardio = UserSkill.create(user_id: user.id, skill_id: cardio.id, level: 50)
+user_cardio = UserSkill.create(user_id: user.id, skill_id: cardio.id, level: 60)
 puts "#{user.name} cardio is level #{user_cardio.level}"
-user_agilite = UserSkill.create(user_id: user.id, skill_id: agilite.id, level: 52)
+user_agilite = UserSkill.create(user_id: user.id, skill_id: agilite.id, level: 33)
 puts "#{user.name} agilite is level #{user_agilite.level}"
 user_vitesse = UserSkill.create(user_id: user.id, skill_id: vitesse.id, level: 55)
 puts "#{user.name} vitesse is level #{user_vitesse.level}"
-user_souplesse = UserSkill.create(user_id: user.id, skill_id: souplesse.id, level: 50)
+user_souplesse = UserSkill.create(user_id: user.id, skill_id: souplesse.id, level: 42)
 puts "#{user.name} souplesse is level #{user_souplesse.level}"
-user_intelligence = UserSkill.create(user_id: user.id, skill_id: intelligence.id, level: 29)
+user_intelligence = UserSkill.create(user_id: user.id, skill_id: intelligence.id, level: 79)
 puts "#{user.name} intelligence is level #{user_intelligence.level}"
-user_logique = UserSkill.create(user_id: user.id, skill_id: logique.id, level: 27)
+user_logique = UserSkill.create(user_id: user.id, skill_id: logique.id, level: 84)
 puts "#{user.name} logique is level #{user_logique.level}"
-user_reflexion = UserSkill.create(user_id: user.id, skill_id: reflexion.id, level: 30)
+user_reflexion = UserSkill.create(user_id: user.id, skill_id: reflexion.id, level: 67)
 puts "#{user.name} reflexion is level #{user_reflexion.level}"
 user_savoir = UserSkill.create(user_id: user.id, skill_id: savoir.id, level: 50)
 puts "#{user.name} savoir is level #{user_savoir.level}"
-user_spiritualite = UserSkill.create(user_id: user.id, skill_id: spiritualite.id, level: 50)
+user_spiritualite = UserSkill.create(user_id: user.id, skill_id: spiritualite.id, level: 34)
 puts "#{user.name} spiritualite is level #{user_spiritualite.level}"
-user_creativite = UserSkill.create(user_id: user.id, skill_id: creativite.id, level: 50)
+user_creativite = UserSkill.create(user_id: user.id, skill_id: creativite.id, level: 64)
 puts "#{user.name} creativite is level #{user_creativite.level}"
-user_social = UserSkill.create(user_id: user.id, skill_id: social.id, level: 58)
+user_social = UserSkill.create(user_id: user.id, skill_id: social.id, level: 3)
 puts "#{user.name} social is level #{user_social.level}"
 user_culture = UserSkill.create(user_id: user.id, skill_id: culture.id, level: 44)
 puts "#{user.name} culture is level #{user_culture.level}"
@@ -189,12 +177,9 @@ puts 'Creation category-database...'
 sport = Category.create!(name: "Sport", description: "Do you want some endorphin? This category is for you")
 sport_skills = [force, endu, cardio, souplesse, vitesse, agilite]
 puts "#{sport.name} done"
-cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies?, this category is for you")
+cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies? This category is for you")
 cinema_skills = [reflexion, culture, savoir, creativite, social]
 puts "#{cinema.name} done"
-literature = Category.create!(name: "Literature", description: "Do you want to understand the word? This category is for you")
-literature_skills = [culture, intelligence, savoir, reflexion, creativite]
-puts "#{literature.name} done"
 music = Category.create!(name: "Music", description: "Do you want enjoy the word? This category is for you")
 music_skills = [culture, intelligence, savoir, social, creativite, logique]
 puts "#{music.name} done"
@@ -204,7 +189,10 @@ puts "#{social.name} done"
 theatre = Category.create!(name: "Theatre", description: "Do you want know how to act? This category is for you")
 theatre_skills = [culture, intelligence, savoir, social, creativite]
 puts "#{theatre.name} done"
-science = Category.create!(name: "Science", description: "Do you want to do 2+2? This category is for you")
+literature = Category.create!(name: "Literature", description: "Do you want to travel the word? This category is for you")
+literature_skills = [culture, intelligence, savoir, reflexion, creativite]
+puts "#{literature.name} done"
+science = Category.create!(name: "Science", description: "Do you want to work your brain out? This category is for you")
 science_skills = [culture, intelligence, savoir, creativite, logique]
 puts "#{science.name} done"
 
@@ -213,7 +201,7 @@ puts '----------------------------------------------------'
 
 # ----------------- CREATING QUESTS AND GOALS -----------------
 
-pushup_description = "To do a push-up, get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
+pushup_description = "TO DO A PUSH-UP, TOUCH THE SCREEN WITH YOUR NOSE. Get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
 running_description = "To run, you just need to run while focusing on your breathing."
 japanese_description = "Watch a lot of japanese movies and test your skills whith Quizzes."
 indian_description = "Watch a lot of indian movies and test your skills whith Quizzes."
@@ -221,7 +209,7 @@ french_description = "Watch a lot of french movies and test your skills whith Qu
 abs_description = "6 pack, 12 pack, 18 pack. As much as you want."
 italian_literature_description = "Read a lot of italian books and test your skills whith Quizzes."
 french_literature_description = "Read a lot of french books and test your skills whith Quizzes."
-portuguese_literature_description = "Read a lot of portuguese books and test your skills whith Quizzes."
+classic_literature_description = "Read a lot of Classic books and test your skills whith Quizzes."
 arithmetic_description = "complete thoses exercises to be better than your child"
 quick_calculation_description = "complete thoses exercises to be better than a calculator"
 biology_description = "Read thoses books and test your skills whith Quizzes."
@@ -272,7 +260,7 @@ create_quest("Indian movies", indian_description, cinema, 4, cinema_skills)
 create_quest("French movies", french_description, cinema, 4, cinema_skills)
 create_quest("Italian literature", italian_literature_description, literature, 4, literature_skills)
 create_quest("French literature", french_literature_description, literature, 4, literature_skills)
-create_quest("Portuguese literature", portuguese_literature_description, literature, 4, literature_skills)
+create_quest("Classic literature", classic_literature_description, literature, 4, literature_skills)
 create_quest("Arithmetic", arithmetic_description, science, 4, science_skills)
 create_quest("Quick calculation", quick_calculation_description, science, 5, science_skills)
 create_quest("Biology", biology_description, science, 6, science_skills)
