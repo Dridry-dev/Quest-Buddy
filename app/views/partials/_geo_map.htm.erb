@@ -1,0 +1,18 @@
+<div class="small-container" data-controller="quest-counter"
+    data-quest-counter-category-value = <%= @category.id %>
+    data-quest-counter-quest-value = <%= @quest.id %>
+    data-quest-counter-userquest-value = <%= @user_quest.id %>
+    data-quest-counter-threshold-value = <%= @goal.threshold %>
+    data-quest-counter-lastgoal-value = <%= @last_goal.threshold %>>
+  <div class="card-grey-action" data-action="click->quest-counter#clicked">
+    <div class="geomap counter" data-quest-counter-target = "div">
+      GEOMAP
+    </div>
+  </div>
+  <%= link_to  "STOP", user_quest_path(@quest.user_quests.last), class:"yellow-large-btn"%>
+  <div class="card-action-progress">
+    <p class="font-bold-large">PROGRESS</p>
+    <h2> Your threshold: <%= @last_goal.threshold %> </h2>
+    <%= render "progress_bar_2" %>
+  </div>
+</div>

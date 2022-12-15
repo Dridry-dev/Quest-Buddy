@@ -1,3 +1,4 @@
+require 'uri'
 class UserGoalsController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
