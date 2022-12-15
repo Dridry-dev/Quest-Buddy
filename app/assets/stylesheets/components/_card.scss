@@ -129,11 +129,12 @@
   background: #E8EDDF;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   border-radius: 8px;
-  height: 144px;
+  height: 148px;
   width: 340px;
   background-color: #E8EDDF;;
   color: #323232;
-  padding-top: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -150,7 +151,7 @@
 }
 
 .lower-card-grey h6{
-  margin-top: -6px;
+  margin-top: -10px;
 }
 
 .card-changing-room {
@@ -334,6 +335,36 @@
 }
 
 .card-grey-action:active {
-background-color: #F5CB5C;
-color: #E8EDDF;
+  background-color: #F5CB5C;
+  color: #E8EDDF;
+}
+
+.card-login {
+  width: 340px;
+  height: 450px;
+  background: #323232;
+  background-color: #323232;
+  color: #E8EDDF;
+  border: 3px solid #F5CB5C;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  padding: 8px 16px 0 16px;
+  text-align: center;
+  display: block;
+  overflow: auto;
+}
+
+.card-sign-in {
+  width: 340px;
+  height: 596px;
+  background: #323232;
+  background-color: #323232;
+  color: #E8EDDF;
+  border: 3px solid #F5CB5C;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  padding: 8px 16px 0 16px;
+  text-align: center;
+  display: block;
+  overflow: auto;
 }

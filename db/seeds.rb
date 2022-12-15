@@ -175,59 +175,26 @@ puts '----------------------------------------------------'
 
 puts 'Creation category-database...'
 sport = Category.create!(name: "Sport", description: "Do you want some endorphin? This category is for you")
-sport_skills = [force, endu, cardio, souplesse, vitesse, agilite]
 puts "#{sport.name} done"
 cinema = Category.create!(name: "Cinema", description: "Do you want to know all the best movies? This category is for you")
-cinema_skills = [reflexion, culture, savoir, creativite, social]
 puts "#{cinema.name} done"
 music = Category.create!(name: "Music", description: "Do you want enjoy the word? This category is for you")
-music_skills = [culture, intelligence, savoir, social, creativite, logique]
 puts "#{music.name} done"
 social = Category.create!(name: "Social", description: "Do you want to understand people? This category is for you")
-social_skills = [intelligence, savoir, social, creativite]
 puts "#{social.name} done"
 theatre = Category.create!(name: "Theatre", description: "Do you want know how to act? This category is for you")
-theatre_skills = [culture, intelligence, savoir, social, creativite]
 puts "#{theatre.name} done"
 gaming = Category.create!(name: "Gaming", description: "Do you want to learn how to try hard? This category is for you")
-gaming_skills = [culture, spiritualite, savoir, logique]
 puts "#{gaming.name} done"
 science = Category.create!(name: "Science", description: "Do you want to work your brain out? This category is for you")
-science_skills = [culture, intelligence, savoir, creativite, logique]
 puts "#{science.name} done"
 literature = Category.create!(name: "Literature", description: "Do you want to travel the word? This category is for you")
-literature_skills = [culture, intelligence, savoir, reflexion, creativite]
 puts "#{literature.name} done"
 
 puts "Category-database done!"
 puts '----------------------------------------------------'
 
 # ----------------- CREATING QUESTS AND GOALS -----------------
-
-pushup_description = "TO DO A PUSH-UP, TOUCH THE SCREEN WITH YOUR NOSE. Get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
-running_description = "To run, you just need to run while focusing on your breathing."
-japanese_description = "Watch a lot of japanese movies and test your skills whith Quizzes."
-indian_description = "Watch a lot of indian movies and test your skills whith Quizzes."
-french_description = "Watch a lot of french movies and test your skills whith Quizzes."
-abs_description = "6 pack, 12 pack, 18 pack. As much as you want."
-italian_literature_description = "Read a lot of italian books and test your skills whith Quizzes."
-french_literature_description = "Read a lot of french books and test your skills whith Quizzes."
-classic_literature_description = "Read a lot of Classic books and test your skills whith Quizzes."
-arithmetic_description = "complete thoses exercises to be better than your child"
-quick_calculation_description = "complete thoses exercises to be better than a calculator"
-biology_description = "Read thoses books and test your skills whith Quizzes."
-rock_description = "Listen this playlist and test your skills whith Quizzes."
-hip_hop_description = "Listen this playlist and test your skills whith Quizzes."
-makina_description = "Listen this playlist and test your skills whith Quizzes."
-moliere_description = "Watch this theater plays and test your skills whith Quizzes."
-classical_theatre_description = "Watch this greek theater plays and test your skills whith Quizzes."
-drama_theatre_description = "Watch this drama plays and test your skills whith Quizzes."
-meeting_description = "Watch those tutorials and test them at your next party."
-talking_description = "Watch those tutorials and test them at your next party."
-good_manners_description = "Watch those tutorials and test them at your next party."
-elden_ring_description = "Play this game to learn how to cry."
-candy_crush_description = "Play this game to learn how to cry too."
-god_of_war_description = "Play this game to learn how to cry but not for the same reason."
 
 def create_goal(quest, threshold)
   score = 100
@@ -238,8 +205,7 @@ def create_goal(quest, threshold)
 end
 
 def create_quest_skill(quest, category_skills)
-  category_skills_sample = category_skills.sample(3)
-  category_skills_sample.each do |skill|
+  category_skills.each do |skill|
     QuestSkill.create(quest_id: quest.id, skill_id: skill.id)
   end
 end
@@ -256,32 +222,105 @@ def create_quest(name, description, category, niveau, category_skills, partial)
   end
 end
 
+pushup_description = "TO DO A PUSH-UP, TOUCH THE SCREEN WITH YOUR NOSE. Get on the floor on all fours, positioning your hands slightly wider than your shoulders. Don't lock out the elbows; keep them slightly bent. Extend your legs back so you are balanced on your hands and toes, your feet hip-width apart. Contract your abs and tighten your core by pulling your belly button toward your spine. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position. Do as many push-up as you can."
+pushup_skills = [force, endu, cardio]
+create_quest("Push-up", pushup_description, sport, 3, pushup_skills, "click_to_count")
+
+running_description = "To run, you just need to run while focusing on your breathing."
+running_skills = [endu, cardio, vitesse]
+create_quest("Running", running_description, sport, 5, running_skills, "geo_map")
+
+abs_description = "6 pack, 12 pack, 18 pack. As much as you want."
+abs_skills = [force, endu, agilite]
+create_quest("Abs", abs_description, sport, 3, abs_skills, "click_to_count")
+
+japanese_description = "Watch a lot of japanese movies and test your skills whith Quizzes."
+japanese_movie_skills = [culture, savoir, social]
+create_quest("Japanese movies", japanese_description, cinema, 4, japanese_movie_skills, "cine_quiz")
+
+indian_description = "Watch a lot of indian movies and test your skills whith Quizzes."
+indian_movie_skills = [culture, savoir, social]
+create_quest("Indian movies", indian_description, cinema, 4, indian_movie_skills, "cine_quiz")
+
+french_description = "Watch a lot of french movies and test your skills whith Quizzes."
+french_movie_skills = [culture, savoir, social]
+create_quest("French movies", french_description, cinema, 4, french_movie_skills, "cine_quiz")
+
+italian_literature_description = "Read a lot of italian books and test your skills whith Quizzes."
+italian_literature_skills = [culture, intelligence, savoir]
+create_quest("Italian literature", italian_literature_description, literature, 4, italian_literature_skills, "click_to_count")
+
+french_literature_description = "Read a lot of french books and test your skills whith Quizzes."
+french_literature_skills = [culture, intelligence, savoir]
+create_quest("French literature", french_literature_description, literature, 4, french_literature_skills, "click_to_count")
+
+classic_literature_description = "Read a lot of Classic books and test your skills whith Quizzes."
+classic_literature_skills = [culture, intelligence, savoir]
+create_quest("Classic literature", classic_literature_description, literature, 4, classic_literature_skills, "click_to_count")
+
+arithmetic_description = "complete thoses exercises to be better than your child"
+arithmetic_skills = [intelligence, savoir, logique]
+create_quest("Arithmetic", arithmetic_description, science, 4, arithmetic_skills, "click_to_count")
+
+quick_calculation_description = "complete thoses exercises to be better than a calculator"
+quick_calculation_skills = [intelligence, savoir, logique]
+create_quest("Quick calculation", quick_calculation_description, science, 5, quick_calculation_skills, "click_to_count")
+
+biology_description = "Read thoses books and test your skills whith Quizzes."
+biology_skills = [culture, intelligence, savoir]
+create_quest("Biology", biology_description, science, 6, biology_skills, "click_to_count")
+
+rock_description = "Listen this playlist and test your skills whith Quizzes."
+rock_skills = [culture, social, creativite]
+create_quest("Rock", rock_description, music, 5, rock_skills, "click_to_count")
+
+hip_hop_description = "Listen this playlist and test your skills whith Quizzes."
+hip_hop_skills = [culture, social, creativite]
+create_quest("Hip Hop", hip_hop_description, music, 5, hip_hop_skills, "click_to_count")
+
+makina_description = "Listen this playlist and test your skills whith Quizzes."
+makina_skills = [culture, social, creativite]
+create_quest("Makina", makina_description, music, 1, makina_skills, "click_to_count")
+
+moliere_description = "Watch this theater plays and test your skills whith Quizzes."
+moliere_skills = [culture, intelligence, savoir]
+create_quest("Moliere", moliere_description, theatre, 4, moliere_skills, "click_to_count")
+
+classical_theatre_description = "Watch this greek theater plays and test your skills whith Quizzes."
+classical_theatre_skills = [culture, intelligence, savoir]
+create_quest("Classical", classical_theatre_description, theatre, 5, classical_theatre_skills, "click_to_count")
+
+drama_theatre_description = "Watch this drama plays and test your skills whith Quizzes."
+drama_theatre_skills = [culture, intelligence, savoir]
+create_quest("Drama", drama_theatre_description, theatre, 4, drama_theatre_skills, "click_to_count")
+
+meeting_description = "Watch those tutorials and test them at your next party."
+meeting_skills = [culture, social, creativite]
+create_quest("Meeting", meeting_description, social, 3, meeting_skills, "click_to_count")
+
+talking_description = "Watch those tutorials and test them at your next party."
+talking_skills = [savoir, social, culture]
+create_quest("Talking", talking_description, social, 5, talking_skills, "click_to_count")
+
+good_manners_description = "Watch those tutorials and test them at your next party."
+social_skills = [culture, savoir, social]
+create_quest("Good manners", good_manners_description, social, 4, social_skills, "click_to_count")
+
+elden_ring_description = "Play this game to learn how to cry."
+elden_ring_skills = [culture, spiritualite, logique]
+create_quest("Elden ring", elden_ring_description, gaming, 4, elden_ring_skills, "click_to_count")
+
+candy_crush_description = "Play this game to learn how to cry too."
+candy_crush_skills = [culture, savoir, logique]
+create_quest("Candy crush", candy_crush_description, gaming, 6, candy_crush_skills, "click_to_count")
+
+god_of_war_description = "Play this game to learn how to cry but not for the same reason."
+god_of_war_skills = [culture, intelligence, logique]
+create_quest("God of war", god_of_war_description, gaming, 3, god_of_war_skills, "click_to_count")
+
+
 puts 'Creation Quest-database & Goal-database...'
 
-create_quest("Push-up", pushup_description, sport, 3, sport_skills, "click_to_count")
-create_quest("Running", running_description, sport, 5, sport_skills, "geo_map")
-create_quest("Abs", abs_description, sport, 3, sport_skills, "click_to_count")
-create_quest("Japanese movies", japanese_description, cinema, 4, cinema_skills, "cine_quiz")
-create_quest("Indian movies", indian_description, cinema, 4, cinema_skills, "cine_quiz")
-create_quest("French movies", french_description, cinema, 4, cinema_skills, "cine_quiz")
-create_quest("Italian literature", italian_literature_description, literature, 4, literature_skills, "click_to_count")
-create_quest("French literature", french_literature_description, literature, 4, literature_skills, "click_to_count")
-create_quest("Classic literature", classic_literature_description, literature, 4, literature_skills, "click_to_count")
-create_quest("Arithmetic", arithmetic_description, science, 4, science_skills, "click_to_count")
-create_quest("Quick calculation", quick_calculation_description, science, 5, science_skills, "click_to_count")
-create_quest("Biology", biology_description, science, 6, science_skills, "click_to_count")
-create_quest("Rock", rock_description, music, 5, music_skills, "click_to_count")
-create_quest("Hip Hop", hip_hop_description, music, 5, music_skills, "click_to_count")
-create_quest("Makina", makina_description, music, 1, music_skills, "click_to_count")
-create_quest("Classical", classical_theatre_description, theatre, 5, theatre_skills, "click_to_count")
-create_quest("Moliere", moliere_description, theatre, 4, theatre_skills, "click_to_count")
-create_quest("Drama", drama_theatre_description, theatre, 4, theatre_skills, "click_to_count")
-create_quest("Meeting", meeting_description, social, 3, social_skills, "click_to_count")
-create_quest("Talking", talking_description, social, 5, social_skills, "click_to_count")
-create_quest("Good manners", good_manners_description, social, 4, social_skills, "click_to_count")
-create_quest("Elden ring", elden_ring_description, gaming, 4, gaming_skills, "click_to_count")
-create_quest("Candy crush", candy_crush_description, gaming, 6, gaming_skills, "click_to_count")
-create_quest("God of war", god_of_war_description, gaming, 3, gaming_skills, "click_to_count")
 puts Quest.count.to_s
 puts Goal.count.to_s
 puts QuestSkill.count.to_s
