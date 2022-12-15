@@ -244,11 +244,11 @@ def create_quest_skill(quest, category_skills)
   end
 end
 
-def create_quest(name, description, category, niveau, category_skills)
+def create_quest(name, description, category, niveau, category_skills, partial)
   rank = 1
   reward = 100
   while rank <= niveau
-    quest = Quest.create!(name: name, rank: rank, description: description, category: category, reward: reward)
+    quest = Quest.create!(name: name, rank: rank, description: description, category: category, reward: reward, partial: partial)
     create_quest_skill(quest, category_skills)
     create_goal(quest, rank)
     reward *= niveau
@@ -258,30 +258,30 @@ end
 
 puts 'Creation Quest-database & Goal-database...'
 
-create_quest("Push-up", pushup_description, sport, 3, sport_skills)
-create_quest("Running", running_description, sport, 5, sport_skills)
-create_quest("Abs", abs_description, sport, 3, sport_skills)
-create_quest("Japanese movies", japanese_description, cinema, 4, cinema_skills)
-create_quest("Indian movies", indian_description, cinema, 4, cinema_skills)
-create_quest("French movies", french_description, cinema, 4, cinema_skills)
-create_quest("Italian literature", italian_literature_description, literature, 4, literature_skills)
-create_quest("French literature", french_literature_description, literature, 4, literature_skills)
-create_quest("Classic literature", classic_literature_description, literature, 4, literature_skills)
-create_quest("Arithmetic", arithmetic_description, science, 4, science_skills)
-create_quest("Quick calculation", quick_calculation_description, science, 5, science_skills)
-create_quest("Biology", biology_description, science, 6, science_skills)
-create_quest("Rock", rock_description, music, 5, music_skills)
-create_quest("Hip Hop", hip_hop_description, music, 5, music_skills)
-create_quest("Makina", makina_description, music, 1, music_skills)
-create_quest("Classical", classical_theatre_description, theatre, 5, theatre_skills)
-create_quest("Moliere", moliere_description, theatre, 4, theatre_skills)
-create_quest("Drama", drama_theatre_description, theatre, 4, theatre_skills)
-create_quest("Meeting", meeting_description, social, 3, social_skills)
-create_quest("Talking", talking_description, social, 5, social_skills)
-create_quest("Good manners", good_manners_description, social, 4, social_skills)
-create_quest("Elden ring", elden_ring_description, gaming, 4, gaming_skills)
-create_quest("Candy crush", candy_crush_description, gaming, 6, gaming_skills)
-create_quest("God of war", god_of_war_description, gaming, 3, gaming_skills)
+create_quest("Push-up", pushup_description, sport, 3, sport_skills, "click_to_count")
+create_quest("Running", running_description, sport, 5, sport_skills, "geo_map")
+create_quest("Abs", abs_description, sport, 3, sport_skills, "click_to_count")
+create_quest("Japanese movies", japanese_description, cinema, 4, cinema_skills, "cine_quiz")
+create_quest("Indian movies", indian_description, cinema, 4, cinema_skills, "cine_quiz")
+create_quest("French movies", french_description, cinema, 4, cinema_skills, "cine_quiz")
+create_quest("Italian literature", italian_literature_description, literature, 4, literature_skills, "click_to_count")
+create_quest("French literature", french_literature_description, literature, 4, literature_skills, "click_to_count")
+create_quest("Classic literature", classic_literature_description, literature, 4, literature_skills, "click_to_count")
+create_quest("Arithmetic", arithmetic_description, science, 4, science_skills, "click_to_count")
+create_quest("Quick calculation", quick_calculation_description, science, 5, science_skills, "click_to_count")
+create_quest("Biology", biology_description, science, 6, science_skills, "click_to_count")
+create_quest("Rock", rock_description, music, 5, music_skills, "click_to_count")
+create_quest("Hip Hop", hip_hop_description, music, 5, music_skills, "click_to_count")
+create_quest("Makina", makina_description, music, 1, music_skills, "click_to_count")
+create_quest("Classical", classical_theatre_description, theatre, 5, theatre_skills, "click_to_count")
+create_quest("Moliere", moliere_description, theatre, 4, theatre_skills, "click_to_count")
+create_quest("Drama", drama_theatre_description, theatre, 4, theatre_skills, "click_to_count")
+create_quest("Meeting", meeting_description, social, 3, social_skills, "click_to_count")
+create_quest("Talking", talking_description, social, 5, social_skills, "click_to_count")
+create_quest("Good manners", good_manners_description, social, 4, social_skills, "click_to_count")
+create_quest("Elden ring", elden_ring_description, gaming, 4, gaming_skills, "click_to_count")
+create_quest("Candy crush", candy_crush_description, gaming, 6, gaming_skills, "click_to_count")
+create_quest("God of war", god_of_war_description, gaming, 3, gaming_skills, "click_to_count")
 puts Quest.count.to_s
 puts Goal.count.to_s
 puts QuestSkill.count.to_s
