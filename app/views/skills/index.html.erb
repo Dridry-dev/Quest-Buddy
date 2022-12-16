@@ -1,45 +1,9 @@
 <div class="container">
-<%# ------------------------NAVBAR CARD--------------------------- %>
-  <div class="navbar-card">
-    <div class="nav-item dropdown side-nav-btn">
-      <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <div class="dropdown">
-          <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
-          <%= link_to "Profil", root_path, class: "btn-dropdown" %>
-          <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
-        </div>
-      </div>
-    </div>
-    <div>
-        <% if current_user.show_selected_skin.nil? %>
-          <div class="cat-cont-smol">
-            <div class="cat-smol">
-              <div class="ear ear--left"></div>
-              <div class="ear ear--right"></div>
-              <div class="face">
-                <div class="eye eye--left">
-                  <div class="eye-pupil"></div>
-                </div>
-                <div class="eye eye--right">
-                  <div class="eye-pupil"></div>
-                </div>
-                <div class="muzzle"></div>
-              </div>
-            </div>
-          </div>
-        <% else %>
-          <%= link_to skin_path(current_user.show_selected_skin) do %>
-            <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
-          <% end %>
-      <% end %>
-    </div>
-    <div class="trophy side-nav-btn">
-      <i class="fa-solid fa-trophy"></i>
-    </div>
-  </div>
+<%# ------------------------ MENU CARD BLACK --------------------------- %>
 
-<%# ------------------------FIRST GRAPH--------------------------- %>
+  <%= render "shared/black_navbar" %>
+
+<%# ------------------------ SKILL GRAPH --------------------------- %>
 
   <div class="card-graph">
     <div class="chart-donut">
@@ -48,5 +12,5 @@
       </div>
     </div>
   </div>
-      <%= link_to  "Return", root_path, class: "yellow-small-btn"%>
+  <%= link_to  "Return", root_path, class: "yellow-small-btn"%>
 </div>

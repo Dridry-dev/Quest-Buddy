@@ -5,12 +5,9 @@
     <%= render "shared/yellow_navbar" %>
     <div class="lower-card-grey">
       <h1><%= @quest.name %></h1>
-      <h6>
-        Level <%= @quest.rank %>
-      </h6>
+      <h6>Level <%= @quest.rank %></h6>
     </div>
   </div>
-
 
 <%# ----------------- CARD QUEST ----------------- %>
 
@@ -24,58 +21,56 @@
           </div>
         <% end %>
       </div>
-
-    <h4>Progress & Rewards</h4>
-    <div class="container-cellules-quests">
-      <div class="progress">
-        <div class="progress-value">
-          <div class="dot-spacer">
-            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggletrois"></div>
-            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggledeux"></div>
-            <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+      <h4>Progress & Rewards</h4>
+      <div class="container-cellules-quests">
+        <div class="progress">
+          <div class="progress-value">
+            <div class="dot-spacer">
+              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggletrois"></div>
+              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggledeux"></div>
+              <div class="step-dot" data-controller="dropdown" data-action="click->dropdown#toggle"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="dropdown-toggled" data-dropdown-target="dropdownUn">
-      <div class="cellules-skills-drop-positionner">
-        <p class="cellules-skills-drop-golds">
-          <div class="cellules-skills-coin navbar-element">
-            <i class="fa-solid fa-coins"></i>
-            <p class="coin-count">
-              <%= @quest.reward * 3 %>
-            </p>
-          </div>
-        </p>
-        <%  @quest.skills.each do |skill| %>
-          <p class="cellules-skills-drop">+1 <%= skill.name %></p>
-        <% end %>
+      <div id="dropdown-toggled" data-dropdown-target="dropdownUn">
+        <div class="cellules-skills-drop-positionner">
+          <p class="cellules-skills-drop-golds">
+            <div class="cellules-skills-coin navbar-element">
+              <i class="fa-solid fa-coins"></i>
+              <p class="coin-count">
+                <%= @quest.reward * 3 %>
+              </p>
+            </div>
+          </p>
+          <%  @quest.skills.each do |skill| %>
+            <p class="cellules-skills-drop">+1 <%= skill.name %></p>
+          <% end %>
+        </div>
+      </div>
+      <div id="dropdown-toggled-deux" data-dropdown-target="dropdowndeux">
+        <div class="cellules-skills-drop-positionner">
+          <p class="cellules-skills-drop-golds">
+            <div class="cellules-skills-coin navbar-element">
+              <i class="fa-solid fa-coins"></i>
+              <p class="coin-count">
+                <%= @quest.reward * 2 %>
+              </p>
+            </div>
+          </p>
+        </div>
+      </div>
+      <div id="dropdown-toggled-trois" data-dropdown-target="dropdowntrois">
+        <div class="cellules-skills-drop-positionner">
+          <p class="cellules-skills-drop-golds">
+            <div class="cellules-skills-coin navbar-element">
+              <i class="fa-solid fa-coins"></i>
+              <p class="coin-count"><%= @quest.reward %></p>
+            </div>
+          </p>
+        </div>
       </div>
     </div>
-    <div id="dropdown-toggled-deux" data-dropdown-target="dropdowndeux">
-      <div class="cellules-skills-drop-positionner">
-        <p class="cellules-skills-drop-golds">
-          <div class="cellules-skills-coin navbar-element">
-            <i class="fa-solid fa-coins"></i>
-            <p class="coin-count">
-              <%= @quest.reward * 2 %>
-            </p>
-          </div>
-        </p>
-      </div>
-    </div>
-    <div id="dropdown-toggled-trois" data-dropdown-target="dropdowntrois">
-      <div class="cellules-skills-drop-positionner">
-        <p class="cellules-skills-drop-golds">
-          <div class="cellules-skills-coin navbar-element">
-            <i class="fa-solid fa-coins"></i>
-            <p class="coin-count"><%= @quest.reward %></p>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
-
     <h4>Description</h4>
     <div class="container-cellules-quests">
       <p><%= @quest.description  %></p>

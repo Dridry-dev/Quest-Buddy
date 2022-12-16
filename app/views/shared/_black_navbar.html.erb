@@ -1,5 +1,5 @@
-  <div class="upper-card-grey">
-    <div class="nav-item dropdown navbar-element">
+<div class="navbar-card">
+    <div class="nav-item dropdown side-nav-btn">
       <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <div class="dropdown">
@@ -10,10 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="cellules-skills-coin navbar-element">
-      <i class="fa-solid fa-coins"></i> <p class="coin-count"><%= current_user.gold %></p>
-    </div>
-    <div class="navbar-element">
+    <div>
       <% if current_user.show_selected_skin.nil? %>
         <div class="cat-cont-smol">
           <div class="cat-smol">
@@ -35,5 +32,8 @@
           <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 80, width: 80, crop: :scale, crop: :fill, class: "avatar-navbar" %>
         <% end %>
       <% end %>
+    </div>
+    <div class="trophy side-nav-btn">
+      <i class="fa-solid fa-trophy"></i>
     </div>
   </div>

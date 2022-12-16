@@ -194,7 +194,9 @@ puts "#{literature.name} done"
 puts "Category-database done!"
 puts '----------------------------------------------------'
 
-# ----------------- CREATING QUESTS AND GOALS -----------------
+# ----------------- CREATING QUESTS, QUEST_SKILLS AND GOALS -----------------
+
+puts 'Creation Quest-database & Goal-database...'
 
 def create_goal(quest, threshold)
   score = 100
@@ -317,9 +319,6 @@ create_quest("Candy crush", candy_crush_description, gaming, 6, candy_crush_skil
 god_of_war_description = "Play this game to learn how to cry but not for the same reason."
 god_of_war_skills = [culture, intelligence, logique]
 create_quest("God of war", god_of_war_description, gaming, 3, god_of_war_skills, "click_to_count")
-
-
-puts 'Creation Quest-database & Goal-database...'
 
 puts Quest.count.to_s
 puts Goal.count.to_s

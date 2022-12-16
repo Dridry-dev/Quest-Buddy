@@ -39,4 +39,3 @@ export default class extends Controller {
       })
   }
 }
-//fetch vers mon create pour creer mon instance

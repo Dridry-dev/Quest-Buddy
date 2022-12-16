@@ -13,25 +13,25 @@
   <div class="shop-container">
     <% @skins.each do |skin| %>
       <%= link_to skin_path(skin) do %>
-      <div class= "semi-card">
-        <div class="shop-element">
-          <%= cl_image_tag skin.photo.key, height: 100, width: 100, crop: :scale, crop: :fill %>
-        </div>
-        <div class="shop-element">
-          <strong><%= skin.name %></strong>
-        </div>
-        <% if skin.user_skins.find_by(user: current_user) %>
+        <div class= "semi-card">
           <div class="shop-element">
-            Purchased
+            <%= cl_image_tag skin.photo.key, height: 100, width: 100, crop: :scale, crop: :fill %>
           </div>
-        <% else %>
           <div class="shop-element">
-            <div class="cellules-skills-coin navbar-element">
-              <i class="fa-solid fa-coins"></i><p class="coin-count"><%= skin.price %></p>
+            <strong><%= skin.name %></strong>
+          </div>
+          <% if skin.user_skins.find_by(user: current_user) %>
+            <div class="shop-element">
+              Purchased
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% else %>
+            <div class="shop-element">
+              <div class="cellules-skills-coin navbar-element">
+                <i class="fa-solid fa-coins"></i><p class="coin-count"><%= skin.price %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>
