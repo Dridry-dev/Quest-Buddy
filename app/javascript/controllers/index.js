@@ -21,3 +21,6 @@ application.register("quest-counter", QuestCounterController)
 
 import TestController from "./test_controller"
 application.register("test", TestController)
+
+import TutorialController from "./tutorial_controller"
+application.register("tutorial", TutorialController)

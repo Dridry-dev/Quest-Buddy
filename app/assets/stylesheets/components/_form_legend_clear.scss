@@ -8,3 +8,27 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.form-actions{
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions-3 input{
+  color: #E8EDDF;
+}
+
+.form-actions-2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.form-check{
+  display: flex;
+}
+.form-check label{
+  margin-left: 8px;
+}

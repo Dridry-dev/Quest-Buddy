@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit]
   def show
     @quest = Quest.new
-    @user_skills = UserSkill.all.order(:skill_id)
+    @user_skills = UserSkill.where(user:current_user).order(:skill_id)
     @skills = Skill.all
     @skins = Skin.all
   end
