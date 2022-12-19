@@ -50,8 +50,9 @@
 
     <%# ----------------- TUTORIAL CARD ----------------- %>
 
-  <% else %>
-    <div class="card-border-yellow" data-controller="tutorial">
+
+  <%# else %>
+    <%# <div class="card-border-yellow" data-controller="tutorial">
       <div id="skill-toggled" data-dropdown-target="dropdown">
         <h3>CLEAR A QUEST </h3>
         <h3>TO UNLOCK SKILLS</h3>
@@ -67,7 +68,10 @@
             <p>You can </p>
           </div>
         </div>
-      </div>
+      </div> %>
+
+
+
       <%# <div id="tuto3-toggled" data-dropdown-target="dropdown">
         <div class="tuto-card">
           <div id="tuto4-toggled" data-action="click->tutorial#toggledeux" data-dropdown-target="dropdown">
@@ -79,7 +83,8 @@
           </div>
         </div>
       </div> %>
-    </div>
+    <%# </div> %>
+
   <% end %>
 
   <%# ----------------- QUEST CARD ----------------- %>
