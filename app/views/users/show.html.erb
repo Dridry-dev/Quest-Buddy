@@ -52,9 +52,11 @@
 
   <% else %>
     <div class="card-border-yellow" data-controller="tutorial">
-      <h3>Skills Unlock</h3>
-      <h3>START A QUEST FIRST</h3>
-      <h6  data-action="click->tutorial#toggle" >Try the tutorial</h6>
+      <div id="skill-toggled" data-dropdown-target="dropdown">
+        <h3>CLEAR A QUEST </h3>
+        <h3>TO UNLOCK SKILLS</h3>
+        <h6  data-action="click->tutorial#toggle" class="yellow-small-btn-tuto" >See the tutorial</h6>
+      </div>
       <div id="tuto-toggled" data-dropdown-target="dropdown">
         <div class="tuto-card">
           <div id="tuto2-toggled" data-action="click->tutorial#toggledeux" data-dropdown-target="dropdown">

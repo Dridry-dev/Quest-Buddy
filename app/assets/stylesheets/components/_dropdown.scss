@@ -114,3 +114,14 @@
 #tuto2-toggled.active {
   display: block;
 }
+
+#skill-toggled{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#skill-toggled.active{
+display: none;
+}
