@@ -4,7 +4,7 @@ require "open-uri"
 
 # ----------------- CLEANING SEED -----------------
 
-puts 'Cleaning database...'
+puts 'Cleaning database 🧹🧹🧹'
 User.destroy_all
 Category.destroy_all
 Quest.destroy_all
@@ -37,59 +37,59 @@ skin1.photo.attach(io: file1, filename: "saitama.png", content_type: "image/jpeg
 skin1.save!
 puts "#{skin1.name} created"
 
-file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/captain_marvel_yh9beh.png")
-skin2 = Skin.new(name: "Cap Marvel", description: "She could have handle Thanos all by herself", price: 800)
-skin2.photo.attach(io: file2, filename: "captain_marvel.png", content_type: "image/jpeg")
-skin2.save!
-puts "#{skin2.name} created"
+# file2 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/captain_marvel_yh9beh.png")
+# skin2 = Skin.new(name: "Cap Marvel", description: "She could have handle Thanos all by herself", price: 800)
+# skin2.photo.attach(io: file2, filename: "captain_marvel.png", content_type: "image/jpeg")
+# skin2.save!
+# puts "#{skin2.name} created"
 
-file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
-skin3 = Skin.new(name: "Goku", description: "KAAAAAMEEEEEEHAAAAMEEEEEHAAAAAAA", price: 800)
-skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
-skin3.save!
-puts "#{skin3.name} created"
+# file3 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Goku_clodrz.png")
+# skin3 = Skin.new(name: "Goku", description: "KAAAAAMEEEEEEHAAAAMEEEEEHAAAAAAA", price: 800)
+# skin3.photo.attach(io: file3, filename: "Goku.png", content_type: "image/jpeg")
+# skin3.save!
+# puts "#{skin3.name} created"
 
-file4 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/wonder_woman_qwgbks.png")
-skin4 = Skin.new(name: "WonderWoman", description: "Best lasso girl on earth", price: 750)
-skin4.photo.attach(io: file4, filename: "wonder_woman.png", content_type: "image/jpeg")
-skin4.save!
-puts "#{skin4.name} created"
+# file4 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/wonder_woman_qwgbks.png")
+# skin4 = Skin.new(name: "WonderWoman", description: "Best lasso girl on earth", price: 750)
+# skin4.photo.attach(io: file4, filename: "wonder_woman.png", content_type: "image/jpeg")
+# skin4.save!
+# puts "#{skin4.name} created"
 
-file5 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Superman_hett66.png")
-skin5 = Skin.new(name: "Superman", description: "It's a bird ? It's a plane ? It's Superman !", price: 750)
-skin5.photo.attach(io: file5, filename: "Superman.png", content_type: "image/jpeg")
-skin5.save!
-puts "#{skin5.name} created"
+# file5 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Superman_hett66.png")
+# skin5 = Skin.new(name: "Superman", description: "It's a bird ? It's a plane ? It's Superman !", price: 750)
+# skin5.photo.attach(io: file5, filename: "Superman.png", content_type: "image/jpeg")
+# skin5.save!
+# puts "#{skin5.name} created"
 
-file6 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/spider_gwen_b90ovj.png")
-skin6 = Skin.new(name: "Spider Gwen", description: "Spider Gwen, the best Spidey", price: 500)
-skin6.photo.attach(io: file6, filename: "spider_gwen.png", content_type: "image/jpeg")
-skin6.save!
-puts "#{skin6.name} created"
+# file6 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/spider_gwen_b90ovj.png")
+# skin6 = Skin.new(name: "Spider Gwen", description: "Spider Gwen, the best Spidey", price: 500)
+# skin6.photo.attach(io: file6, filename: "spider_gwen.png", content_type: "image/jpeg")
+# skin6.save!
+# puts "#{skin6.name} created"
 
-file7 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/mikasa_jyg4fu.png")
-skin7 = Skin.new(name: "Mikasa", description: "Mikasa, es tu casa....?", price: 400)
-skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg")
-skin7.save!
-puts "#{skin7.name} created"
+# file7 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/mikasa_jyg4fu.png")
+# skin7 = Skin.new(name: "Mikasa", description: "Mikasa, es tu casa....?", price: 400)
+# skin7.photo.attach(io: file7, filename: "mikasa.png", content_type: "image/jpeg")
+# skin7.save!
+# puts "#{skin7.name} created"
 
-file10 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670245700/Ryan-removebg-preview_kvkyb6.png")
-skin10 = Skin.new(name: "Ryan's Abs", description: "Did you ask for some abs ?", price: 250)
-skin10.photo.attach(io: file10, filename: "RyanAbs.png", content_type: "image/jpeg")
-skin10.save!
-puts "#{skin10.name} created"
+# file10 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670245700/Ryan-removebg-preview_kvkyb6.png")
+# skin10 = Skin.new(name: "Ryan's Abs", description: "Did you ask for some abs ?", price: 250)
+# skin10.photo.attach(io: file10, filename: "RyanAbs.png", content_type: "image/jpeg")
+# skin10.save!
+# puts "#{skin10.name} created"
 
-file8 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/sailor_ps3rqp.png")
-skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, the one and only!", price: 200)
-skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
-skin8.save!
-puts "#{skin8.name} created"
+# file8 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1670493493/sailor_ps3rqp.png")
+# skin8 = Skin.new(name: "Sailor Moon", description: "Sailor Moon, the one and only!", price: 200)
+# skin8.photo.attach(io: file8, filename: "sailor.png", content_type: "image/jpeg")
+# skin8.save!
+# puts "#{skin8.name} created"
 
-file11 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
-skin11 = Skin.new(name: "Loki", description: '"Loki, cool guy but never trust him!" - Thor', price: 200)
-skin11.photo.attach(io: file11, filename: "loki.png", content_type: "image/jpeg")
-skin11.save!
-puts "#{skin11.name} created"
+# file11 = URI.open("https://res.cloudinary.com/dpmbalij4/image/upload/v1669906121/Loki_ztoxtk.png")
+# skin11 = Skin.new(name: "Loki", description: '"Loki, cool guy but never trust him!" - Thor', price: 200)
+# skin11.photo.attach(io: file11, filename: "loki.png", content_type: "image/jpeg")
+# skin11.save!
+# puts "#{skin11.name} created"
 
 puts "#{Skin.count} skins created"
 puts '----------------------------------------------------'
