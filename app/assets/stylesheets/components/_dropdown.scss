@@ -93,7 +93,7 @@
   opacity: 0.9;
   position: relative;
   z-index: 1;
-  top: -90px;
+  top: -13px;
   right: 23px;
   display: none;
   box-shadow: 0px 2px 8px black;
@@ -107,13 +107,47 @@
   display: block;
 }
 
-#tuto2-toggled{
+#close-toggled{
   height: 20px;
-  width: 20px;
+  width: 100%;
+  padding-top: 12px;
+  padding-left: 315px;
   display: none;
 }
 
+#close-toggled.active {
+  display: block;
+}
+#tuto2-toggled {
+  height: 176px;
+  width: 340px;
+  background-color: #E8EDDF;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  top: -13px;
+  right: 23px;
+  display: none;
+  box-shadow: 0px 2px 8px black;
+  border-radius: 8px;
+  color: #323232;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 #tuto2-toggled.active {
+  display: block;
+}
+
+#close2-toggled{
+  height: 20px;
+  width: 100%;
+  padding-top: 12px;
+  padding-left: 315px;
+  display: none;
+}
+
+#close2-toggled.active {
   display: block;
 }
 
@@ -122,6 +156,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 12px;
 }
 
 #skill-toggled.active{

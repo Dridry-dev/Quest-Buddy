@@ -51,7 +51,7 @@ export default class extends Controller {
       data: {
         labels,
         datasets: [{
-          label: false,
+          label: ' ' + ' ' + 'Level' + ' ' + ' ' ,
           data,
           backgroundColor: [
             '#F5CB5C',
