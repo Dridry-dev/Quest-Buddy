@@ -19,10 +19,10 @@
       <i class="fa-solid fa-angles-right arrow-color" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <div class="dropdown">
-          <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
           <%= link_to "Profil", root_path, class: "btn-dropdown" %>
+          <%= link_to "Quests", categories_path, class: "btn-dropdown" %>
           <%= link_to "Shop", skins_path, class: "btn-dropdown" %>
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropdown" %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, form: { "data-turbo" => "false" }, class: "btn-dropdown" %>
         </div>
       </div>
     </div>
@@ -51,89 +51,75 @@
     <%# ----------------- TUTORIAL CARD ----------------- %>
 
 
-  <%# else %>
-    <%# <div class="card-border-yellow" data-controller="tutorial">
+  <% else %>
+    <div class="card-border-yellow" data-controller="tutorial">
       <div id="skill-toggled" data-dropdown-target="dropdown">
-        <h3>CLEAR A QUEST </h3>
-        <h3>TO UNLOCK SKILLS</h3>
         <h6  data-action="click->tutorial#toggle" class="yellow-small-btn-tuto" >See the tutorial</h6>
+        <h3>To unlock the skills you need to finish a quest.</h3>
+        <div class="arrows">
+        </div>
       </div>
+
       <div id="tuto-toggled" data-dropdown-target="dropdown">
         <div class="tuto-card">
-          <div id="tuto2-toggled" data-action="click->tutorial#toggledeux" data-dropdown-target="dropdown">
-            <strong>X</strong>
+          <div id="close-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
           </div>
           <div>
             <h6>This is your profile page</h6>
-            <p>You can </p>
+          </div>
+          <div class="tuto-text">
+            <p>Your skills will be shown here after completing your first quest.</p>
+          </div>
+          <div>
+            <h6 data-action="click->tutorial#toggle2" class="grey-small-btn-tuto" >Next</h6>
           </div>
         </div>
-      </div> %>
+      </div>
 
-
-
-      <%# <div id="tuto3-toggled" data-dropdown-target="dropdown">
+      <div id="tuto2-toggled" data-dropdown-target="dropdown">
         <div class="tuto-card">
-          <div id="tuto4-toggled" data-action="click->tutorial#toggledeux" data-dropdown-target="dropdown">
-            <strong>X</strong>
+          <div id="close2-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
           </div>
           <div>
-            <h6>This is your profile page</h6>
-            <p>You can </p>
+            <h6>Skin & Start a quest</h6>
+          </div>
+          <div class="tuto-text">
+            <p>Miaou has taken over your Skin but you can buy another one on the <strong><%= link_to "Shop", skins_path %></strong>.<br>Or you can start a quest!</p>
+          </div>
+          <div class="arrows">
           </div>
         </div>
-      </div> %>
-    <%# </div> %>
-
+      </div>
+    </div>
   <% end %>
-
-  <%# ----------------- QUEST CARD ----------------- %>
-
-  <%#= link_to quest_path do %>
-    <%# <div class="card">
-      <div class="title-card">
-        <h2>PUSH-UP</h2>
-      </div>
-      <div class="grid-cellules-skills">
-        <div class="cellules-skills">
-          <p>Force</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Endu</p>
-        </div>
-        <div class="cellules-skills">
-          <p>Cardio</p>
-        </div>
-      </div>
-      <div class="progress">
-        <div class="step-one">
-        </div>
-        <div class="step-one">
-        </div>
-        <div class="step-one">
-        </div>
-        <div class="progress-value"></div>
-      </div>
-    </div> %>
-  <%# end %>
 
   <%# ----------------- SKIN CARD + START QUEST ----------------- %>
 
   <div class="card-changing-room">
     <div class="cat-cont">
-      <div class="cat">
-        <div class="ear ear--left"></div>
-        <div class="ear ear--right"></div>
-        <div class="face">
-          <div class="eye eye--left">
-            <div class="eye-pupil"></div>
+      <% if current_user.show_selected_skin.nil? %>
+        <div class="cat">
+          <div class="ear ear--left"></div>
+          <div class="ear ear--right"></div>
+          <div class="face">
+            <div class="eye eye--left">
+              <div class="eye-pupil"></div>
+            </div>
+            <div class="eye eye--right">
+              <div class="eye-pupil"></div>
+            </div>
+            <div class="muzzle"></div>
           </div>
-          <div class="eye eye--right">
-            <div class="eye-pupil"></div>
-          </div>
-          <div class="muzzle"></div>
         </div>
-      </div>
+      <% else %>
+        <%= link_to skin_path(current_user.show_selected_skin) do %>
+          <%= cl_image_tag current_user.show_selected_skin.photo.key, height: 190, width: 190, crop: :scale, crop: :fill, class: "avatar-navbar" %>
+        <% end %>
+      <% end %>
     </div>
     <div class="adding-bar">
       <div class="round-plus">

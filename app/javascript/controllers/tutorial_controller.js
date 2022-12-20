@@ -4,40 +4,60 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   connect() {
-    console.log("YES");
   }
   toggle() {
-    console.log("TOGGLE");
+    let skill = document.getElementById('skill-toggled')
+    let tuto = document.getElementById('tuto-toggled')
+    let close = document.getElementById('close-toggled')
+    if (tuto.classList.contains("active")) {
+      tuto.classList.remove("active")
+      close.classList.remove("active")
+    } else {
+      tuto.classList.add("active")
+      close.classList.add("active")
+      skill.classList.add("active")
+    }
+  }
 
+  toggle2() {
     let skill = document.getElementById('skill-toggled')
     let tuto = document.getElementById('tuto-toggled')
     let tuto2 = document.getElementById('tuto2-toggled')
-
-    if (tuto.classList.contains("active")) {
-      tuto.classList.remove("active")
+    let close = document.getElementById('close-toggled')
+    let close2 = document.getElementById('close2-toggled')
+    if (tuto2.classList.contains("active")) {
       tuto2.classList.remove("active")
+      tuto.classList.remove("active")
+      close.classList.remove("active")
+      close2.classList.remove("active")
+      skill.classList.remove("active")
     } else {
-      tuto.classList.add("active")
+      tuto.classList.remove("active")
       tuto2.classList.add("active")
-      skill.classList.add("active")
+      close.classList.add("active")
+      close2.classList.add("active")
 
     }
   }
 
-  toggledeux() {
-    console.log("TOGGLE 2");
-
+  close() {
     let tuto = document.getElementById('tuto-toggled')
     let skill = document.getElementById('skill-toggled')
+    let close = document.getElementById('close-toggled')
     let tuto2 = document.getElementById('tuto2-toggled')
+    let close2 = document.getElementById('close2-toggled')
     if (tuto.classList.contains("active")) {
       tuto.classList.remove("active")
       tuto2.classList.remove("active")
+      close.classList.remove("active")
+      close2.classList.remove("active")
       skill.classList.remove("active")
     } else {
-      tuto.classList.add("active")
-      tuto2.classList.add("active")
-
+      tuto.classList.remove("active")
+      tuto2.classList.remove("active")
+      close.classList.add("active")
+      close2.classList.add("active")
+      skill.classList.remove("active")
     }
   }
 }

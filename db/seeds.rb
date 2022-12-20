@@ -151,9 +151,9 @@ user_vitesse = UserSkill.create(user_id: user.id, skill_id: vitesse.id, level: 5
 puts "#{user.name} vitesse is level #{user_vitesse.level}"
 user_souplesse = UserSkill.create(user_id: user.id, skill_id: souplesse.id, level: 42)
 puts "#{user.name} souplesse is level #{user_souplesse.level}"
-user_intelligence = UserSkill.create(user_id: user.id, skill_id: intelligence.id, level: 79)
+user_intelligence = UserSkill.create(user_id: user.id, skill_id: intelligence.id, level: 72)
 puts "#{user.name} intelligence is level #{user_intelligence.level}"
-user_logique = UserSkill.create(user_id: user.id, skill_id: logique.id, level: 84)
+user_logique = UserSkill.create(user_id: user.id, skill_id: logique.id, level: 74)
 puts "#{user.name} logique is level #{user_logique.level}"
 user_reflexion = UserSkill.create(user_id: user.id, skill_id: reflexion.id, level: 67)
 puts "#{user.name} reflexion is level #{user_reflexion.level}"
