@@ -1,3 +1,6 @@
+$softorange: #323232;
+$tomatored: #F5CB5C;
+
 .action-count {
   font-size: 40px;
   font-weight: bolder;
@@ -40,6 +43,19 @@
   color: #E8EDDF;
 }
 
+.tuto-text{
+  padding: 8px;
+}
+
+.tuto-text a{
+  color: #323232;
+}
+
+.tuto-text a:hover{
+  color: #F5CB5C;
+}
+
+// ----------------- LOGO -----------------
 .deconstructed {
   position: relative;
   margin: auto;
