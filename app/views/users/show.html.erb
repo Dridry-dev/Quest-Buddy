@@ -37,65 +37,73 @@
   </div>
 
   <%# ----------------- SKILLS CARD ----------------- %>
+  <div data-controller="tutorial">
+    <% if current_user.user_skills.count > 1 %>
+      <%= link_to skills_path do %>
+        <div class="card-border-yellow">
+          <h2>SKILLS</h2>
+          <div class="bar-chart" data-controller="chart-js" data-chart-js-skills-value="<%= @skills.to_json %>" data-chart-js-user-skills-value="<%= @user_skills.to_json %>">
+            <canvas width="800px" height="280px" data-chart-js-target="myChart"></canvas>
+          </div>
+        </div>
+      <% end %>
 
-  <% if current_user.user_skills.count > 1 %>
-    <%= link_to skills_path do %>
+      <%# ----------------- TUTORIAL CARD ----------------- %>
+
+
+    <% else %>
       <div class="card-border-yellow">
-        <h2>SKILLS</h2>
-        <div class="bar-chart" data-controller="chart-js" data-chart-js-skills-value="<%= @skills.to_json %>" data-chart-js-user-skills-value="<%= @user_skills.to_json %>">
-          <canvas width="800px" height="280px" data-chart-js-target="myChart"></canvas>
+        <div id="skill-toggled" data-dropdown-target="dropdown">
+          <div>
+            <h6> </h6>
+          </div>
+          <div>
+            <h3>To unlock the skills you need to finish a quest.</h3>
+          </div>
+          <div>
+            <div class="arrows"></div>
+          </div>
+        </div>
+
+        <div id="tuto-toggled" data-dropdown-target="dropdown">
+          <div class="tuto-card">
+            <div id="close-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
+              <div class="leftright"></div>
+              <div class="rightleft"></div>
+            </div>
+            <div>
+              <h6>This is your profile page</h6>
+            </div>
+            <div class="tuto-text">
+              <p>Your skills will be shown here after completing your first quest.</p>
+            </div>
+            <div>
+              <h6 data-action="click->tutorial#toggle2" class="grey-small-btn-tuto" >Next</h6>
+            </div>
+          </div>
+        </div>
+
+        <div id="tuto2-toggled" data-dropdown-target="dropdown">
+          <div class="tuto-card">
+            <div id="close2-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
+              <div class="leftright"></div>
+              <div class="rightleft"></div>
+            </div>
+            <div>
+              <h6>Skin & Start a quest</h6>
+            </div>
+            <div class="tuto-text">
+              <p>Miaou has taken over your Skin but you can buy another one on the <strong><%= link_to "Shop", skins_path %></strong>.<br>Or you can start a quest!<br>Quests rewards you with golds and skill points.</p>
+            </div>
+            <div class="arrows">
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
 
-    <%# ----------------- TUTORIAL CARD ----------------- %>
-
-
-  <% else %>
-    <div class="card-border-yellow" data-controller="tutorial">
-      <div id="skill-toggled" data-dropdown-target="dropdown">
-        <h6  data-action="click->tutorial#toggle" class="yellow-small-btn-tuto" >See the tutorial</h6>
-        <h3>To unlock the skills you need to finish a quest.</h3>
-        <div class="arrows">
-        </div>
-      </div>
-
-      <div id="tuto-toggled" data-dropdown-target="dropdown">
-        <div class="tuto-card">
-          <div id="close-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
-            <div class="leftright"></div>
-            <div class="rightleft"></div>
-          </div>
-          <div>
-            <h6>This is your profile page</h6>
-          </div>
-          <div class="tuto-text">
-            <p>Your skills will be shown here after completing your first quest.</p>
-          </div>
-          <div>
-            <h6 data-action="click->tutorial#toggle2" class="grey-small-btn-tuto" >Next</h6>
-          </div>
-        </div>
-      </div>
-
-      <div id="tuto2-toggled" data-dropdown-target="dropdown">
-        <div class="tuto-card">
-          <div id="close2-toggled" class="close-container" data-action="click->tutorial#close" data-dropdown-target="dropdown">
-            <div class="leftright"></div>
-            <div class="rightleft"></div>
-          </div>
-          <div>
-            <h6>Skin & Start a quest</h6>
-          </div>
-          <div class="tuto-text">
-            <p>Miaou has taken over your Skin but you can buy another one on the <strong><%= link_to "Shop", skins_path %></strong>.<br>Or you can start a quest!</p>
-          </div>
-          <div class="arrows">
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+    <h6  data-action="click->tutorial#toggle" class="yellow-small-btn-tuto" >See the tutorial</h6>
+  </div>
 
   <%# ----------------- SKIN CARD + START QUEST ----------------- %>
 
